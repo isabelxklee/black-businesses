@@ -1,22 +1,21 @@
 import React, {Component} from 'react'
-import mapboxgl from 'mapbox-gl'
-mapboxgl.accessToken =
+import MapboxGL from 'mapbox-gl'
+MapboxGL.accessToken =
   'pk.eyJ1Ijoic3VwZXJoaSIsImEiOiJkMTcyNzU0M2YzZDQ3YjNjNmQ2NmYwYjcwMmMzZGViMCJ9.RmlVJzqEJ1RqQSvQGL_Jkg'
 
 class Map extends Component {
-  state = {
-    lng: 5,
-    lat: 34,
-    zoom: 2,
-  }
-
   componentDidMount() {
-    const map = new mapboxgl.Map({
+    const {style, long, lat, zoom} = this.props.app
+
+    const map = new MapboxGL.Map({
       container: this.mapContainer,
-      style: 'mapbox://styles/mapbox/streets-v11',
-      center: [this.state.lng, this.state.lat],
-      zoom: this.state.zoom,
+      style: style,
+      center: [long, lat],
+      zoom: zoom
     })
+
+    const navigationControl = new MapboxGL.NavigationControl()
+    map.addControl(navigationControl)
   }
 
   render() {
