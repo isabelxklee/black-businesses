@@ -10,20 +10,25 @@ const formSchema = Yup.object().shape({
 })
 
 const handleSubmit = (props, values) => {
-  // fetch('https://shower-thoughts-json.herokuapp.com/thoughts', {
-  //   method: 'POST',
-  //   headers: {
-  //     'Content-type': 'application/json',
-  //   },
-  //   body: JSON.stringify({
-  //     emoji: values.emoji,
-  //     quote: values.thought,
-  //   }),
-  // })
-  //   .then((response) => response.json())
-  //   .then((newThought) => {
-  //     props.addNewThought(newThought)
-  //   })
+  fetch('https://black-businesses-json.herokuapp.com/places', {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      title: values.title,
+      category: values.category,
+      address: values.address,
+      city: values.city,
+      state: values.state,
+      zipcode: values.zipcode,
+      description: values.description,
+      image: values.image,
+      link: values.link
+    }),
+  })
+    .then((response) => response.json())
+    .then(console.log)
 }
 
 const AddBusinessForm = (props) => {
@@ -49,7 +54,7 @@ const AddBusinessForm = (props) => {
         {/* this is a render method, which expects a react component */}
         {({errors, touched}) => (
           <Form>
-            <h3>Add shower thought</h3>
+            <h3>Add a Black-owned business to the showcase</h3>
 
             <label htmlFor="title">Business name</label>
             {touched.title && errors.title && <section className="error">{errors.title}</section>}

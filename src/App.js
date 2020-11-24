@@ -26,13 +26,15 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.places)
+
     return (
       <Router>
         <div>
           <nav>
             <ul>
               <li>
-                <Link to="/home">Map</Link>
+                <Link to="/">Map</Link>
               </li>
               <li>
                 <Link to="/about">About</Link>
@@ -47,9 +49,9 @@ class App extends Component {
               <About />
             </Route>
             <Route exact path="/all-businesses">
-              <Businesses />
+              <Businesses businesses={this.state.places} />
             </Route>
-            <Route exact path="/home">
+            <Route exact path="/">
               <Map app={this.state} places={this.state.places} />
             </Route>
           </Switch>
