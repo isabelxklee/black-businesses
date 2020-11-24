@@ -1,5 +1,12 @@
-import React from 'react'
+import React, {Component} from 'react'
+import Form from './Form.jsx'
 
-const Businesses = () => 'hello world'
+class Businesses extends Component {
+  render() {
+    return (
+      <Form />
+    )
+  }
+}
 
 export default Businesses
