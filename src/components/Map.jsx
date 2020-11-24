@@ -18,11 +18,10 @@ class Map extends Component {
     map.addControl(navigationControl)
   }
 
-  render() { 
+  render() {
     return (
       <div>
-        <div ref={(el) => (this.mapContainer = el)} className="mapContainer">
-        </div>
+        <div ref={(el) => (this.mapContainer = el)} className="mapContainer"></div>
       </div>
     )
   }
