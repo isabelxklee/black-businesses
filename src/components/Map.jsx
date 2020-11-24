@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import MapboxGL from 'mapbox-gl'
+import MapboxGL, {Marker} from 'mapbox-gl'
 MapboxGL.accessToken =
   'pk.eyJ1Ijoic3VwZXJoaSIsImEiOiJkMTcyNzU0M2YzZDQ3YjNjNmQ2NmYwYjcwMmMzZGViMCJ9.RmlVJzqEJ1RqQSvQGL_Jkg'
 
@@ -11,17 +11,18 @@ class Map extends Component {
       container: this.mapContainer,
       style: style,
       center: [long, lat],
-      zoom: zoom
+      zoom: zoom,
     })
 
     const navigationControl = new MapboxGL.NavigationControl()
     map.addControl(navigationControl)
   }
 
-  render() {
+  render() { 
     return (
       <div>
-        <div ref={(el) => (this.mapContainer = el)} className="mapContainer" />
+        <div ref={(el) => (this.mapContainer = el)} className="mapContainer">
+        </div>
       </div>
     )
   }
