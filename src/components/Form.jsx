@@ -6,7 +6,7 @@ import {Formik, Form, Field} from 'formik'
 const formSchema = Yup.object().shape({
   title: Yup.string()
     .required('* Please enter the name of the business.')
-    .max(250, "* Sorry, that's too long.")
+    .max(250, "* Sorry, that's too long."),
 })
 
 const handleSubmit = (props, values) => {
@@ -24,7 +24,7 @@ const handleSubmit = (props, values) => {
       zipcode: values.zipcode,
       description: values.description,
       image: values.image,
-      link: values.link
+      link: values.link,
     }),
   })
     .then((response) => response.json())
@@ -44,7 +44,7 @@ const AddBusinessForm = (props) => {
           zipcode: '',
           description: '',
           image: '',
-          link: ''
+          link: '',
         }}
         validationSchema={formSchema}
         onSubmit={(values) => {
@@ -61,11 +61,15 @@ const AddBusinessForm = (props) => {
             <Field name="title" type="text" autoComplete="off" />
 
             <label htmlFor="category">Category</label>
-            {touched.category && errors.category && <section className="error">{errors.category}</section>}
+            {touched.category && errors.category && (
+              <section className="error">{errors.category}</section>
+            )}
             <Field name="category" type="text" autoComplete="off" />
 
             <label htmlFor="address">Street address</label>
-            {touched.address && errors.address && <section className="error">{errors.address}</section>}
+            {touched.address && errors.address && (
+              <section className="error">{errors.address}</section>
+            )}
             <Field name="address" type="text" autoComplete="off" />
 
             <label htmlFor="city">City</label>
@@ -77,11 +81,15 @@ const AddBusinessForm = (props) => {
             <Field name="state" type="text" autoComplete="off" />
 
             <label htmlFor="zipcode">Zipcode</label>
-            {touched.zipcode && errors.zipcode && <section className="error">{errors.zipcode}</section>}
+            {touched.zipcode && errors.zipcode && (
+              <section className="error">{errors.zipcode}</section>
+            )}
             <Field name="zipcode" type="text" autoComplete="off" />
 
             <label htmlFor="description">Description</label>
-            {touched.description && errors.description && <section className="error">{errors.description}</section>}
+            {touched.description && errors.description && (
+              <section className="error">{errors.description}</section>
+            )}
             <Field name="description" type="text" autoComplete="off" />
 
             <label htmlFor="image">Image URL</label>

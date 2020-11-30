@@ -3,7 +3,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import './App.css'
 import Map from './components/Map.jsx'
 import Header from './components/Header.jsx'
-import Businesses from './components/Businesses.jsx'
+import BusinessContainer from './components/BusinessContainer.jsx'
 
 class App extends Component {
   state = {
@@ -35,7 +35,7 @@ class App extends Component {
               <Map app={this.state} places={this.state.places} />
             </Route>
             <Route exact path="/all-businesses">
-              <Businesses businesses={this.state.places} />
+              <BusinessContainer businesses={this.state.places} />
             </Route>
           </Switch>
         </section>

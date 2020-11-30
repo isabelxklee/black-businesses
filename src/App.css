@@ -13,3 +13,10 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.business-tile-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  margin: 6rem;
+  grid-column-gap: 4rem;
+}

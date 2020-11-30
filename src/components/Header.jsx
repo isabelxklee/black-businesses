@@ -1,10 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import {Link} from 'react-router-dom'
-// import Navigation from './header-styles/Navigation.jsx'
-// import LinkSection from './header-styles/LinkSection.jsx'
-// import TextLink from './header-styles/TextLink.jsx'
-// import Title from './header-styles/Title.jsx'
 
 const Navigation = styled.header`
   background-color: black;
@@ -60,8 +56,12 @@ const Header = () => (
   <Navigation>
     <Title>Black Business Showcase</Title>
     <Links>
-      <Link to="/" component={TextLink}>Map</Link>
-      <Link to="/all-businesses" component={TextLink}>See all businesses</Link>
+      <Link to="/" component={TextLink}>
+        Map
+      </Link>
+      <Link to="/all-businesses" component={TextLink}>
+        See all businesses
+      </Link>
     </Links>
   </Navigation>
 )
