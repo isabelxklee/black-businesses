@@ -4,6 +4,10 @@ import BusinessTile from './BusinessTile.jsx'
 import CategoryTag from './CategoryTag.jsx'
 
 class BusinessContainer extends Component {
+  state = {
+    category: null
+  }
+
   getAllCategories = () => {
     const array = []
 
@@ -16,6 +20,12 @@ class BusinessContainer extends Component {
     return [...new Set(array)]
   }
 
+  handleClick = (event) => {
+    this.setState({
+      category: event.target.id
+    })
+  }
+
   render() {
     const businessesArray = () => {
       return this.props.businesses.map((business) => {
@@ -25,7 +35,7 @@ class BusinessContainer extends Component {
 
     const allCategoryTags = () => {
       return this.getAllCategories().map((category) => {
-        return <CategoryTag key={category}>{category}</CategoryTag>
+        return <CategoryTag key={category} id={category} onClick={this.handleClick}>{category}</CategoryTag>
       })
     }
 
@@ -36,6 +46,10 @@ class BusinessContainer extends Component {
         <h3>Filter by category</h3>
         <section className="category-container">{allCategoryTags()}</section>
         <section className="business-tile-container">{businessesArray()}</section>
+        <h3>Sources</h3>
+        <ul>
+          <li><a href="https://www.blackownedbrooklyn.com" target="noreferrer_blank">Black-Owned Brooklyn</a></li>
+        </ul>
       </section>
     )
   }
