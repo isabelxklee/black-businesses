@@ -2,10 +2,10 @@ import React from 'react'
 import Card from './Card.jsx'
 import CategoryTag from './CategoryTag.jsx'
 
-const BusinessTile = ({business}) => {
+const BusinessTile = ({business, selectCategory}) => {
   const renderCategoryTags = () => (
     business.categories.map((category) => {
-      return <CategoryTag key={category}>{category}</CategoryTag>
+      return <CategoryTag key={category} id={category} onClick={selectCategory}>{category}</CategoryTag>
     })
   )
 

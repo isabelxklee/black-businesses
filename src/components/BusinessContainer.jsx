@@ -5,11 +5,12 @@ import CategoryTag from './CategoryTag.jsx'
 
 class BusinessContainer extends Component {
   state = {
-    category: null
+    category: "all"
   }
 
   getAllCategories = () => {
     const array = []
+    array.push("all")
 
     this.props.businesses.forEach((business) => {
       business.categories.forEach((category) => {
@@ -26,10 +27,28 @@ class BusinessContainer extends Component {
     })
   }
 
+  filterBusinesses = () => {
+    const allBusinesses = this.props.businesses
+    const selectedCategory = this.state.category
+    let filteredArray = []
+
+    if (selectedCategory === "all") {
+      filteredArray = allBusinesses
+    } else {
+      allBusinesses.map((business) => {
+        business.categories.map((category) => {
+          category === selectedCategory ? filteredArray.push(business) : null
+        })
+      })
+    }
+
+    return filteredArray
+  }
+
   render() {
     const businessesArray = () => {
-      return this.props.businesses.map((business) => {
-        return <BusinessTile key={business.id} business={business} />
+      return this.filterBusinesses().map((business) => {
+        return <BusinessTile key={business.id} business={business} selectCategory={this.handleClick} />
       })
     }
 
