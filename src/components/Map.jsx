@@ -7,19 +7,6 @@ class Map extends Component {
   componentDidMount() {
     const {style, long, lat, zoom} = this.props.app
 
-    const places = [
-      {
-        title: "other business",
-        long: -73.928641,
-        lat: 40.681526
-      },
-      {
-        title: "business",
-        long: -73.954216,
-        lat: 40.684093
-      }
-    ]  
-
     const map = new mapboxgl.Map({
       container: this.mapContainer,
       style: style,
@@ -29,6 +16,13 @@ class Map extends Component {
 
     const navigationControl = new mapboxgl.NavigationControl()
     map.addControl(navigationControl)
+
+    this.props.setMap(map)
+  }
+
+  renderAllMarkers = () => {
+    const places = this.props.app.places
+    const map = this.props.app.map
 
     places.forEach((place) => {
       new mapboxgl.Marker()

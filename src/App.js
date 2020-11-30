@@ -24,6 +24,12 @@ class App extends Component {
         })
       })
   }
+
+  setMap = (inputFromChild) => {
+    this.setState({
+      map: inputFromChild
+    })
+  }
   
   render() {
     return (
@@ -32,7 +38,7 @@ class App extends Component {
         <section>
           <Switch>
             <Route exact path="/">
-              <Map app={this.state} places={this.state.places} />
+              <Map app={this.state} setMap={this.setMap} />
             </Route>
             <Route exact path="/all-businesses">
               <BusinessContainer businesses={this.state.places} />
