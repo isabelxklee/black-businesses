@@ -92,6 +92,7 @@ const AddBusinessForm = (props) => {
             {touched.link && errors.link && <section className="error">{errors.link}</section>}
             <Field name="link" type="text" autoComplete="off" />
 
+            <button type="submit">Add business</button>
 
             {/* <section className="button-group">
               <Button type="submit" id={errors.thought || errors.emoji ? 'error' : ''}>
