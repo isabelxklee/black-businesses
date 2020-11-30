@@ -4,7 +4,7 @@ import CategoryTag from './CategoryTag.jsx'
 
 const BusinessTile = ({business}) => {
   const renderCategoryTags = () => (
-    business.categories.split(", ").map((category) => {
+    business.categories.map((category) => {
       return <CategoryTag key={category}>{category}</CategoryTag>
     })
   )
@@ -16,7 +16,8 @@ const BusinessTile = ({business}) => {
         <h3>{business.title}</h3>
         <section className="category-container">{renderCategoryTags()}</section>
         <p>{business.description}</p>
-        <p className="address">{business.address ? `${business.address}, ${business.city}` : `${business.city}`}</p>
+        <p className="address">{business.address ? business.address : null}</p>
+        <p className="address">{business.city}</p>
         <p className="address">{business.state}</p>
         <a href={business.website} target="noreferrer_blank">Website</a>
       </section>
