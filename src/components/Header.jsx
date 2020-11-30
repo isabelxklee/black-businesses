@@ -54,13 +54,13 @@ const TextLink = styled.a`
 
 const Header = () => (
   <Navigation>
-    <Title>Black Business Showcase</Title>
+    <Title>Black-Owned Food & Drink</Title>
     <Links>
       <Link to="/" component={TextLink}>
         Map
       </Link>
       <Link to="/all-businesses" component={TextLink}>
-        See all businesses
+        All businesses
       </Link>
     </Links>
   </Navigation>

@@ -28,7 +28,7 @@ class Map extends Component {
       if (place && place.coordinates !== null) {
         new mapboxgl.Marker()
         .setLngLat([place.coordinates[0], place.coordinates[1]])
-        .setPopup(new mapboxgl.Popup().setHTML(`<h3>${place.title}</h3><p>${place.address}</p><p>${place.city}</p>`))
+        .setPopup(new mapboxgl.Popup().setHTML(`<h2>${place.title}</h2><p>${place.address}</p><p>${place.city}</p>`))
         .addTo(map)
       }
     })

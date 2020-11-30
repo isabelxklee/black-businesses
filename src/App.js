@@ -7,9 +7,9 @@ import BusinessContainer from './components/BusinessContainer.jsx'
 
 class App extends Component {
   state = {
-    long: -73.8748099,
-    lat: 40.7774697,
-    zoom: 10,
+    long: -101.20869,
+    lat: 39.8383872,
+    zoom: 4,
     style: 'mapbox://styles/mapbox/light-v9',
     places: [],
     map: null,

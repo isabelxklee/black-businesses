@@ -68,6 +68,7 @@ class BusinessContainer extends Component {
         <h3>Sources</h3>
         <ul>
           <li><a href="https://www.blackownedbrooklyn.com" target="noreferrer_blank">Black-Owned Brooklyn</a></li>
+          <li><a href="https://trippin.world/guides" target="noreferrer_blank">Trippin World Guides</a></li>
         </ul>
       </section>
     )
