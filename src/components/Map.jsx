@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import mapboxgl, {Marker} from 'mapbox-gl'
+import mapboxgl from 'mapbox-gl'
 mapboxgl.accessToken =
   'pk.eyJ1Ijoic3VwZXJoaSIsImEiOiJkMTcyNzU0M2YzZDQ3YjNjNmQ2NmYwYjcwMmMzZGViMCJ9.RmlVJzqEJ1RqQSvQGL_Jkg'
 
@@ -25,16 +25,19 @@ class Map extends Component {
     const map = this.props.app.map
 
     places.forEach((place) => {
-      new mapboxgl.Marker()
-      .setLngLat([place.long, place.lat])
-      .setPopup(new mapboxgl.Popup().setHTML(`<h1>${place.title}</h1>`))
-      .addTo(map)
+      if (place && place.coordinates !== null) {
+        new mapboxgl.Marker()
+        .setLngLat([place.coordinates[0], place.coordinates[1]])
+        .setPopup(new mapboxgl.Popup().setHTML(`<h3>${place.title}</h3><p>${place.address}</p><p>${place.city}</p>`))
+        .addTo(map)
+      }
     })
   }
 
   render() {
     return (
       <div>
+        {this.renderAllMarkers()}
         <div ref={(el) => (this.mapContainer = el)} className="mapContainer"></div>
       </div>
     )
