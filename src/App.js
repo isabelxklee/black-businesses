@@ -24,10 +24,8 @@ class App extends Component {
         })
       })
   }
-
+  
   render() {
-    console.log(this.state.places)
-
     return (
       <BrowserRouter>
         <Header />

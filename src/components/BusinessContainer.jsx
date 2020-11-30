@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Form from './Form.jsx'
+// import Form from './Form.jsx'
 import BusinessTile from './BusinessTile.jsx'
 
 class BusinessContainer extends Component {
@@ -12,7 +12,7 @@ class BusinessContainer extends Component {
 
     return (
       <>
-        <Form />
+        {/* <Form /> */}
         <section className="business-tile-container">{businessesArray()}</section>
       </>
     )

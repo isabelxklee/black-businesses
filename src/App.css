@@ -22,6 +22,11 @@ p {
   margin: 1rem 0;
 }
 
+form {
+  display: inline-grid;
+  margin: 4rem;
+}
+
 .address {
   font-weight: 700;
   margin: 0;
