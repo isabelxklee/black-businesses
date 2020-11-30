@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
 const CategoryTag = styled.figure`
-  background-color: blue;
+  background-color: black;
   color: white;
   border-radius: 0.2rem;
   padding: 0.6rem;
-  margin: 0;
+  margin: 0.8rem 0.4rem 0.8rem 0;
   text-align: center;
   width: fit-content;
   /* @media only screen and (max-width: 700px) {
