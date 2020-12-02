@@ -13,14 +13,15 @@ const PanelChild = ({place, map}) => {
   const flyToLocation = () => {  
     map.flyTo({
       center: [place.coordinates[0], place.coordinates[1]],
-      zoom: 14,
+      zoom: 12,
       speed: 1,
     })
   }
 
   return (
     <ListItem onClick={flyToLocation}>
-      <p>{place.title}</p>
+      <p className="popup title">{place.title}</p>
+      <p className="popup">{place.city}, {place.state}</p>
     </ListItem>
   )
 }

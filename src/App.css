@@ -86,6 +86,10 @@ a.popup:hover {
   margin: 0.4rem 0;
 }
 
+.popup.title {
+  font-weight: 600;
+}
+
 h3.popup {
   font-weight: 600;
   font-size: 1.2rem;
@@ -94,7 +98,7 @@ h3.popup {
 .panel {
   background-color: white;
   color: black;
-  z-index: 2;
+  z-index: 1;
   width: 20%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 0.2rem;
