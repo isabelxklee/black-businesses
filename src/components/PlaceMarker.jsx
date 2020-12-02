@@ -8,7 +8,11 @@ const PlaceMarker = ({app, place}) => {
         closeButton: false,
       })
 
-      popup.setHTML(place.title)
+      popup.setHTML(
+        `<h3 class="popup"><a href=${place.website} target="noreferrer_blank" class="popup">${place.title}</a></h3>
+        <p class="popup">${place.address}</p>
+        <p class="popup">${place.city}, ${place.state}</p>`
+      )
 
       const marker = new mapboxgl.Marker({
         color: '#2727e6',
