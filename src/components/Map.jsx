@@ -29,8 +29,8 @@ class Map extends Component {
         new mapboxgl.Marker()
           .setLngLat([place.coordinates[0], place.coordinates[1]])
           .setPopup(
-            new mapboxgl.Popup().setHTML(
-              `<h2>${place.title}</h2><p>${place.address}</p><p>${place.city}</p>`
+            new mapboxgl.Popup({clasName: "mapbox-popup"}).setHTML(
+              `<h3 class="popup"><a href=${place.website} class="popup" target="noreferrer_blank">${place.title}</a></h3><p class="popup">${place.address}</p><p class="popup">${place.city}, ${place.state}</p>`
             )
           )
           .addTo(map)

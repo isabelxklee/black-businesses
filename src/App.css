@@ -60,3 +60,34 @@ form {
   display: block;
   width: 75%;
 }
+
+div.mapboxgl-popup-content {
+  font-family: 'Karla', sans-serif;
+  padding: 2rem;
+  font-size: 1rem;
+  border-radius: 0.2rem;
+  background-color: black;
+  color: white;
+}
+
+a.popup {
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+a.popup:hover {
+  opacity: 0.5;
+}
+
+.popup {
+  margin: 0.4rem 0;
+}
+
+button.mapboxgl-popup-close-button {
+  color: white;
+  font-size: 1.4rem;
+  padding: 0.4rem 0.8rem;
+}
