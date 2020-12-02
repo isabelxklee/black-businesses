@@ -24,11 +24,12 @@ const Links = styled.section`
   }
 `
 
-const Title = styled.h1`
+const Title = styled.h3`
   float: left;
   color: white;
   margin: 1rem;
-  font-weight: 400;
+  font-weight: 600;
+  font-size: 1.6rem;
   @media only screen and (max-width: 700px) {
     float: none;
     margin: 1rem 0;
@@ -39,7 +40,6 @@ const TextLink = styled.a`
   color: white;
   font-family: 'Karla', sans-serif;
   font-size: 1.2rem;
-  font-weight: 600;
   transition: 0.3s;
   margin: 1rem;
   text-decoration: none;

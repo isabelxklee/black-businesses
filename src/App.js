@@ -28,10 +28,10 @@ class App extends Component {
 
   setMap = (inputFromChild) => {
     this.setState({
-      map: inputFromChild
+      map: inputFromChild,
     })
   }
-  
+
   render() {
     return (
       <BrowserRouter>

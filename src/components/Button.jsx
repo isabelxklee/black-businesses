@@ -1,27 +1,25 @@
 import styled from 'styled-components'
 
-const CategoryTag = styled.nav`
-  background-color: black;
-  color: white;
+const Button = styled.a`
+  background-color: white;
+  color: black;
+  border: 2px solid black;
   border-radius: 0.2rem;
   padding: 0.6rem;
-  margin: 0.8rem 0.6rem 0.6rem 0;
+  margin: 1rem 0;
   text-align: center;
   cursor: pointer;
   transition: 0.3s;
+  text-decoration: none;
   display: inline-block;
 
   &:hover {
-    opacity: 0.7;
-  }
-
-  &:active {
     opacity: 0.5;
   }
   /* @media only screen and (max-width: 700px) {
-    height: auto;
-    padding: 1rem 2rem;
+    margin: 0.4rem 0;
+    width: 100%;
   } */
 `
 
-export default CategoryTag
+export default Button

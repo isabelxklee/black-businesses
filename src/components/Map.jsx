@@ -27,19 +27,23 @@ class Map extends Component {
     places.forEach((place) => {
       if (place && place.coordinates !== null) {
         new mapboxgl.Marker()
-        .setLngLat([place.coordinates[0], place.coordinates[1]])
-        .setPopup(new mapboxgl.Popup().setHTML(`<h2>${place.title}</h2><p>${place.address}</p><p>${place.city}</p>`))
-        .addTo(map)
+          .setLngLat([place.coordinates[0], place.coordinates[1]])
+          .setPopup(
+            new mapboxgl.Popup().setHTML(
+              `<h2>${place.title}</h2><p>${place.address}</p><p>${place.city}</p>`
+            )
+          )
+          .addTo(map)
       }
     })
   }
 
   render() {
     return (
-      <div>
+      <section>
         {this.renderAllMarkers()}
-        <div ref={(el) => (this.mapContainer = el)} className="mapContainer"></div>
-      </div>
+        <section ref={(el) => (this.mapContainer = el)} className="map-container"></section>
+      </section>
     )
   }
 }

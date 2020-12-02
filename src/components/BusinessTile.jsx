@@ -1,13 +1,17 @@
 import React from 'react'
 import Card from './Card.jsx'
 import CategoryTag from './CategoryTag.jsx'
+import Button from './Button.jsx'
 
 const BusinessTile = ({business, selectCategory}) => {
-  const renderCategoryTags = () => (
+  const renderCategoryTags = () =>
     business.categories.map((category) => {
-      return <CategoryTag key={category} id={category} onClick={selectCategory}>{category}</CategoryTag>
+      return (
+        <CategoryTag key={category} id={category} onClick={selectCategory}>
+          {category}
+        </CategoryTag>
+      )
     })
-  )
 
   return (
     <Card>
@@ -17,9 +21,8 @@ const BusinessTile = ({business, selectCategory}) => {
         <section className="category-container">{renderCategoryTags()}</section>
         <p>{business.description}</p>
         <p className="address">{business.address ? business.address : null}</p>
-        <p className="address">{business.city}</p>
-        <p className="address">{business.state}</p>
-        <a href={business.website} target="noreferrer_blank">Website</a>
+        <p className="address">{business.city}, {business.state}</p>
+        <Button href={business.website} target="noreferrer_blank">Website</Button>
       </section>
     </Card>
   )
