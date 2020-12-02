@@ -1,6 +1,7 @@
 {
   "short_name": "Black-Owned Food & Drink",
-  "name": "A showcase of Black-owned restaurants, bars, and cafes in America.",
+  "name": "Black-Owned Food & Drink",
+  "description": "A showcase of Black-owned restaurants, bars, and cafes in America.",
   "icons": [
     {
       "src": "favicon.ico",
