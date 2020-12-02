@@ -31,7 +31,7 @@ class Map extends Component {
 
     return (
       <section>
-        <Panel places={this.props.app.places} />
+        <Panel places={this.props.app.places} map={this.props.app.map} />
         {places.length > 0 ? placeMarkers : null}
         <section ref={(el) => (this.mapContainer = el)} className="map-container"></section>
       </section>
