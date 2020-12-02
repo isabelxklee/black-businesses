@@ -21,8 +21,12 @@ const BusinessTile = ({business, selectCategory}) => {
         <section className="category-container">{renderCategoryTags()}</section>
         <p>{business.description}</p>
         <p className="address">{business.address ? business.address : null}</p>
-        <p className="address">{business.city}, {business.state}</p>
-        <Button href={business.website} target="noreferrer_blank">Website</Button>
+        <p className="address">
+          {business.city}, {business.state}
+        </p>
+        <Button href={business.website} target="noreferrer_blank">
+          Website
+        </Button>
       </section>
     </Card>
   )

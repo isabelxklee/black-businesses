@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import mapboxgl from 'mapbox-gl'
+import PlaceMarker from './PlaceMarker.jsx'
 mapboxgl.accessToken =
   'pk.eyJ1Ijoic3VwZXJoaSIsImEiOiJkMTcyNzU0M2YzZDQ3YjNjNmQ2NmYwYjcwMmMzZGViMCJ9.RmlVJzqEJ1RqQSvQGL_Jkg'
 
@@ -20,28 +21,28 @@ class Map extends Component {
     this.props.setMap(map)
   }
 
-  renderAllMarkers = () => {
-    const places = this.props.app.places
-    const map = this.props.app.map
+  // renderAllMarkers = () => {
+  //   const places = this.props.app.places
+  //   const map = this.props.app.map
 
-    places.forEach((place) => {
-      if (place && place.coordinates !== null) {
-        new mapboxgl.Marker()
-          .setLngLat([place.coordinates[0], place.coordinates[1]])
-          .setPopup(
-            new mapboxgl.Popup({clasName: "mapbox-popup"}).setHTML(
-              `<h3 class="popup"><a href=${place.website} class="popup" target="noreferrer_blank">${place.title}</a></h3><p class="popup">${place.address}</p><p class="popup">${place.city}, ${place.state}</p>`
-            )
-          )
-          .addTo(map)
-      }
-    })
-  }
+  //   places.forEach((place, index) => {
+  //     if (place && place.coordinates !== null) {
+  //       return <PlaceMarker place={place} key={index} app={this.props.app} />
+  //     }
+  //   })
+  // }
 
   render() {
+    const places = this.props.app.places
+
+    const placeMarkers = places.map((place, index) => {
+      return <PlaceMarker place={place} app={this.props.app} key={index}></PlaceMarker>
+    })
+
     return (
       <section>
-        {this.renderAllMarkers()}
+        {/* {this.renderAllMarkers()} */}
+        {places.length > 0 ? placeMarkers : null}
         <section ref={(el) => (this.mapContainer = el)} className="map-container"></section>
       </section>
     )
