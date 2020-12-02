@@ -4,6 +4,7 @@ import './App.css'
 import Map from './components/Map.jsx'
 import Header from './components/Header.jsx'
 import BusinessContainer from './components/BusinessContainer.jsx'
+import Resources from './components/Resources.jsx'
 
 class App extends Component {
   state = {
@@ -42,6 +43,9 @@ class App extends Component {
             </Route>
             <Route exact path="/all-businesses">
               <BusinessContainer businesses={this.state.places} />
+            </Route>
+            <Route exact path="/resources">
+              <Resources />
             </Route>
           </Switch>
         </section>
