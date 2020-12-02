@@ -106,6 +106,7 @@ h3.popup {
   margin: 1rem;
   height: 20rem;
   overflow: auto;
+  position: absolute;
 }
 
 ul {
