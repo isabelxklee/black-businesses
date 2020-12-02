@@ -1,11 +1,8 @@
-import React, {Component} from 'react'
+import React from 'react'
 import mapboxgl from 'mapbox-gl'
 
-class PlaceMarker extends Component {
-  createMarker = () => {
-    const app = this.props.app
-    const place = this.props.place
-
+const PlaceMarker = ({app, place}) => {
+  const createMarker = () => {
     if (place && app) {
       const popup = new mapboxgl.Popup({
         closeButton: false,
@@ -22,13 +19,7 @@ class PlaceMarker extends Component {
     }
   }
 
-  render() {
-    return (
-      <>
-        {this.createMarker()}
-      </>
-    )
-  }
+  return <>{createMarker()}</>
 }
 
 export default PlaceMarker

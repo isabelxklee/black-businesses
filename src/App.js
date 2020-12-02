@@ -10,7 +10,7 @@ class App extends Component {
   state = {
     long: -101.20869,
     lat: 39.8383872,
-    zoom: 4,
+    zoom: 3.5,
     style: 'mapbox://styles/mapbox/light-v9',
     places: [],
     map: null,
