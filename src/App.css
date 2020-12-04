@@ -149,7 +149,7 @@ ul li:last-child {
   }
 
   .panel {
-    bottom: 2rem;
+    bottom: 3rem;
     width: -webkit-fill-available;
     border-radius: 0;
     margin: 0;

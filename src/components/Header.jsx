@@ -11,18 +11,8 @@ const Navigation = styled.header`
 
   @media only screen and (max-width: 700px) {
     height: auto;
-    padding: 1rem 2rem;
-    display: none;
-  }
-`
-
-const Links = styled.section`
-  float: right;
-  display: inline-flex;
-  @media only screen and (max-width: 700px) {
-    float: none;
-    display: grid;
-    grid-row-gap: 0.4rem;
+    padding: 0.4rem 2rem;
+    background-color: transparent;
   }
 `
 
@@ -34,7 +24,25 @@ const Title = styled.h3`
   font-size: 1.6rem;
   @media only screen and (max-width: 700px) {
     float: none;
-    margin: 1rem 0;
+    margin: 0.6rem 0;
+    font-size: 1.2rem;
+    color: black;
+    position: fixed;
+  }
+`
+
+const Links = styled.section`
+  float: right;
+  display: inline-flex;
+  @media only screen and (max-width: 700px) {
+    position: fixed;
+    bottom: 0;
+    background-color: black;
+    width: -webkit-fill-available;
+    left: 0;
+    padding: 0.6rem 0.4rem;
+    text-align: center;
+    z-index: 2;
   }
 `
 
@@ -50,7 +58,11 @@ const TextLink = styled.a`
     opacity: 0.5;
   }
   @media only screen and (max-width: 700px) {
-    margin: 0 0 0.6rem 0;
+    margin: 0.6rem;
+    text-align: center;
+    font-size: 1rem;
+    width: 100%;
+    font-weight: 600;
   }
 `
 
@@ -62,7 +74,7 @@ const Header = () => (
         Map
       </Link>
       <Link to="/all-businesses" component={TextLink}>
-        All businesses
+        Showcase
       </Link>
       <Link to="/resources" component={TextLink}>
         Resources
