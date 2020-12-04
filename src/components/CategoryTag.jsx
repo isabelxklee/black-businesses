@@ -18,10 +18,9 @@ const CategoryTag = styled.nav`
   &:active {
     opacity: 0.5;
   }
-  /* @media only screen and (max-width: 700px) {
-    height: auto;
-    padding: 1rem 2rem;
-  } */
+  @media only screen and (max-width: 700px) {
+    margin: 0.6rem 0.6rem 0 0;
+  }
 `
 
 export default CategoryTag
