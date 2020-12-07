@@ -15,10 +15,14 @@ const BusinessPage = (props) => {
           <section className="category-container">{props.PrimaryTags}</section>
           <h1 className="business-page">{title}</h1>
           <p>{description}</p>
-          <p className="address">{address ? address : null}</p>
-          <p className="address">
-            {city}, {state}
-          </p>
+
+          <section className="address">
+            <h3>Address</h3>
+            <p className="address">{address ? address : null}</p>
+            <p className="address">
+              {city}, {state}
+            </p>
+          </section>
           <Button href={website} target="noreferrer_blank">
             Website
           </Button>
