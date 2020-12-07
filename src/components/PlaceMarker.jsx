@@ -23,11 +23,7 @@ const PlaceMarker = ({app, place}) => {
     }
   }
 
-  return (
-    <section>
-      {createMarker()}
-    </section>
-  ) 
+  return <section>{createMarker()}</section>
 }
 
 export default PlaceMarker

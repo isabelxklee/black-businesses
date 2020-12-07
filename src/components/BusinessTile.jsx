@@ -1,24 +1,27 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import Card from './Card.jsx'
-import CategoryTag from './CategoryTag.jsx'
+import SecondaryTag from './SecondaryTag.jsx'
 import Button from './Button.jsx'
 
-const BusinessTile = ({business, selectCategory}) => {
-  const renderCategoryTags = () =>
+const BusinessTile = ({business}) => {
+  const renderPrimaryTags = () =>
     business.categories.map((category) => {
       return (
-        <CategoryTag key={category} id={category} onClick={selectCategory}>
+        <SecondaryTag key={category} id={category}>
           {category}
-        </CategoryTag>
+        </SecondaryTag>
       )
     })
 
   return (
     <Card>
-      <img src={business.image_url} alt={business.title} className="tile-image" />
+      <Link to={`all-businesses/${business.id}`}>
+        <img src={business.image_url} alt={business.title} className="tile-image" />
+      </Link>
       <section className="tile-info">
         <h3>{business.title}</h3>
-        <section className="category-container">{renderCategoryTags()}</section>
+        <section className="category-container">{renderPrimaryTags()}</section>
         <p>{business.description}</p>
         <p className="address">{business.address ? business.address : null}</p>
         <p className="address">

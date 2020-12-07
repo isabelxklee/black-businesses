@@ -10,7 +10,7 @@ const ListItem = styled.li`
 `
 
 const PanelChild = ({place, map}) => {
-  const flyToLocation = () => {  
+  const flyToLocation = () => {
     map.flyTo({
       center: [place.coordinates[0], place.coordinates[1]],
       zoom: 12,
@@ -21,7 +21,9 @@ const PanelChild = ({place, map}) => {
   return (
     <ListItem onClick={flyToLocation}>
       <p className="popup title">{place.title}</p>
-      <p className="popup">{place.city}, {place.state}</p>
+      <p className="popup">
+        {place.city}, {place.state}
+      </p>
     </ListItem>
   )
 }

@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import BusinessTile from './BusinessTile.jsx'
-import CategoryTag from './CategoryTag.jsx'
+import PrimaryTag from './PrimaryTag.jsx'
 import Wrapper from './Wrapper.jsx'
 
 class BusinessContainer extends Component {
@@ -48,18 +48,16 @@ class BusinessContainer extends Component {
   render() {
     const businessesArray = () => {
       return this.filterBusinesses().map((business) => {
-        return (
-          <BusinessTile key={business.id} business={business} selectCategory={this.handleClick} />
-        )
+        return <BusinessTile key={business.id} business={business} />
       })
     }
 
-    const allCategoryTags = () => {
+    const allPrimaryTags = () => {
       return this.getAllCategories().map((category) => {
         return (
-          <CategoryTag key={category} id={category} onClick={this.handleClick}>
+          <PrimaryTag key={category} id={category} onClick={this.handleClick}>
             {category}
-          </CategoryTag>
+          </PrimaryTag>
         )
       })
     }
@@ -68,7 +66,7 @@ class BusinessContainer extends Component {
       <Wrapper>
         <h1>All Businesses</h1>
         <h3>Filter by category</h3>
-        <section className="category-container">{allCategoryTags()}</section>
+        <section className="category-container">{allPrimaryTags()}</section>
         <section className="business-tile-container">{businessesArray()}</section>
       </Wrapper>
     )

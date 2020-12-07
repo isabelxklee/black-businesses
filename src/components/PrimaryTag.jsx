@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const CategoryTag = styled.nav`
+const PrimaryTag = styled.nav`
   background-color: black;
   color: white;
   border-radius: 0.2rem;
@@ -23,4 +23,4 @@ const CategoryTag = styled.nav`
   }
 `
 
-export default CategoryTag
+export default PrimaryTag
