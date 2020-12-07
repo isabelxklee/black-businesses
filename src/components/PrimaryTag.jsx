@@ -5,7 +5,7 @@ const PrimaryTag = styled.nav`
   color: white;
   border-radius: 0.2rem;
   padding: 0.6rem;
-  margin: 0.8rem 0.6rem 0.6rem 0;
+  margin: 0.8rem 0.6rem 0 0;
   text-align: center;
   cursor: pointer;
   transition: 0.3s;

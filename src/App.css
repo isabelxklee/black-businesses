@@ -52,6 +52,25 @@ form {
   border-radius: 1rem 1rem 0 0;
 }
 
+img.business-page {
+  object-fit: cover;
+  width: 100%;
+  border-radius: 0.4rem;
+}
+
+section.business-page {
+  display: flex;
+}
+
+h1.business-page {
+  margin: 0;
+}
+
+.column {
+  flex: 50%;
+  padding: 10px;
+}
+
 .tile-info {
   padding: 1rem 2rem;
 }
