@@ -16,10 +16,6 @@ const Button = styled.a`
   &:hover {
     opacity: 0.5;
   }
-  /* @media only screen and (max-width: 700px) {
-    margin: 0.4rem 0;
-    width: 100%;
-  } */
 `
 
 export default Button

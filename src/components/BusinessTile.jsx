@@ -20,13 +20,14 @@ const BusinessTile = ({business}) => {
         <img src={business.image_url} alt={business.title} className="tile-image" />
       </Link>
       <section className="tile-info">
-        <h3>{business.title}</h3>
         <section className="category-container">{renderPrimaryTags()}</section>
-        <p>{business.description}</p>
-        <p className="address">{business.address ? business.address : null}</p>
-        <p className="address">
-          {business.city}, {business.state}
-        </p>
+        <h3>{business.title}</h3>
+        <section className="address">
+          <p className="address">{business.address ? business.address : null}</p>
+          <p className="address">
+            {business.city}, {business.state}
+          </p>
+        </section>
         <Button href={business.website} target="noreferrer_blank">
           Website
         </Button>

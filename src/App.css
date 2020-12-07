@@ -20,7 +20,8 @@ h1 {
 
 h3 {
   margin: 0.4rem 0;
-  font-weight: 400;
+  font-weight: 600;
+  font-size: 1.4rem;
 }
 
 p {
@@ -30,11 +31,6 @@ p {
 form {
   display: inline-grid;
   margin: 4rem;
-}
-
-.address {
-  font-weight: 700;
-  margin: 0;
 }
 
 .business-tile-container {
@@ -77,7 +73,7 @@ h1.business-page {
 
 .category-container {
   display: block;
-  width: 75%;
+  margin: 0 0 1.2rem 0;
 }
 
 div.mapboxgl-popup-content {
@@ -146,6 +142,14 @@ ul li:last-child {
 
 .mapboxgl-ctrl.mapboxgl-ctrl-attrib {
   display: none;
+}
+
+section.address {
+  margin: 1rem 0 0.4rem 0;
+}
+
+p.address {
+  margin: 0.2rem 0;
 }
 
 @media only screen and (max-width: 700px) {
