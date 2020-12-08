@@ -28,11 +28,6 @@ p {
   margin: 1rem 0;
 }
 
-form {
-  display: inline-grid;
-  margin: 4rem;
-}
-
 .business-tile-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));

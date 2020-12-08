@@ -34,26 +34,20 @@ class App extends Component {
     })
   }
 
-  renderBusinessTags = (categories) => {
-    return categories.map((category) => {
-      return (
-        <SecondaryTag key={category} id={category}>
-          {category}
-        </SecondaryTag>
-      )
-    })
-  }
+  renderTags = (business) =>
+    business.categories.map((category) => (
+      <SecondaryTag key={category} id={category}>
+        {category}
+      </SecondaryTag>
+    ))
 
-  createNestedRoutes = () => {
-    return this.state.places.map((business) => (
-      <Route exact path={`/all-businesses/${business.id}`} key={business.id}>
-        <BusinessPage
-          business={business}
-          businessTags={this.renderBusinessTags(business.categories)}
-        />
+  createNestedRoutes = () => (
+    this.state.places.map((business) => (
+      <Route exact path={`/businesses/${business.id}`} key={business.id}>
+        <BusinessPage business={business} tags={this.renderTags(business)} />
       </Route>
     ))
-  }
+  )
 
   render() {
     return (
@@ -64,7 +58,7 @@ class App extends Component {
             <Route exact path="/">
               <Map app={this.state} setMap={this.setMap} />
             </Route>
-            <Route exact path="/all-businesses">
+            <Route exact path="/businesses">
               <Showcase businesses={this.state.places} />
             </Route>
             <Route exact path="/resources">

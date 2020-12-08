@@ -73,7 +73,7 @@ const Header = () => (
       <Link to="/" component={TextLink}>
         Map
       </Link>
-      <Link to="/all-businesses" component={TextLink}>
+      <Link to="/businesses" component={TextLink}>
         Showcase
       </Link>
       <Link to="/resources" component={TextLink}>

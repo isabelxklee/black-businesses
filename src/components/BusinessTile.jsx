@@ -5,7 +5,7 @@ import SecondaryTag from './SecondaryTag.jsx'
 import Button from './Button.jsx'
 
 const BusinessTile = ({business}) => {
-  const renderPrimaryTags = () =>
+  const renderTags = () =>
     business.categories.map((category) => {
       return (
         <SecondaryTag key={category} id={category}>
@@ -16,11 +16,11 @@ const BusinessTile = ({business}) => {
 
   return (
     <Card>
-      <Link to={`all-businesses/${business.id}`}>
+      <Link to={`businesses/${business.id}}`}>
         <img src={business.image_url} alt={business.title} className="tile-image" />
       </Link>
       <section className="tile-info">
-        <section className="category-container">{renderPrimaryTags()}</section>
+        <section className="category-container">{renderTags()}</section>
         <h3>{business.title}</h3>
         <section className="address">
           <p className="address">{business.address ? business.address : null}</p>
