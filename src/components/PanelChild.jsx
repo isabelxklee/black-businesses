@@ -1,12 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const ListItem = styled.li`
-  padding-bottom: 0.4rem;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid black;
-  margin-left: 0;
+const ListItem = styled.article`
+  padding: 1.4rem 3rem;
   cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    background-color: #dadada;
+  }
 `
 
 const PanelChild = ({place, map}) => {
@@ -14,7 +15,8 @@ const PanelChild = ({place, map}) => {
     map.flyTo({
       center: [place.coordinates[0], place.coordinates[1]],
       zoom: 12,
-      speed: 1,
+      curve: 1,
+      speed: 1
     })
   }
 
