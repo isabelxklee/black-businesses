@@ -155,4 +155,17 @@ p.address {
   .mapboxgl-ctrl-group:not(:empty) {
     display: none;
   }
+
+  section.business-page {
+    display: block;
+    padding: 2rem 0 4rem 0;
+  }
+
+  section.column {
+    padding: 0;
+  }
+
+  img.business-page {
+
+  }
 }

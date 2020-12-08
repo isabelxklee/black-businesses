@@ -17,7 +17,7 @@ const SidePanel = styled.section`
     bottom: 3rem;
     width: -webkit-fill-available;
     border-radius: 0;
-    margin: 0;
+    margin: 0 0 0.6rem 0;
     height: 10rem;
   }
 `
