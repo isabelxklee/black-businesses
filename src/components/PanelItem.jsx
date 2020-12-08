@@ -10,13 +10,11 @@ const ListItem = styled.article`
   }
 `
 
-const PanelChild = ({place, map}) => {
+const PanelItem = ({place, map}) => {
   const flyToLocation = () => {
-    map.flyTo({
+    map.jumpTo({
       center: [place.coordinates[0], place.coordinates[1]],
       zoom: 12,
-      curve: 1,
-      speed: 1
     })
   }
 
@@ -30,4 +28,4 @@ const PanelChild = ({place, map}) => {
   )
 }
 
-export default PanelChild
+export default PanelItem

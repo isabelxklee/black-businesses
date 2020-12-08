@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import PanelChild from './PanelChild.jsx'
+import PanelItem from './PanelItem.jsx'
 
 const SidePanel = styled.section`
   background-color: white;
@@ -12,7 +12,7 @@ const SidePanel = styled.section`
   position: absolute;
   left: 0;
   height: 87%;
-  
+
   @media only screen and (max-width: 700px) {
     bottom: 3rem;
     width: -webkit-fill-available;
@@ -22,17 +22,12 @@ const SidePanel = styled.section`
   }
 `
 
-
 const PlacesList = (props) => {
-  const placesList = props.places.map((place, index) => {
-    return <PanelChild key={index} place={place} map={props.map} />
+  const allPlaces = props.places.map((place, index) => {
+    return <PanelItem key={index} place={place} map={props.map} />
   })
 
-  return (
-      <SidePanel>
-        {placesList}
-      </SidePanel>
-  )
+  return <SidePanel>{allPlaces}</SidePanel>
 }
 
 export default PlacesList

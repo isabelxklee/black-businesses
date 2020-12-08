@@ -3,7 +3,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom'
 import './App.css'
 import Map from './components/Map.jsx'
 import Header from './components/Header.jsx'
-import BusinessContainer from './components/BusinessContainer.jsx'
+import Showcase from './components/Showcase.jsx'
 import Resources from './components/Resources.jsx'
 import BusinessPage from './components/BusinessPage.jsx'
 import SecondaryTag from './components/SecondaryTag.jsx'
@@ -15,7 +15,7 @@ class App extends Component {
     zoom: 3.5,
     style: 'mapbox://styles/mapbox/light-v9',
     places: [],
-    map: null
+    map: null,
   }
 
   componentDidMount() {
@@ -26,20 +26,6 @@ class App extends Component {
           places: placesArray,
         })
       })
-  }
-
-  getAllCategories = () => {
-    const array = []
-    array.push('all')
-
-    this.state.places.forEach((place) => {
-      place.categories.forEach((category) => {
-        array.push(category)
-      })
-    })
-
-    let uniqueArray = array.filter((value, index, self) => self.indexOf(value) === index)
-    return uniqueArray
   }
 
   setMap = (inputFromChild) => {
@@ -79,7 +65,7 @@ class App extends Component {
               <Map app={this.state} setMap={this.setMap} />
             </Route>
             <Route exact path="/all-businesses">
-              <BusinessContainer businesses={this.state.places} categories={this.getAllCategories()} />
+              <Showcase businesses={this.state.places} />
             </Route>
             <Route exact path="/resources">
               <Resources />

@@ -1,17 +1,23 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import BusinessTile from './BusinessTile.jsx'
 import PrimaryTag from './PrimaryTag.jsx'
 import Wrapper from './Wrapper.jsx'
 
-const BusinessContainer = ({categories}) => {
+const Showcase = ({businesses}) => {
   const [selectedCategory, setSelectedCategory] = useState('all')
-  const [businesses, setBusinesses] = useState([])
 
-  useEffect(() => {
-    fetch('https://black-businesses-json.herokuapp.com/places')
-      .then((response) => response.json())
-      .then((response) => setBusinesses(response))
-  }, [])
+  const getAllCategories = () => {
+    const categoryArray = []
+    categoryArray.push('all')
+
+    businesses.map((business) => {
+      business.categories.map((category) => {
+        categoryArray.push(category)
+      })
+    })
+
+    return categoryArray.filter((value, index, self) => self.indexOf(value) === index)
+  }
 
   const filterBusinesses = () => {
     let filteredArray = []
@@ -29,21 +35,15 @@ const BusinessContainer = ({categories}) => {
     return filteredArray
   }
 
-  const renderBusinesses = () => {
-    return filterBusinesses().map((business) => {
-      return <BusinessTile key={business.id} business={business} />
-    })
-  }
+  const renderBusinesses = () =>
+    filterBusinesses().map((business) => <BusinessTile key={business.id} business={business} />)
 
-  const renderAllTags = () => {
-    return categories.map((category) => {
-      return (
-        <PrimaryTag key={category} id={category} onClick={() => setSelectedCategory(category)}>
-          {category}
-        </PrimaryTag>
-      )
-    })
-  }
+  const renderAllTags = () =>
+    getAllCategories().map((category) => (
+      <PrimaryTag key={category} id={category} onClick={() => setSelectedCategory(category)}>
+        {category}
+      </PrimaryTag>
+    ))
 
   return (
     <Wrapper>
@@ -55,4 +55,4 @@ const BusinessContainer = ({categories}) => {
   )
 }
 
-export default BusinessContainer
+export default Showcase
