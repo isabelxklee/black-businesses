@@ -1,7 +1,6 @@
 import React from 'react'
 import * as Yup from 'yup'
 import {Formik, Form, Field} from 'formik'
-// import Button from './Button.jsx'
 
 const formSchema = Yup.object().shape({
   title: Yup.string()
