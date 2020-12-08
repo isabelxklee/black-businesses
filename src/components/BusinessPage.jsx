@@ -12,7 +12,7 @@ const BusinessPage = (props) => {
           <img src={image_url} alt={title} className="business-page" />
         </section>
         <section className="column">
-          <section className="category-container">{props.PrimaryTags}</section>
+          <section className="category-container">{props.businessTags}</section>
           <h1 className="business-page">{title}</h1>
           <p>{description}</p>
 

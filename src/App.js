@@ -15,7 +15,7 @@ class App extends Component {
     zoom: 3.5,
     style: 'mapbox://styles/mapbox/light-v9',
     places: [],
-    map: null,
+    map: null
   }
 
   componentDidMount() {
@@ -28,13 +28,27 @@ class App extends Component {
       })
   }
 
+  getAllCategories = () => {
+    const array = []
+    array.push('all')
+
+    this.state.places.forEach((place) => {
+      place.categories.forEach((category) => {
+        array.push(category)
+      })
+    })
+
+    let uniqueArray = array.filter((value, index, self) => self.indexOf(value) === index)
+    return uniqueArray
+  }
+
   setMap = (inputFromChild) => {
     this.setState({
       map: inputFromChild,
     })
   }
 
-  renderPrimaryTags = (categories) => {
+  renderBusinessTags = (categories) => {
     return categories.map((category) => {
       return (
         <SecondaryTag key={category} id={category}>
@@ -49,7 +63,7 @@ class App extends Component {
       <Route exact path={`/all-businesses/${business.id}`} key={business.id}>
         <BusinessPage
           business={business}
-          PrimaryTags={this.renderPrimaryTags(business.categories)}
+          businessTags={this.renderBusinessTags(business.categories)}
         />
       </Route>
     ))
@@ -65,7 +79,7 @@ class App extends Component {
               <Map app={this.state} setMap={this.setMap} />
             </Route>
             <Route exact path="/all-businesses">
-              <BusinessContainer businesses={this.state.places} />
+              <BusinessContainer businesses={this.state.places} categories={this.getAllCategories()} />
             </Route>
             <Route exact path="/resources">
               <Resources />

@@ -3,33 +3,15 @@ import BusinessTile from './BusinessTile.jsx'
 import PrimaryTag from './PrimaryTag.jsx'
 import Wrapper from './Wrapper.jsx'
 
-const BusinessContainer = () => {
+const BusinessContainer = ({categories}) => {
   const [selectedCategory, setSelectedCategory] = useState('all')
-  const [categories, setCategories] = useState([])
   const [businesses, setBusinesses] = useState([])
 
   useEffect(() => {
     fetch('https://black-businesses-json.herokuapp.com/places')
       .then((response) => response.json())
-      .then((placesArray) => {
-        setBusinesses(placesArray)
-      })
-  }),
-    [businesses]
-
-  useEffect(() => {
-    const array = []
-    array.push('all')
-
-    businesses.forEach((business) => {
-      business.categories.forEach((category) => {
-        array.push(category)
-      })
-    })
-
-    setCategories([...new Set(array)])
-  }),
-    [categories]
+      .then((response) => setBusinesses(response))
+  }, [])
 
   const filterBusinesses = () => {
     let filteredArray = []
@@ -47,17 +29,21 @@ const BusinessContainer = () => {
     return filteredArray
   }
 
-  const renderBusinesses = () =>
-    filterBusinesses().map((business) => {
-      <BusinessTile key={business.id} business={business} />
+  const renderBusinesses = () => {
+    return filterBusinesses().map((business) => {
+      return <BusinessTile key={business.id} business={business} />
     })
+  }
 
-  const renderAllTags = () =>
-    categories.map((category) => {
-      <PrimaryTag key={category} id={category} onClick={() => setSelectedCategory(category)}>
-        {category}
-      </PrimaryTag>
+  const renderAllTags = () => {
+    return categories.map((category) => {
+      return (
+        <PrimaryTag key={category} id={category} onClick={() => setSelectedCategory(category)}>
+          {category}
+        </PrimaryTag>
+      )
     })
+  }
 
   return (
     <Wrapper>
