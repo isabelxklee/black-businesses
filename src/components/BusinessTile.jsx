@@ -16,7 +16,7 @@ const BusinessTile = ({business}) => {
 
   return (
     <Card>
-      <Link to={`businesses/${business.id}}`}>
+      <Link to={`businesses/${business.id}`}>
         <img src={business.image_url} alt={business.title} className="tile-image" />
       </Link>
       <section className="tile-info">
