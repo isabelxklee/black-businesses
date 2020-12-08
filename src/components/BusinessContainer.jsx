@@ -1,41 +1,43 @@
-import React, {Component} from 'react'
+import React, {useState, useEffect} from 'react'
 import BusinessTile from './BusinessTile.jsx'
 import PrimaryTag from './PrimaryTag.jsx'
 import Wrapper from './Wrapper.jsx'
 
-class BusinessContainer extends Component {
-  state = {
-    category: 'all',
-  }
+const BusinessContainer = () => {
+  const [selectedCategory, setSelectedCategory] = useState('all')
+  const [categories, setCategories] = useState([])
+  const [businesses, setBusinesses] = useState([])
 
-  getAllCategories = () => {
+  useEffect(() => {
+    fetch('https://black-businesses-json.herokuapp.com/places')
+      .then((response) => response.json())
+      .then((placesArray) => {
+        setBusinesses(placesArray)
+      })
+  }),
+    [businesses]
+
+  useEffect(() => {
     const array = []
     array.push('all')
 
-    this.props.businesses.forEach((business) => {
+    businesses.forEach((business) => {
       business.categories.forEach((category) => {
         array.push(category)
       })
     })
 
-    return [...new Set(array)]
-  }
+    setCategories([...new Set(array)])
+  }),
+    [categories]
 
-  handleClick = (event) => {
-    this.setState({
-      category: event.target.id,
-    })
-  }
-
-  filterBusinesses = () => {
-    const allBusinesses = this.props.businesses
-    const selectedCategory = this.state.category
+  const filterBusinesses = () => {
     let filteredArray = []
 
     if (selectedCategory === 'all') {
-      filteredArray = allBusinesses
+      filteredArray = businesses
     } else {
-      allBusinesses.map((business) => {
+      businesses.map((business) => {
         business.categories.map((category) => {
           category === selectedCategory ? filteredArray.push(business) : null
         })
@@ -45,32 +47,26 @@ class BusinessContainer extends Component {
     return filteredArray
   }
 
-  render() {
-    const businessesArray = () => {
-      return this.filterBusinesses().map((business) => {
-        return <BusinessTile key={business.id} business={business} />
-      })
-    }
+  const renderBusinesses = () =>
+    filterBusinesses().map((business) => {
+      <BusinessTile key={business.id} business={business} />
+    })
 
-    const allPrimaryTags = () => {
-      return this.getAllCategories().map((category) => {
-        return (
-          <PrimaryTag key={category} id={category} onClick={this.handleClick}>
-            {category}
-          </PrimaryTag>
-        )
-      })
-    }
+  const renderAllTags = () =>
+    categories.map((category) => {
+      <PrimaryTag key={category} id={category} onClick={() => setSelectedCategory(category)}>
+        {category}
+      </PrimaryTag>
+    })
 
-    return (
-      <Wrapper>
-        <h1>All Businesses</h1>
-        <h3>Filter by category</h3>
-        <section className="category-container">{allPrimaryTags()}</section>
-        <section className="business-tile-container">{businessesArray()}</section>
-      </Wrapper>
-    )
-  }
+  return (
+    <Wrapper>
+      <h1>All Businesses</h1>
+      <h3>Filter by category</h3>
+      <section className="category-container">{renderAllTags()}</section>
+      <section className="business-tile-container">{renderBusinesses()}</section>
+    </Wrapper>
+  )
 }
 
 export default BusinessContainer
