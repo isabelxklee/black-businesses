@@ -6,23 +6,20 @@ const List = styled.ul`
   list-style: none;
 `
 
-class Panel extends Component {
-  render() {
-    const places = this.props.places
-    let placesList = []
+const Panel = (props) => {
+  let placesList = []
 
-    if (places) {
-      placesList = places.map((place, index) => {
-        return <PanelChild key={index} place={place} map={this.props.map} />
-      })
-    }
+  if (props.places) {
+    placesList = props.places.map((place, index) => {
+      return <PanelChild key={index} place={place} map={props.map} />
+    })
+  }
 
-    return (
+  return (
       <section className="panel">
         <List>{placesList}</List>
       </section>
-    )
-  }
+  )
 }
 
 export default Panel
