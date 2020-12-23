@@ -10,10 +10,10 @@ class Map extends Component {
     const {style, long, lat, zoom} = this.props.app
 
     const map = new mapboxgl.Map({
-      container: this.mapContainer,
+      container: 'map',
       style: style,
       center: [long, lat],
-      zoom: zoom,
+      zoom: zoom
     })
 
     const navigationControl = new mapboxgl.NavigationControl()
@@ -33,7 +33,7 @@ class Map extends Component {
       <section>
         <Panel places={this.props.app.places} map={this.props.app.map} />
         {places.length > 0 ? placeMarkers : null}
-        <section ref={(el) => (this.mapContainer = el)} className="map-container"></section>
+        <section id="map" className="map-container" />
       </section>
     )
   }
