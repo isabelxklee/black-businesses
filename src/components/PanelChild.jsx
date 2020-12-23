@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import mapboxgl from 'mapbox-gl'
 
 const ListItem = styled.li`
   padding-bottom: 0.4rem;
@@ -16,6 +17,23 @@ const PanelChild = ({place, map}) => {
       zoom: 12,
       speed: 1,
     })
+
+    createPopup(place, map)
+  }
+
+  const createPopup = (place, map) => {
+    const popup = new mapboxgl.Popup({
+      closeButton: false,
+    })
+
+    popup.setHTML(
+      `<h3 class="popup"><a href=${place.website} target="noreferrer_blank" class="popup">${place.title}</a></h3>
+      <p class="popup">${place.address}</p>
+      <p class="popup">${place.city}, ${place.state}</p>`
+    )
+
+    popup.setLngLat([place.coordinates[0], place.coordinates[1]])
+    popup.addTo(map)
   }
 
   return (
