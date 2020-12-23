@@ -13,17 +13,15 @@ class Panel extends Component {
 
     if (places) {
       placesList = places.map((place, index) => {
-        return <PanelChild key={index} place={place} map={this.props.map}/>
+        return <PanelChild key={index} place={place} map={this.props.map} />
       })
     }
 
     return (
       <section className="panel">
-        <List>
-          {placesList}      
-        </List>
+        <List>{placesList}</List>
       </section>
-    ) 
+    )
   }
 }
 

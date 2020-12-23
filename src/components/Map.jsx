@@ -7,13 +7,11 @@ mapboxgl.accessToken =
 
 class Map extends Component {
   componentDidMount() {
-    const {style, long, lat, zoom} = this.props.app
-
     const map = new mapboxgl.Map({
       container: 'map',
-      style: style,
-      center: [long, lat],
-      zoom: zoom
+      style: 'mapbox://styles/mapbox/light-v9',
+      center: [-101.20869, 39.8383872],
+      zoom: 3.5,
     })
 
     const navigationControl = new mapboxgl.NavigationControl()
@@ -23,7 +21,7 @@ class Map extends Component {
   }
 
   render() {
-    const places = this.props.app.places
+    const {places, map} = this.props.app
 
     const placeMarkers = places.map((place, index) => {
       return <PlaceMarker place={place} app={this.props.app} key={index}></PlaceMarker>
@@ -31,7 +29,7 @@ class Map extends Component {
 
     return (
       <section>
-        <Panel places={this.props.app.places} map={this.props.app.map} />
+        <Panel places={places} map={map} />
         {places.length > 0 ? placeMarkers : null}
         <section id="map" className="map-container" />
       </section>
