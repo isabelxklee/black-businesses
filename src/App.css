@@ -61,9 +61,14 @@ form {
   width: 75%;
 }
 
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+  border-top-color: black;
+  margin-bottom: 2.4rem;
+}
+
 div.mapboxgl-popup-content {
   font-family: 'Karla', sans-serif;
-  padding: 2rem;
+  padding: 1rem;
   font-size: 1rem;
   border-radius: 0.2rem;
   background-color: black;
