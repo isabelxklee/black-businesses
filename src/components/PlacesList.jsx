@@ -4,7 +4,6 @@ import PanelItem from './PanelItem.jsx'
 
 const SidePanel = styled.section`
   background-color: white;
-  color: black;
   z-index: 1;
   width: 20%;
   height: 20rem;

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const TextLink = styled.a`
-  color: #EA4A4A;;
+  color: #EA4A4A;
   font-family: 'Calistoga', cursive;
   font-size: 1.2rem;
   transition: 0.3s;

@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
 const PrimaryTag = styled.nav`
-  background-color: black;
+  background-color: #EA4A4A;
   color: white;
-  border-radius: 0.2rem;
-  padding: 0.6rem;
+  border-radius: 2rem;
+  padding: 0.6rem 1.4rem;
   margin: 0.8rem 0.6rem 0 0;
   text-align: center;
   cursor: pointer;

@@ -1,16 +1,16 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import Card from './components/Card.jsx'
-import SecondaryTag from './components/SecondaryTag.jsx'
+import PrimaryTag from './components/PrimaryTag.jsx'
 import Button from './components/Button.jsx'
 
 const BusinessTile = ({business}) => {
   const renderTags = () =>
     business.categories.map((category) => {
       return (
-        <SecondaryTag key={category} id={category}>
+        <PrimaryTag key={category} id={category}>
           {category}
-        </SecondaryTag>
+        </PrimaryTag>
       )
     })
 
