@@ -2,9 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 const ListItem = styled.article`
-  padding: 1.4rem 3rem;
+  padding: 1.4rem 2rem;
   cursor: pointer;
   transition: 0.3s;
+  border-bottom: 3px solid #EA4A4A;
   &:hover {
     background-color: #dadada;
   }
