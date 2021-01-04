@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import BusinessTile from './BusinessTile.jsx'
-import PrimaryTag from './PrimaryTag.jsx'
-import Wrapper from './Wrapper.jsx'
+import PrimaryTag from './components/PrimaryTag.jsx'
+import Wrapper from './components/Wrapper.jsx'
 
 const Showcase = ({businesses}) => {
   const [selectedCategory, setSelectedCategory] = useState('all')
