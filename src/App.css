@@ -14,6 +14,10 @@ body {
   padding: 0;
 }
 
+h1, h2, h3, p.popup.title, a.popup {
+  font-family: 'Calistoga', cursive;
+}
+
 h1 {
   font-size: 3rem;
 }
@@ -96,13 +100,10 @@ a.popup:hover {
   margin: 0.4rem 0;
 }
 
-.popup.title {
-  font-weight: 600;
-}
-
 h3.popup {
   font-weight: 600;
   font-size: 1.2rem;
+  font-family: 'Calistoga', cursive;
 }
 
 ul {

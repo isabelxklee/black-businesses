@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Navigation = styled.header`
-  background-color: black;
+  background-color: #FBEDF1;
   top: 0;
   height: 4rem;
   margin: auto;
