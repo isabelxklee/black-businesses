@@ -1,12 +1,12 @@
 import React from 'react'
 import SidePanel from './styled-components/SidePanel.jsx'
-import PanelItem from './PanelItem.jsx'
+import PanelChild from './PanelChild.jsx'
 
 const PlacesList = ({places, map}) => (
   <SidePanel>
     <ul>
       {places.map((place, index) => (
-        <PanelItem key={index} place={place} map={map} />
+        <PanelChild key={index} place={place} map={map} />
       ))}
     </ul>
   </SidePanel>

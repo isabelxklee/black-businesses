@@ -1,7 +1,7 @@
 import React from 'react'
 import ListItem from './styled-components/ListItem.jsx'
 
-const PanelItem = ({place, map}) => {
+const PanelChild = ({place, map}) => {
   const flyToLocation = () => {
     map.jumpTo({
       center: [place.coordinates[0], place.coordinates[1]],
@@ -19,4 +19,4 @@ const PanelItem = ({place, map}) => {
   )
 }
 
-export default PanelItem
+export default PanelChild
