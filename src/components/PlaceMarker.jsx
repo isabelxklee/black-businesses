@@ -15,7 +15,7 @@ const PlaceMarker = ({app, place}) => {
       )
 
       const marker = new mapboxgl.Marker({
-        color: '#2727e6',
+        color: '#EA4A4A',
       })
       marker.setLngLat([place.coordinates[0], place.coordinates[1]])
       marker.setPopup(popup)
