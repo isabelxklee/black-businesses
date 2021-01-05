@@ -1,16 +1,16 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import Card from './components/Card.jsx'
-import PrimaryTag from './components/PrimaryTag.jsx'
+import SecondaryTag from './components/SecondaryTag.jsx'
 import Button from './components/Button.jsx'
 
 const BusinessTile = ({business}) => {
   const renderTags = () =>
     business.categories.map((category) => {
       return (
-        <PrimaryTag key={category} id={category}>
+        <SecondaryTag key={category} id={category}>
           {category}
-        </PrimaryTag>
+        </SecondaryTag>
       )
     })
 
@@ -23,7 +23,7 @@ const BusinessTile = ({business}) => {
         <section className="category-container">{renderTags()}</section>
         <Link to={`businesses/${business.id}`}>
           <h3>{business.title}</h3>
-        </Link> 
+        </Link>
         <section className="address">
           <p className="address">{business.address ? business.address : null}</p>
           <p className="address">

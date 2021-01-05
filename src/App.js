@@ -6,7 +6,7 @@ import Header from './components/Header.jsx'
 import Showcase from './Showcase.jsx'
 import Resources from './Resources.jsx'
 import BusinessPage from './BusinessPage.jsx'
-import PrimaryTag from './components/PrimaryTag.jsx'
+import SecondaryTag from './components/SecondaryTag.jsx'
 
 class App extends Component {
   state = {
@@ -36,9 +36,9 @@ class App extends Component {
 
   renderTags = (business) =>
     business.categories.map((category) => (
-      <PrimaryTag key={category} id={category}>
+      <SecondaryTag key={category} id={category}>
         {category}
-      </PrimaryTag>
+      </SecondaryTag>
     ))
 
   createNestedRoutes = () =>
