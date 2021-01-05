@@ -3,7 +3,7 @@ import BusinessTile from './BusinessTile.jsx'
 import CategoryTag from './CategoryTag.jsx'
 import Wrapper from './Wrapper.jsx'
 
-class BusinessContainer extends Component {
+class Showcase extends Component {
   state = {
     category: 'all',
   }
@@ -75,4 +75,4 @@ class BusinessContainer extends Component {
   }
 }
 
-export default BusinessContainer
+export default Showcase

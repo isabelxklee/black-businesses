@@ -76,9 +76,6 @@ const Header = () => (
       <Link to="/all-businesses" component={TextLink}>
         Showcase
       </Link>
-      <Link to="/resources" component={TextLink}>
-        Resources
-      </Link>
     </Links>
   </Navigation>
 )
