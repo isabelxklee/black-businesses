@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
-import './App.css'
+import GlobalStyle from './components/GlobalStyle.jsx'
 import Map from './Map.jsx'
 import Header from './components/Header.jsx'
 import Showcase from './Showcase.jsx'
@@ -41,17 +41,17 @@ class App extends Component {
       </PrimaryTag>
     ))
 
-  createNestedRoutes = () => (
+  createNestedRoutes = () =>
     this.state.places.map((business) => (
       <Route exact path={`/businesses/${business.id}`} key={business.id}>
         <BusinessPage business={business} tags={this.renderTags(business)} />
       </Route>
     ))
-  )
 
   render() {
     return (
       <BrowserRouter>
+        <GlobalStyle />
         <Header />
         <section>
           <Switch>

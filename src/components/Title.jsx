@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const Title = styled.h3`
   float: left;
-  color: #EA4A4A;
+  color: #ea4a4a;
   margin: 1rem;
   font-weight: 600;
   font-size: 1.6rem;

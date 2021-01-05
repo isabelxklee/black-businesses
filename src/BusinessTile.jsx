@@ -21,7 +21,9 @@ const BusinessTile = ({business}) => {
       </Link>
       <section className="tile-info">
         <section className="category-container">{renderTags()}</section>
-        <h3>{business.title}</h3>
+        <Link to={`businesses/${business.id}`}>
+          <h3>{business.title}</h3>
+        </Link> 
         <section className="address">
           <p className="address">{business.address ? business.address : null}</p>
           <p className="address">

@@ -7,9 +7,9 @@ import TextLink from './TextLink.jsx'
 
 const Header = () => (
   <Navigation>
-      <Link to="/" component={TextLink}>
-        <Title>Black-Owned Food & Drink</Title>
-      </Link>
+    <Link to="/" component={TextLink}>
+      <Title>Black-Owned Food & Drink</Title>
+    </Link>
     <Links>
       <Link to="/" component={TextLink}>
         Map
