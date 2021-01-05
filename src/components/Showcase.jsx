@@ -35,22 +35,22 @@ const Showcase = ({businesses}) => {
     return filteredArray
   }
 
-  const renderBusinesses = () =>
-    filterBusinesses().map((business) => <BusinessTile key={business.id} business={business} />)
-
-  const renderAllTags = () =>
-    getAllCategories().map((category) => (
-      <PrimaryTag key={category} id={category} onClick={() => setSelectedCategory(category)}>
-        {category}
-      </PrimaryTag>
-    ))
-
   return (
     <Wrapper>
       <h1>All Businesses</h1>
       <h3>Filter by category</h3>
-      <section className="category-container">{renderAllTags()}</section>
-      <section className="business-tile-container">{renderBusinesses()}</section>
+      <section className="category-container">
+        {getAllCategories().map((category) => (
+          <PrimaryTag key={category} id={category} onClick={() => setSelectedCategory(category)}>
+            {category}
+          </PrimaryTag>
+        ))}
+      </section>
+      <section className="business-tile-container">
+        {filterBusinesses().map((business) => (
+          <BusinessTile key={business.id} business={business} />
+        ))}
+      </section>
     </Wrapper>
   )
 }
