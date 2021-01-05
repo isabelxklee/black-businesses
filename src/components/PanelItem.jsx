@@ -1,5 +1,5 @@
 import React from 'react'
-import ListItem from './ListItem.jsx'
+import ListItem from './styled-components/ListItem.jsx'
 
 const PanelItem = ({place, map}) => {
   const flyToLocation = () => {

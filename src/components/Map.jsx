@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import mapboxgl from 'mapbox-gl'
-import PlacesList from './components/PlacesList.jsx'
+import PlacesList from './PlacesList.jsx'
 mapboxgl.accessToken =
   'pk.eyJ1Ijoic3VwZXJoaSIsImEiOiJkMTcyNzU0M2YzZDQ3YjNjNmQ2NmYwYjcwMmMzZGViMCJ9.RmlVJzqEJ1RqQSvQGL_Jkg'
 

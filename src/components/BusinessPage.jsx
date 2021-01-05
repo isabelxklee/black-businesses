@@ -1,6 +1,6 @@
 import React from 'react'
-import Button from './components/Button.jsx'
-import Wrapper from './components/Wrapper.jsx'
+import Button from './styled-components/Button.jsx'
+import Wrapper from './styled-components/Wrapper.jsx'
 
 const BusinessPage = (props) => {
   const {title, description, address, city, state, website, image_url} = props.business

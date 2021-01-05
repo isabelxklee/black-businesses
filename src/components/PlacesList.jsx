@@ -1,5 +1,5 @@
 import React from 'react'
-import SidePanel from './SidePanel.jsx'
+import SidePanel from './styled-components/SidePanel.jsx'
 import PanelItem from './PanelItem.jsx'
 
 const PlacesList = ({places, map}) => (

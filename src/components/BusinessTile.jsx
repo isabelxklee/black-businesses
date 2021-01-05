@@ -1,8 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import Card from './components/Card.jsx'
-import SecondaryTag from './components/SecondaryTag.jsx'
-import Button from './components/Button.jsx'
+import Card from './styled-components/Card.jsx'
+import SecondaryTag from './styled-components/SecondaryTag.jsx'
+import Button from './styled-components/Button.jsx'
 
 const BusinessTile = ({business}) => {
   const renderTags = () =>
