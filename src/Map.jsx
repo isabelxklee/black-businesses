@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import mapboxgl from 'mapbox-gl'
-import PlaceMarker from './components/PlaceMarker.jsx'
 import PlacesList from './components/PlacesList.jsx'
 mapboxgl.accessToken =
   'pk.eyJ1Ijoic3VwZXJoaSIsImEiOiJkMTcyNzU0M2YzZDQ3YjNjNmQ2NmYwYjcwMmMzZGViMCJ9.RmlVJzqEJ1RqQSvQGL_Jkg'
@@ -10,7 +9,7 @@ class Map extends Component {
     const {style, long, lat, zoom} = this.props.app
 
     const map = new mapboxgl.Map({
-      container: this.mapContainer,
+      container: 'map',
       style: style,
       center: [long, lat],
       zoom: zoom,
@@ -22,18 +21,38 @@ class Map extends Component {
     this.props.setMap(map)
   }
 
-  render() {
-    const places = this.props.app.places
+  createMarkers = () => {
+    const {places, map} = this.props.app
 
-    const placeMarkers = places.map((place, index) => {
-      return <PlaceMarker place={place} app={this.props.app} key={index}></PlaceMarker>
-    })
+    {
+      places.length > 0
+        ? this.props.app.places.map((place) => {
+            const marker = new mapboxgl.Marker({
+              color: '#ea4a4a',
+            })
+            marker.setLngLat([place.coordinates[0], place.coordinates[1]])
+            marker.addTo(map)
+
+            const popup = new mapboxgl.Popup({offset: 0}).setHTML(
+              `<h3 class="popup"><a href=${place.website} target="noreferrer_blank" class="popup">${place.title}</a></h3>
+              <p class="popup">${place.address}</p>
+              <p class="popup">${place.city}, ${place.state}</p>`
+            )
+
+            marker.setPopup(popup)
+          })
+        : null
+    }
+  }
+
+  render() {
+    const {places, map} = this.props.app
 
     return (
       <section>
-        <PlacesList places={this.props.app.places} map={this.props.app.map} />
-        {places.length > 0 ? placeMarkers : null}
-        <section ref={(el) => (this.mapContainer = el)} className="map-container"></section>
+        <PlacesList places={places} map={map} />
+        <section>{this.createMarkers()}</section>
+        <section id="map" className="map-container" />
       </section>
     )
   }

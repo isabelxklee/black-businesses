@@ -81,8 +81,23 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 0 1.2rem 0;
   }
 
+  .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+    border-top-color: #ea4a4a;
+    margin-bottom: 2.4rem;
+  }
+
+  .mapboxgl-ctrl-group:not(:empty) {
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    margin: 1rem;
+  }
+
+  .mapboxgl-ctrl.mapboxgl-ctrl-attrib {
+    display: none;
+  }
+
   div.mapboxgl-popup-content {
-    font-family: 'Karla', sans-serif;
     padding: 2rem;
     font-size: 1rem;
     border-radius: 0.2rem;
@@ -108,11 +123,6 @@ const GlobalStyle = createGlobalStyle`
 
   .popup {
     margin: 0.4rem 0;
-  }
-
-  h3.popup {
-    font-size: 1.2rem;
-    font-family: 'Calistoga', cursive;
   }
 
   ul {
