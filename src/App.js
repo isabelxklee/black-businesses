@@ -41,7 +41,12 @@ class App extends Component {
         <section>
           <Switch>
             <Route exact path="/">
-              <Map map={this.state.map} places={this.state.places} setMap={this.setMap} />
+              <Map
+                map={this.state.map}
+                places={this.state.places}
+                app={this.state}
+                setMap={this.setMap}
+              />
             </Route>
             <Route exact path="/businesses">
               <Showcase businesses={this.state.places} />
