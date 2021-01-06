@@ -1,0 +1,168 @@
+.map-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+body {
+  font-family: 'Karla', sans-serif;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h3 {
+  margin: 0.4rem 0;
+  font-weight: 400;
+}
+
+p {
+  margin: 1rem 0;
+}
+
+form {
+  display: inline-grid;
+  margin: 4rem;
+}
+
+.address {
+  font-weight: 700;
+  margin: 0;
+}
+
+.business-tile-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  grid-column-gap: 2rem;
+  grid-row-gap: 2rem;
+  margin: 4rem 0;
+}
+
+.tile-image {
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.tile-info {
+  padding: 1rem 2rem;
+}
+
+.category-container {
+  display: block;
+  width: 75%;
+}
+
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+  border-top-color: black;
+  margin-bottom: 2.4rem;
+}
+
+div.mapboxgl-popup-content {
+  font-family: 'Karla', sans-serif;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 0.2rem;
+  background-color: black;
+  color: white;
+}
+
+a.popup {
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+a.popup:hover {
+  opacity: 0.5;
+}
+
+.popup {
+  margin: 0.4rem 0;
+}
+
+.popup.title {
+  font-weight: 600;
+}
+
+h3.popup {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.panel {
+  background-color: white;
+  color: black;
+  z-index: 1;
+  width: 20%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 0.2rem;
+  padding: 0.4rem 1rem;
+  margin: 1rem;
+  height: 20rem;
+  overflow: auto;
+  position: absolute;
+}
+
+ul {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+ul li:last-child {
+  border: none;
+}
+
+.mapboxgl-ctrl-group:not(:empty) {
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  margin: 1rem;
+}
+
+.mapboxgl-ctrl.mapboxgl-ctrl-attrib {
+  display: none;
+}
+
+@media only screen and (max-width: 700px) {
+  h1 {
+    font-size: 2.4rem;
+    margin: 1rem 0;
+  }
+
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    line-height: 1.4rem;
+  }
+
+  .category-container {
+    display: block;
+    width: auto;
+  }
+
+  .panel {
+    bottom: 3rem;
+    width: -webkit-fill-available;
+    border-radius: 0;
+    margin: 0;
+    height: 10rem;
+  }
+
+  .mapboxgl-ctrl-group:not(:empty) {
+    display: none;
+  }
+}
