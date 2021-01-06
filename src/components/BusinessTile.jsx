@@ -19,7 +19,6 @@ const BusinessTile = ({business, selectCategory}) => {
       <section className="tile-info">
         <h3>{business.title}</h3>
         <section className="category-container">{renderCategoryTags()}</section>
-        <p>{business.description}</p>
         <p className="address">{business.address ? business.address : null}</p>
         <p className="address">
           {business.city}, {business.state}
