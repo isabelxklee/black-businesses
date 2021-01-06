@@ -13,8 +13,5 @@
     "sourceType": "module"
   },
   "plugins": ["react"],
-  "rules": {
-    "react/prop-types": [0],
-    "no-unused-vars": "off"
-  }
+  "rules": {}
 }

@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {IBusinesses} from '../types'
 import BusinessTile from './BusinessTile.jsx'
 import PrimaryTag from './styled-components/PrimaryTag.jsx'
 import Wrapper from './styled-components/Wrapper.jsx'
@@ -51,6 +52,10 @@ const Showcase = ({businesses}) => {
       </section>
     </Wrapper>
   )
+}
+
+Showcase.propTypes = {
+  businesses: IBusinesses.isRequired,
 }
 
 export default Showcase

@@ -1,9 +1,10 @@
 import React from 'react'
+import {IBusiness} from '../types'
 import BusinessTags from './BusinessTags'
 import Button from './styled-components/Button.jsx'
 import Wrapper from './styled-components/Wrapper.jsx'
 
-const BusinessPage = ({business, tags}) => (
+const BusinessPage = ({business}) => (
   <Wrapper>
     <section className="business-page">
       <section className="column">
@@ -30,5 +31,9 @@ const BusinessPage = ({business, tags}) => (
     </section>
   </Wrapper>
 )
+
+BusinessPage.propTypes = {
+  business: IBusiness.isRequired,
+}
 
 export default BusinessPage

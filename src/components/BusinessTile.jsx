@@ -1,8 +1,8 @@
 import React from 'react'
+import {IBusiness} from '../types'
 import {Link} from 'react-router-dom'
 import BusinessTags from './BusinessTags'
 import Card from './styled-components/Card.jsx'
-import SecondaryTag from './styled-components/SecondaryTag.jsx'
 import Button from './styled-components/Button.jsx'
 
 const BusinessTile = ({business}) => (
@@ -29,5 +29,9 @@ const BusinessTile = ({business}) => (
     </section>
   </Card>
 )
+
+BusinessTile.propTypes = {
+  business: IBusiness.isRequired,
+}
 
 export default BusinessTile

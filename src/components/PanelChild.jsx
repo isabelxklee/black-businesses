@@ -1,4 +1,6 @@
 import React from 'react'
+import {object} from 'prop-types'
+import {IBusiness} from '../types'
 import ListItem from './styled-components/ListItem.jsx'
 
 const PanelChild = ({place, map}) => {
@@ -17,6 +19,11 @@ const PanelChild = ({place, map}) => {
       </p>
     </ListItem>
   )
+}
+
+PanelChild.propTypes = {
+  place: IBusiness.isRequired,
+  map: object,
 }
 
 export default PanelChild

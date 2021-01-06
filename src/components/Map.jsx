@@ -1,4 +1,6 @@
 import React, {useEffect} from 'react'
+import {func} from 'prop-types'
+import {IBusinesses, IMapState} from '../types'
 import mapboxgl from 'mapbox-gl'
 import PlacesList from './PlacesList.jsx'
 
@@ -45,6 +47,12 @@ const Map = ({mapState, places, setMap}) => {
       <section id="map" className="map-container" />
     </section>
   )
+}
+
+Map.propTypes = {
+  places: IBusinesses.isRequired,
+  mapState: IMapState.isRequired,
+  setMap: func.isRequired,
 }
 
 export default Map
