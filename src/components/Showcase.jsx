@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {IBusinesses} from '../types'
 import BusinessTile from './BusinessTile.jsx'
 import PrimaryTag from './styled-components/PrimaryTag.jsx'
 import Wrapper from './styled-components/Wrapper.jsx'
@@ -7,32 +8,25 @@ const Showcase = ({businesses}) => {
   const [selectedCategory, setSelectedCategory] = useState('all')
 
   const getAllCategories = () => {
-    const categoryArray = []
-    categoryArray.push('all')
+    const categoryArray = ['all']
 
-    businesses.map((business) => {
-      business.categories.map((category) => {
-        categoryArray.push(category)
+    businesses.forEach((business) => {
+      business.categories.forEach((category) => {
+        if (!categoryArray.includes(category)) {
+          categoryArray.push(category)
+        }
       })
     })
 
-    return categoryArray.filter((value, index, self) => self.indexOf(value) === index)
+    return categoryArray
   }
 
   const filterBusinesses = () => {
-    let filteredArray = []
-
     if (selectedCategory === 'all') {
-      filteredArray = businesses
+      return businesses
     } else {
-      businesses.map((business) => {
-        business.categories.map((category) => {
-          category === selectedCategory ? filteredArray.push(business) : null
-        })
-      })
+      return businesses.filter((business) => business.categories.includes(selectedCategory))
     }
-
-    return filteredArray
   }
 
   return (
@@ -41,7 +35,12 @@ const Showcase = ({businesses}) => {
       <h3>Filter by category</h3>
       <section className="category-container">
         {getAllCategories().map((category) => (
-          <PrimaryTag key={category} id={category} onClick={() => setSelectedCategory(category)}>
+          <PrimaryTag
+            key={category}
+            id={category}
+            $isSelected={selectedCategory === category}
+            onClick={() => setSelectedCategory(category)}
+          >
             {category}
           </PrimaryTag>
         ))}
@@ -53,6 +52,10 @@ const Showcase = ({businesses}) => {
       </section>
     </Wrapper>
   )
+}
+
+Showcase.propTypes = {
+  businesses: IBusinesses.isRequired,
 }
 
 export default Showcase

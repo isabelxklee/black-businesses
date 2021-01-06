@@ -1,10 +1,12 @@
 import React from 'react'
+import {object} from 'prop-types'
+import {IBusiness} from '../types'
 import ListItem from './styled-components/ListItem.jsx'
 
 const PanelChild = ({place, map}) => {
   const flyToLocation = () => {
     map.jumpTo({
-      center: [place.coordinates[0], place.coordinates[1]],
+      center: place.coordinates,
       zoom: 12,
     })
   }
@@ -17,6 +19,11 @@ const PanelChild = ({place, map}) => {
       </p>
     </ListItem>
   )
+}
+
+PanelChild.propTypes = {
+  place: IBusiness.isRequired,
+  map: object,
 }
 
 export default PanelChild
