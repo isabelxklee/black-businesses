@@ -7,32 +7,25 @@ const Showcase = ({businesses}) => {
   const [selectedCategory, setSelectedCategory] = useState('all')
 
   const getAllCategories = () => {
-    const categoryArray = []
-    categoryArray.push('all')
+    const categoryArray = ['all']
 
-    businesses.map((business) => {
-      business.categories.map((category) => {
-        categoryArray.push(category)
+    businesses.forEach((business) => {
+      business.categories.forEach((category) => {
+        if (!categoryArray.includes(category)) {
+          categoryArray.push(category)
+        }
       })
     })
 
-    return categoryArray.filter((value, index, self) => self.indexOf(value) === index)
+    return categoryArray
   }
 
   const filterBusinesses = () => {
-    let filteredArray = []
-
     if (selectedCategory === 'all') {
-      filteredArray = businesses
+      return businesses
     } else {
-      businesses.map((business) => {
-        business.categories.map((category) => {
-          category === selectedCategory ? filteredArray.push(business) : null
-        })
-      })
+      return businesses.filter((business) => business.categories.includes(selectedCategory))
     }
-
-    return filteredArray
   }
 
   return (
@@ -41,7 +34,12 @@ const Showcase = ({businesses}) => {
       <h3>Filter by category</h3>
       <section className="category-container">
         {getAllCategories().map((category) => (
-          <PrimaryTag key={category} id={category} onClick={() => setSelectedCategory(category)}>
+          <PrimaryTag
+            key={category}
+            id={category}
+            $isSelected={selectedCategory === category}
+            onClick={() => setSelectedCategory(category)}
+          >
             {category}
           </PrimaryTag>
         ))}

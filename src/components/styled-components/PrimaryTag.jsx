@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const PrimaryTag = styled.nav`
-  background-color: #ea4a4a;
+  background-color: ${({$isSelected}) => ($isSelected ? '#9b1616' : '#ea4a4a')};
   color: white;
   border-radius: 2rem;
   padding: 0.6rem 1.4rem;

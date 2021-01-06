@@ -24,34 +24,30 @@ class Map extends Component {
   createMarkers = () => {
     const {places, map} = this.props.app
 
-    {
-      places.length > 0
-        ? this.props.app.places.map((place) => {
-            const marker = new mapboxgl.Marker({
-              color: '#ea4a4a',
-            })
-            marker.setLngLat([place.coordinates[0], place.coordinates[1]])
-            marker.addTo(map)
+    places.map((place) => {
+      const marker = new mapboxgl.Marker({
+        color: '#ea4a4a',
+      })
+      marker.setLngLat(place.coordinates)
+      marker.addTo(map)
 
-            const popup = new mapboxgl.Popup({offset: 0}).setHTML(
-              `<h3 class="popup"><a href=${place.website} target="noreferrer_blank" class="popup">${place.title}</a></h3>
+      const popup = new mapboxgl.Popup({offset: 0}).setHTML(
+        `<h3 class="popup"><a href=${place.website} target="noreferrer_blank" class="popup">${place.title}</a></h3>
               <p class="popup">${place.address}</p>
               <p class="popup">${place.city}, ${place.state}</p>`
-            )
+      )
 
-            marker.setPopup(popup)
-          })
-        : null
-    }
+      marker.setPopup(popup)
+    })
   }
 
   render() {
     const {places, map} = this.props.app
+    this.createMarkers()
 
     return (
       <section>
         <PlacesList places={places} map={map} />
-        <section>{this.createMarkers()}</section>
         <section id="map" className="map-container" />
       </section>
     )

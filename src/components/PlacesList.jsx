@@ -5,8 +5,8 @@ import PanelChild from './PanelChild.jsx'
 const PlacesList = ({places, map}) => (
   <SidePanel>
     <ul>
-      {places.map((place, index) => (
-        <PanelChild key={index} place={place} map={map} />
+      {places.map((place) => (
+        <PanelChild key={place.id} place={place} map={map} />
       ))}
     </ul>
   </SidePanel>
