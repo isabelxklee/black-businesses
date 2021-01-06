@@ -8,9 +8,8 @@ const Navigation = styled.header`
   padding: 1rem 3rem 0;
 
   @media only screen and (max-width: 700px) {
-    height: auto;
-    padding: 0.4rem 2rem;
-    background-color: transparent;
+    height: 4rem;
+    padding: 1rem 2rem;
   }
 `
 

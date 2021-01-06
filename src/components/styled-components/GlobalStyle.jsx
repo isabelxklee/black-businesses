@@ -160,7 +160,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     h3 {
-      font-size: 1.6rem;
+      font-size: 1.2rem;
     }
 
     p {
@@ -183,6 +183,15 @@ const GlobalStyle = createGlobalStyle`
 
     section.column {
       padding: 0;
+    }
+
+    section.business-tile-container {
+      grid-template-columns: 1fr;
+      margin: 4rem 0 10rem 0
+    } 
+
+    .tile-info {
+      padding: 1rem;
     }
   }
 `

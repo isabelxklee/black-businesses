@@ -13,11 +13,12 @@ const SidePanel = styled.section`
   border: 3px solid #ea4a4a;
 
   @media only screen and (max-width: 700px) {
-    bottom: 3rem;
+    bottom: 15%;
     width: -webkit-fill-available;
     border-radius: 0;
     margin: 0 0 0.6rem 0;
     height: 10rem;
+    left: 0;
   }
 `
 

@@ -7,11 +7,8 @@ const Title = styled.h3`
   font-weight: 600;
   font-size: 1.6rem;
   @media only screen and (max-width: 700px) {
-    float: none;
     margin: 0.6rem 0;
     font-size: 1.2rem;
-    color: black;
-    position: fixed;
   }
 `
 

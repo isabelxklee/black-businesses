@@ -15,9 +15,6 @@ const PrimaryTag = styled.nav`
     opacity: 0.7;
   }
 
-  &:active {
-    opacity: 0.5;
-  }
   @media only screen and (max-width: 700px) {
     margin: 0.6rem 0.6rem 0 0;
   }

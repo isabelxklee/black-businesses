@@ -8,8 +8,13 @@ const ListItem = styled.article`
   &:hover {
     background-color: #dadada;
   }
+
+  :last-child {
+    border-bottom: none;
+  }
+
   @media only screen and (max-width: 700px) {
-    padding: 1rem 1.8rem;
+    padding: 0.6rem 1.4rem;
   }
 `
 
