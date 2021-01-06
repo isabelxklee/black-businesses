@@ -4,8 +4,6 @@ import GlobalStyle from './components/styled-components/GlobalStyle.jsx'
 import Map from './components/Map.jsx'
 import Header from './components/Header.jsx'
 import Showcase from './components/Showcase.jsx'
-import Resources from './components/Resources.jsx'
-import BusinessPage from './components/BusinessPage.jsx'
 
 class App extends Component {
   state = {
@@ -51,14 +49,6 @@ class App extends Component {
             <Route exact path="/businesses">
               <Showcase businesses={this.state.places} />
             </Route>
-            <Route exact path="/resources">
-              <Resources />
-            </Route>
-            {this.state.places.map((business) => (
-              <Route exact path={`/businesses/${business.id}`} key={business.id}>
-                <BusinessPage business={business} />
-              </Route>
-            ))}
           </Switch>
         </section>
       </BrowserRouter>

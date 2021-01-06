@@ -31,13 +31,13 @@ class Map extends Component {
         })
         marker.setLngLat(place.coordinates)
         marker.addTo(this.props.map)
-  
+
         const popup = new mapboxgl.Popup({offset: 0}).setHTML(
           `<h3 class="popup"><a href=${place.website} target="noreferrer_blank" class="popup">${place.title}</a></h3>
                 <p class="popup">${place.address}</p>
                 <p class="popup">${place.city}, ${place.state}</p>`
         )
-  
+
         marker.setPopup(popup)
       })
     }
