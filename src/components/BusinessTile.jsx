@@ -1,15 +1,9 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import BusinessTags from './BusinessTags'
 import Card from './styled-components/Card.jsx'
 import SecondaryTag from './styled-components/SecondaryTag.jsx'
 import Button from './styled-components/Button.jsx'
-
-const Tags = ({business}) =>
-  business.categories.map((category) => (
-    <SecondaryTag key={category} id={category}>
-      {category}
-    </SecondaryTag>
-  ))
 
 const BusinessTile = ({business}) => (
   <Card>
@@ -18,7 +12,7 @@ const BusinessTile = ({business}) => (
     </Link>
     <section className="tile-info">
       <section className="category-container">
-        <Tags business={business} />
+        <BusinessTags business={business} />
       </section>
       <Link to={`businesses/${business.id}`}>
         <h3>{business.title}</h3>

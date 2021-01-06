@@ -1,4 +1,5 @@
 import React from 'react'
+import BusinessTags from './BusinessTags'
 import Button from './styled-components/Button.jsx'
 import Wrapper from './styled-components/Wrapper.jsx'
 
@@ -9,7 +10,9 @@ const BusinessPage = ({business, tags}) => (
         <img src={business.image_url} alt={business.title} className="business-page" />
       </section>
       <section className="column">
-        <section className="category-container">{tags}</section>
+        <section className="category-container">
+          <BusinessTags business={business} />
+        </section>
         <h1 className="business-page">{business.title}</h1>
         <p>{business.description}</p>
 
