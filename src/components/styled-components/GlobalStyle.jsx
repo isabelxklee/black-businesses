@@ -187,7 +187,6 @@ const GlobalStyle = createGlobalStyle`
 
     section.business-tile-container {
       grid-template-columns: 1fr;
-      margin: 4rem 0 10rem 0
     } 
 
     .tile-info {
