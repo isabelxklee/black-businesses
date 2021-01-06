@@ -9,6 +9,7 @@ mapboxgl.accessToken =
 
 class Map extends Component {
   componentDidMount() {
+    const {style, long, lat, zoom} = this.props.app
     const map = new mapboxgl.Map({
       container: 'map',
       style: style,
