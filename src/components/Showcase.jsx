@@ -1,16 +1,18 @@
-import React, {useState} from 'react'
+import React, {Component} from 'react'
 import {IBusinesses} from '../types'
 import BusinessTile from './BusinessTile.jsx'
 import PrimaryTag from './styled-components/PrimaryTag.jsx'
 import Wrapper from './styled-components/Wrapper.jsx'
 
-const Showcase = ({businesses}) => {
-  const [selectedCategory, setSelectedCategory] = useState('all')
+class Showcase extends Component {
+  state = {
+    selectedCategory: 'all',
+  }
 
-  const getAllCategories = () => {
+  getAllCategories = () => {
     const categoryArray = ['all']
 
-    businesses.forEach((business) => {
+    this.props.businesses.forEach((business) => {
       business.categories.forEach((category) => {
         if (!categoryArray.includes(category)) {
           categoryArray.push(category)
@@ -21,37 +23,47 @@ const Showcase = ({businesses}) => {
     return categoryArray
   }
 
-  const filterBusinesses = () => {
-    if (selectedCategory === 'all') {
-      return businesses
+  filterBusinesses = () => {
+    if (this.state.selectedCategory === 'all') {
+      return this.props.businesses
     } else {
-      return businesses.filter((business) => business.categories.includes(selectedCategory))
+      return this.props.businesses.filter((business) =>
+        business.categories.includes(this.state.selectedCategory)
+      )
     }
   }
 
-  return (
-    <Wrapper>
-      <h1>All Businesses</h1>
-      <h3>Filter by category</h3>
-      <section className="category-container">
-        {getAllCategories().map((category) => (
-          <PrimaryTag
-            key={category}
-            id={category}
-            $isSelected={selectedCategory === category}
-            onClick={() => setSelectedCategory(category)}
-          >
-            {category}
-          </PrimaryTag>
-        ))}
-      </section>
-      <section className="business-tile-container">
-        {filterBusinesses().map((business) => (
-          <BusinessTile key={business.id} business={business} />
-        ))}
-      </section>
-    </Wrapper>
-  )
+  handleClick = (event) => {
+    this.setState({
+      selectedCategory: event.target.id,
+    })
+  }
+
+  render() {
+    return (
+      <Wrapper>
+        <h1>All Businesses</h1>
+        <h3>Filter by category</h3>
+        <section className="category-container">
+          {this.getAllCategories().map((category) => (
+            <PrimaryTag
+              key={category}
+              id={category}
+              $isSelected={this.state.selectedCategory === category}
+              onClick={this.handleClick}
+            >
+              {category}
+            </PrimaryTag>
+          ))}
+        </section>
+        <section className="business-tile-container">
+          {this.filterBusinesses().map((business) => (
+            <BusinessTile key={business.id} business={business} />
+          ))}
+        </section>
+      </Wrapper>
+    )
+  }
 }
 
 Showcase.propTypes = {
