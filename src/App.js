@@ -1,5 +1,8 @@
 import React, {Component} from 'react'
-import {BrowserRouter, Switch, Route} from 'react-router-dom'
+import {Switch, Route, withRouter} from 'react-router-dom'
+import {connect} from 'react-redux'
+import {func} from 'prop-types'
+import {IBusinesses} from './types'
 import GlobalStyle from './components/styled-components/GlobalStyle.jsx'
 import Map from './components/Map.jsx'
 import Header from './components/Header.jsx'
@@ -21,9 +24,7 @@ class App extends Component {
     fetch('https://black-businesses-json.herokuapp.com/places')
       .then((response) => response.json())
       .then((placesArray) => {
-        this.setState({
-          places: placesArray,
-        })
+        this.props.setAllPlaces(placesArray)
       })
   }
 
@@ -35,7 +36,7 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
+      <>
         <GlobalStyle />
         <Header />
         <section>
@@ -61,9 +62,31 @@ class App extends Component {
             ))}
           </Switch>
         </section>
-      </BrowserRouter>
+      </>
     )
   }
 }
 
-export default App
+const setAllPlaces = (response) => {
+  return {
+    type: "SET_ALL_PLACES",
+    payload: response
+  }
+}
+
+const mapDispatchToProps = {
+  setAllPlaces: setAllPlaces
+}
+
+const mapStateToProps = (globalState) => {
+  return {
+    places: globalState.places
+  }
+}
+
+App.propTypes = {
+  setAllPlaces: func.isRequired,
+  places: IBusinesses.isRequired
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(App))
