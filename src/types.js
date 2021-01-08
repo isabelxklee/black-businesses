@@ -21,6 +21,5 @@ export const IMapState = exact({
   lat: number.isRequired,
   zoom: number.isRequired,
   map: object,
-  style: string.isRequired,
-  places: arrayOf(object).isRequired,
+  style: string.isRequired
 })

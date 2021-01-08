@@ -16,7 +16,6 @@ class App extends Component {
     lat: 39.8383872,
     zoom: 3.5,
     style: 'mapbox://styles/mapbox/light-v9',
-    places: [],
     map: null,
   }
 
@@ -44,18 +43,17 @@ class App extends Component {
             <Route exact path="/">
               <Map
                 map={this.state.map}
-                places={this.state.places}
                 app={this.state}
                 setMap={this.setMap}
               />
             </Route>
             <Route exact path="/businesses">
-              <Showcase businesses={this.state.places} />
+              <Showcase/>
             </Route>
             <Route exact path="/resources">
               <Resources />
             </Route>
-            {this.state.places.map((business) => (
+            {this.props.places.map((business) => (
               <Route exact path={`/businesses/${business.id}`} key={business.id}>
                 <BusinessPage business={business} />
               </Route>

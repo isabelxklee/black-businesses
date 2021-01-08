@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+import {withRouter} from 'react-router-dom'
+import {connect} from 'react-redux'
 import {IBusinesses} from '../types'
 import BusinessTile from './BusinessTile.jsx'
 import PrimaryTag from './styled-components/PrimaryTag.jsx'
@@ -12,7 +14,7 @@ class Showcase extends Component {
   getAllCategories = () => {
     const categoryArray = ['all']
 
-    this.props.businesses.forEach((business) => {
+    this.props.places.forEach((business) => {
       business.categories.forEach((category) => {
         if (!categoryArray.includes(category)) {
           categoryArray.push(category)
@@ -25,9 +27,9 @@ class Showcase extends Component {
 
   filterBusinesses = () => {
     if (this.state.selectedCategory === 'all') {
-      return this.props.businesses
+      return this.props.places
     } else {
-      return this.props.businesses.filter((business) =>
+      return this.props.places.filter((business) =>
         business.categories.includes(this.state.selectedCategory)
       )
     }
@@ -66,8 +68,14 @@ class Showcase extends Component {
   }
 }
 
-Showcase.propTypes = {
-  businesses: IBusinesses.isRequired,
+const mapStateToProps = (globalState) => {
+  return {
+    places: globalState.places
+  }
 }
 
-export default Showcase
+Showcase.propTypes = {
+  places: IBusinesses.isRequired
+}
+
+export default connect(mapStateToProps, null)(withRouter(Showcase))

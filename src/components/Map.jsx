@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
+import {withRouter} from 'react-router-dom'
+import {connect} from 'react-redux'
 import {func} from 'prop-types'
-import {IBusinesses, IMapState} from '../types'
+import {IMapState, IBusinesses} from '../types'
 import mapboxgl from 'mapbox-gl'
 import PlacesList from './PlacesList.jsx'
 
@@ -43,10 +45,6 @@ class Map extends Component {
     }
   }
 
-  // TODO:
-  // 1. do we need to keep updating the markers each time?
-  // 2. should we keep track of markers to remove old ones if we update?
-
   render() {
     return (
       <section>
@@ -57,6 +55,12 @@ class Map extends Component {
   }
 }
 
+const mapStateToProps = (globalState) => {
+  return {
+    places: globalState.places
+  }
+}
+
 Map.propTypes = {
   places: IBusinesses.isRequired,
   app: IMapState.isRequired,
@@ -64,4 +68,4 @@ Map.propTypes = {
   setMap: func.isRequired,
 }
 
-export default Map
+export default connect(mapStateToProps, null)(withRouter(Map))
