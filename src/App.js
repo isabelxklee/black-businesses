@@ -21,7 +21,7 @@ class App extends Component {
 
   render() {
     return (
-      <>
+      <section className="app">
         <GlobalStyle />
         <Header />
         <section>
@@ -42,7 +42,7 @@ class App extends Component {
             ))}
           </Switch>
         </section>
-      </>
+      </section>
     )
   }
 }
