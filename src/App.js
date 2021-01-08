@@ -11,26 +11,12 @@ import Resources from './components/Resources.jsx'
 import BusinessPage from './components/BusinessPage.jsx'
 
 class App extends Component {
-  state = {
-    long: -101.20869,
-    lat: 39.8383872,
-    zoom: 3.5,
-    style: 'mapbox://styles/mapbox/light-v9',
-    map: null,
-  }
-
   componentDidMount() {
     fetch('https://black-businesses-json.herokuapp.com/places')
       .then((response) => response.json())
       .then((placesArray) => {
         this.props.setAllPlaces(placesArray)
       })
-  }
-
-  setMap = (inputFromChild) => {
-    this.setState({
-      map: inputFromChild,
-    })
   }
 
   render() {
@@ -41,14 +27,10 @@ class App extends Component {
         <section>
           <Switch>
             <Route exact path="/">
-              <Map
-                map={this.state.map}
-                app={this.state}
-                setMap={this.setMap}
-              />
+              <Map />
             </Route>
             <Route exact path="/businesses">
-              <Showcase/>
+              <Showcase />
             </Route>
             <Route exact path="/resources">
               <Resources />
@@ -67,24 +49,24 @@ class App extends Component {
 
 const setAllPlaces = (response) => {
   return {
-    type: "SET_ALL_PLACES",
-    payload: response
+    type: 'SET_ALL_PLACES',
+    payload: response,
   }
 }
 
 const mapDispatchToProps = {
-  setAllPlaces: setAllPlaces
+  setAllPlaces: setAllPlaces,
 }
 
 const mapStateToProps = (globalState) => {
   return {
-    places: globalState.placesInfo.places
+    places: globalState.placesInfo.places,
   }
 }
 
 App.propTypes = {
   setAllPlaces: func.isRequired,
-  places: IBusinesses.isRequired
+  places: IBusinesses.isRequired,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(App))

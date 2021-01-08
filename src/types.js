@@ -16,10 +16,9 @@ export const IBusiness = exact({
 export const IBusinesses = arrayOf(IBusiness)
 
 export const IMapState = exact({
-  app: object,
   long: number.isRequired,
   lat: number.isRequired,
   zoom: number.isRequired,
+  style: string.isRequired,
   map: object,
-  style: string.isRequired
 })

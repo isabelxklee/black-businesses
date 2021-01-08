@@ -6,22 +6,21 @@ import ReactDOM from 'react-dom'
 import App from './App'
 
 const initialStatePlaces = {
-  places: []
+  places: [],
 }
 
 const initialStateMap = {
   long: -101.20869,
   lat: 39.8383872,
   zoom: 3.5,
-  style: 'mapbox://styles/mapbox/light-v9',
-  map: null,
+  style: 'mapbox://styles/mapbox/light-v9'
 }
 
 const placesReducer = (state = initialStatePlaces, action) => {
   if (action.type === 'SET_ALL_PLACES') {
     return {
       ...state,
-      places: action.payload
+      places: action.payload,
     }
   }
 
@@ -32,11 +31,7 @@ const mapReducer = (state = initialStateMap, action) => {
   if (action.type === 'SET_MAP') {
     return {
       ...state,
-      long: action.payload.long,
-      lat: action.payload.lat,
-      zoom: action.payload.zoom,
-      style: action.payload.style,
-      map: action.payload.map
+      map: action.payload,
     }
   }
 
@@ -45,12 +40,15 @@ const mapReducer = (state = initialStateMap, action) => {
 
 const singleReducer = {
   placesInfo: placesReducer,
-  mapInfo: mapReducer
+  mapInfo: mapReducer,
 }
 
 const rootReducer = combineReducers(singleReducer)
 
-const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const store = createStore(
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 
 ReactDOM.render(
   <Provider store={store}>

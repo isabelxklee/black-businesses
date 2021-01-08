@@ -70,12 +70,12 @@ class Showcase extends Component {
 
 const mapStateToProps = (globalState) => {
   return {
-    places: globalState.placesInfo.places
+    places: globalState.placesInfo.places,
   }
 }
 
 Showcase.propTypes = {
-  places: IBusinesses.isRequired
+  places: IBusinesses.isRequired,
 }
 
 export default connect(mapStateToProps, null)(withRouter(Showcase))

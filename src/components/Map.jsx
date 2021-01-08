@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
-import {func} from 'prop-types'
 import {IMapState, IBusinesses} from '../types'
 import mapboxgl from 'mapbox-gl'
 import PlacesList from './PlacesList.jsx'
@@ -10,19 +9,24 @@ mapboxgl.accessToken =
   'pk.eyJ1Ijoic3VwZXJoaSIsImEiOiJkMTcyNzU0M2YzZDQ3YjNjNmQ2NmYwYjcwMmMzZGViMCJ9.RmlVJzqEJ1RqQSvQGL_Jkg'
 
 class Map extends Component {
+  state = {
+    map: null,
+  }
+
   componentDidMount() {
-    const {style, long, lat, zoom} = this.props.app
     const map = new mapboxgl.Map({
       container: 'map',
-      style: style,
-      center: [long, lat],
-      zoom: zoom,
+      style: this.props.style,
+      center: [this.props.long, this.props.lat],
+      zoom: this.props.zoom,
     })
 
     const navigationControl = new mapboxgl.NavigationControl()
     map.addControl(navigationControl)
 
-    this.props.setMap(map)
+    this.setState({
+      map: map
+    })
   }
 
   componentDidUpdate(prevProps) {
@@ -32,7 +36,7 @@ class Map extends Component {
           color: '#ea4a4a',
         })
         marker.setLngLat(place.coordinates)
-        marker.addTo(this.props.map)
+        marker.addTo(this.state.map)
 
         const popup = new mapboxgl.Popup({offset: 0}).setHTML(
           `<h3 class="popup"><a href=${place.website} target="noreferrer_blank" class="popup">${place.title}</a></h3>
@@ -48,7 +52,7 @@ class Map extends Component {
   render() {
     return (
       <section>
-        <PlacesList places={this.props.places} map={this.props.map} />
+        <PlacesList places={this.props.places} map={this.state.map} />
         <section id="map" className="map-container" />
       </section>
     )
@@ -57,15 +61,20 @@ class Map extends Component {
 
 const mapStateToProps = (globalState) => {
   return {
-    places: globalState.placesInfo.places
+    places: globalState.placesInfo.places,
+    long: globalState.mapInfo.long,
+    lat: globalState.mapInfo.lat,
+    zoom: globalState.mapInfo.zoom,
+    style: globalState.mapInfo.style,
   }
 }
 
 Map.propTypes = {
   places: IBusinesses.isRequired,
-  app: IMapState.isRequired,
-  map: IMapState,
-  setMap: func.isRequired,
+  style: IMapState.isRequired,
+  long: IMapState.isRequired,
+  lat: IMapState.isRequired,
+  zoom: IMapState.isRequired
 }
 
 export default connect(mapStateToProps, null)(withRouter(Map))
