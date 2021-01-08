@@ -57,7 +57,7 @@ class Map extends Component {
 
 const mapStateToProps = (globalState) => {
   return {
-    places: globalState.places
+    places: globalState.placesInfo.places
   }
 }
 
