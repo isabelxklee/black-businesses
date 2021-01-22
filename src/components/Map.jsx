@@ -1,15 +1,17 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 import {IBusinesses} from '../types.js'
-import ReactMapGl, {Marker, NavigationControl} from 'react-map-gl'
-// import ReactMapGl, {Marker, NavigationControl, Popup} from 'react-map-gl'
+import ReactMapGl, {NavigationControl} from 'react-map-gl'
 import PlacesList from './PlacesList.jsx'
-import mapPin from '../assets/map-pin.svg'
+import CustomPopup from './CustomPopup.jsx'
+import CustomMarker from './CustomMarker.jsx'
 const accessToken =
   'pk.eyJ1Ijoic3VwZXJoaSIsImEiOiJkMTcyNzU0M2YzZDQ3YjNjNmQ2NmYwYjcwMmMzZGViMCJ9.RmlVJzqEJ1RqQSvQGL_Jkg'
 
 class Map extends Component {
   state = {
     showPopup: false,
+    selectedMarker: null,
     viewport: {
       width: '100%',
       height: 600,
@@ -19,27 +21,19 @@ class Map extends Component {
     },
   }
 
-  handleClick = () => {
-    this.setState((state) => ({
-      showPopup: !state.showPopup,
-    }))
+  // openPopup = (key) => {
+  //   this.setSelectedMarker(key)
+  // }
 
-    // showPopup && (
-    //   <Popup
-    //     latitude={37.78}
-    //     longitude={-122.41}
-    //     closeButton={true}
-    //     closeOnClick={false}
-    //     onClose={() => this.setState({showPopup: false})}
-    //     anchor="top"
-    //   >
-    //     <div>You are here</div>
-    //   </Popup>
-    // )}
+  setSelectedMarker = (place) => {
+    this.setState({
+      selectedMarker: place,
+    })
   }
 
   render() {
-    const {places} = this.props
+    const {places, selectedMarker} = this.props
+    console.log(selectedMarker)
 
     return (
       <div>
@@ -55,17 +49,14 @@ class Map extends Component {
           <div style={{position: 'absolute', right: 0}}>
             <NavigationControl showCompass={false} />
           </div>
+          {selectedMarker && (
+            <CustomPopup
+              place={selectedMarker}
+              // closePopup={this.closePopup}
+            />
+          )}
           {places.map((place) => (
-            <Marker
-              key={place.id}
-              latitude={place.coordinates[1]}
-              longitude={place.coordinates[0]}
-              offsetLeft={-20}
-              offsetTop={-10}
-              onClick={this.handleClick}
-            >
-              <img src={mapPin} />
-            </Marker>
+            <CustomMarker key={place.id} place={place} setSelectedMarker={this.setSelectedMarker} />
           ))}
         </ReactMapGl>
       </div>
@@ -75,6 +66,7 @@ class Map extends Component {
 
 Map.propTypes = {
   places: IBusinesses.isRequired,
+  selectedMarker: PropTypes.object,
 }
 
 export default Map
