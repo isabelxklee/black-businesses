@@ -103,6 +103,10 @@ const GlobalStyle = createGlobalStyle`
     text-align: center;
   }
 
+  div.hero-text {
+    margin: 100px;
+  }
+
   div.map-header {
     text-align: center;
     padding: 20px 0;
