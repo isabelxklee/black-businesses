@@ -138,6 +138,14 @@ const GlobalStyle = createGlobalStyle`
 
   div.resources-page {
     padding: 80px 100px;
+    background-color: #FCDFDD;
+  }
+
+  div.resource-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 85%;
+    margin-top: 80px;
   }
 
   img.business-page {

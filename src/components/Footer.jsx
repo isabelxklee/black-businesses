@@ -3,6 +3,7 @@ import tileDivider from '../assets/tile-divider.svg'
 
 const Footer = () => (
   <footer>
+    <img src={tileDivider} className="tile-divider" />
     <div className="footer-message">
       <h3>Have a website to add to the directory?</h3>
       <p>
