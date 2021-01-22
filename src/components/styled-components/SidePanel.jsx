@@ -7,8 +7,8 @@ const SidePanel = styled.section`
   overflow: auto;
   position: absolute;
   left: 1rem;
-  bottom: 1rem;
   height: 70%;
+  margin-top: 40px;
   border-radius: 0.6rem;
   border: 3px solid #ea4a4a;
 

@@ -1,15 +1,9 @@
 import {createGlobalStyle} from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Calistoga&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
-
   .map-container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
+    position: relative;
+    height: 636px;
     z-index: -1;
   }
 
@@ -34,8 +28,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 60px;
     margin: 0;
+  }
+
+  h2 {
+    font-size: 40px;
   }
 
   h3 {
@@ -83,6 +81,31 @@ const GlobalStyle = createGlobalStyle`
 
   img.tile.right {
     right: 0;
+  }
+
+  img.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  div.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  div.hero-section {
+    margin-top: 32px;
+  }
+
+  div.hero-2 {
+    background-color: #FCDFDD;
+    text-align: center;
+  }
+
+  div.map-header {
+    text-align: center;
+    padding: 20px 0;
   }
 
   img.business-page {

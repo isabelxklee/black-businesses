@@ -25,7 +25,7 @@ class Map extends Component {
     map.addControl(navigationControl)
 
     this.setState({
-      map: map
+      map: map,
     })
   }
 
@@ -51,10 +51,13 @@ class Map extends Component {
 
   render() {
     return (
-      <section>
+      <div>
+        <div className="map-header">
+          <h2>Map View</h2>
+        </div>
         <PlacesList places={this.props.places} map={this.state.map} />
-        <section id="map" className="map-container" />
-      </section>
+        <div id="map" className="map-container" />
+      </div>
     )
   }
 }
@@ -74,7 +77,7 @@ Map.propTypes = {
   style: IMapState.isRequired,
   long: IMapState.isRequired,
   lat: IMapState.isRequired,
-  zoom: IMapState.isRequired
+  zoom: IMapState.isRequired,
 }
 
 export default connect(mapStateToProps, null)(withRouter(Map))
