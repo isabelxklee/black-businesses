@@ -6,7 +6,7 @@ const Title = styled.h3`
   margin: 1rem;
   font-weight: 600;
   font-size: 1.6rem;
-  @media only screen and (max-width: 700px) {
+  @media (max-width: 700px) {
     margin: 0.6rem 0;
     font-size: 1.2rem;
   }

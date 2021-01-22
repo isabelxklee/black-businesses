@@ -8,12 +8,12 @@ const TextLink = styled.a`
   margin: 1rem;
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: 900;
+  font-weight: 700;
   cursor: pointer;
   &:hover {
     opacity: 0.5;
   }
-  @media only screen and (max-width: 700px) {
+  @media (max-width: 700px) {
     margin: 0.6rem;
     text-align: center;
     font-size: 1rem;

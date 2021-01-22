@@ -6,7 +6,7 @@ const Navigation = styled.header`
   padding: 1rem 3rem 0;
   display: flex;
 
-  @media only screen and (max-width: 700px) {
+  @media (max-width: 700px) {
     /* height: 4rem;
     padding: 1rem 2rem; */
   }
