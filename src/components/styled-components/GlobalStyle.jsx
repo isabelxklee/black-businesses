@@ -1,6 +1,9 @@
 import {createGlobalStyle} from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Calistoga&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+
   .map-container {
     position: absolute;
     top: 0;
@@ -11,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-weight: 400;
     margin: 0;
     padding: 0;
