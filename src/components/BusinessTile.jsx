@@ -2,7 +2,7 @@ import React from 'react'
 import {IBusiness} from '../types'
 import {Link} from 'react-router-dom'
 import BusinessTags from './BusinessTags'
-import Button from './styled-components/Button.jsx'
+import mapPin from '../assets/map-pin.svg'
 
 const BusinessTile = ({business}) => (
   <div className="business-tile">
@@ -14,17 +14,16 @@ const BusinessTile = ({business}) => (
         <BusinessTags business={business} />
       </div>
       <Link to={`businesses/${business.id}`}>
-        <h3>{business.title}</h3>
+        <h3 className="business-tile-name">{business.title}</h3>
       </Link>
-      <div className="address">
-        <p className="address">{business.address ? business.address : null}</p>
-        <p className="address">
-          {business.city}, {business.state}
-        </p>
-      </div>
-      <Button href={business.website} target="noreferrer_blank">
-        Website
-      </Button>
+      <img src={mapPin} alt="red icon of a map pin" className="map-pin" />
+      <p className="address">
+        {business.city}, {business.state}
+      </p>
+      <p className="description">{business.description}</p>
+      <a href={business.website} target="noreferrer_blank" className="site-link">
+        Visit their site
+      </a>
     </div>
   </div>
 )

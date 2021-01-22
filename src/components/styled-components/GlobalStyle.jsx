@@ -39,6 +39,10 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1.4rem;
   }
 
+  h3.business-tile-name {
+    margin: 20px 0 8px 0
+  }
+
   p {
     margin: 1rem 0;
   }
@@ -97,6 +101,11 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  img.map-pin {
+    position: relative;
+    top: 5px;
   }
 
   div.grid {
@@ -177,6 +186,11 @@ const GlobalStyle = createGlobalStyle`
     color: #CE1E20;
   }
 
+  a.site-link {
+    text-decoration: underline;
+    font-weight: 700;
+  }
+
   a.popup {
     color: white;
     text-decoration: none;
@@ -205,12 +219,13 @@ const GlobalStyle = createGlobalStyle`
     display: none;
   }
 
-  .address {
-    margin: 1rem 0 0.4rem 0;
+  p.address {
+    display: inline-block;
+    margin: 0 10px;
   }
 
-  p.address {
-    margin: 0.2rem 0;
+  p.description {
+    width: 85%;
   }
 
   @media (max-width: 700px) {
