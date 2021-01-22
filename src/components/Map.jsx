@@ -1,7 +1,5 @@
 import React, {Component} from 'react'
-import {withRouter} from 'react-router-dom'
-import {connect} from 'react-redux'
-import {IMapState, IBusinesses} from '../types'
+import {IMapState, IBusinesses} from '../types.js'
 import mapboxgl from 'mapbox-gl'
 import PlacesList from './PlacesList.jsx'
 
@@ -16,9 +14,9 @@ class Map extends Component {
   componentDidMount() {
     const map = new mapboxgl.Map({
       container: 'map',
-      style: this.props.style,
-      center: [this.props.long, this.props.lat],
-      zoom: this.props.zoom,
+      style: this.props.app.appstyle,
+      center: [this.props.app.long, this.props.app.lat],
+      zoom: this.props.app.zoom,
     })
 
     const navigationControl = new mapboxgl.NavigationControl()
@@ -62,22 +60,13 @@ class Map extends Component {
   }
 }
 
-const mapStateToProps = (globalState) => {
-  return {
-    places: globalState.placesInfo.places,
-    long: globalState.mapInfo.long,
-    lat: globalState.mapInfo.lat,
-    zoom: globalState.mapInfo.zoom,
-    style: globalState.mapInfo.style,
-  }
-}
-
 Map.propTypes = {
   places: IBusinesses.isRequired,
   style: IMapState.isRequired,
   long: IMapState.isRequired,
   lat: IMapState.isRequired,
   zoom: IMapState.isRequired,
+  app: IMapState.isRequired,
 }
 
-export default connect(mapStateToProps, null)(withRouter(Map))
+export default Map

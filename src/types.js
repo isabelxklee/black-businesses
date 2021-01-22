@@ -21,4 +21,5 @@ export const IMapState = exact({
   zoom: number.isRequired,
   style: string.isRequired,
   map: object,
+  app: object,
 })
