@@ -1,12 +1,14 @@
 import styled from 'styled-components'
 
 const TextLink = styled.a`
-  color: #ea4a4a;
-  font-family: 'Calistoga', cursive;
-  font-size: 1.2rem;
+  color: #ce1e20;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1rem;
   transition: 0.3s;
   margin: 1rem;
   text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 900;
   cursor: pointer;
   &:hover {
     opacity: 0.5;

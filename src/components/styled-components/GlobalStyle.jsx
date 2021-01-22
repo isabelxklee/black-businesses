@@ -18,7 +18,11 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     margin: 0;
     padding: 0;
-    color: #ea4a4a;
+    color: #CE1E20;
+  }
+
+  body, a {
+    font-family: 'Rubik', sans-serif;
   }
 
   h1,
@@ -31,6 +35,7 @@ const GlobalStyle = createGlobalStyle`
 
   h1 {
     font-size: 3rem;
+    margin: 0;
   }
 
   h3 {
@@ -54,6 +59,30 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: 300px;
     border-radius: 1rem 1rem 0 0;
+  }
+
+  div.header-links {
+    margin: auto;
+    display: flex;
+  }
+
+  img.logo {
+    width: 200px;
+    margin: 0 60px;
+  }
+
+  img.tile {
+    top: 2%;
+    position: absolute;
+    width: 300px;
+  }
+
+  img.tile.left {
+    left: 0;
+  }
+
+  img.tile.right {
+    right: 0;
   }
 
   img.business-page {
@@ -85,7 +114,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
-    border-top-color: #ea4a4a;
+    border-top-color: #CE1E20;
     margin-bottom: 2.4rem;
   }
 
@@ -104,13 +133,13 @@ const GlobalStyle = createGlobalStyle`
     padding: 2rem;
     font-size: 1rem;
     border-radius: 0.2rem;
-    background-color: #ea4a4a;
+    background-color: #CE1E20;
     color: white;
   }
 
   a {
     text-decoration: none;
-    color: #ea4a4a;
+    color: #CE1E20;
   }
 
   a.popup {

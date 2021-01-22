@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import {func} from 'prop-types'
 import {IBusinesses} from './types'
 import GlobalStyle from './components/styled-components/GlobalStyle.jsx'
-import Map from './components/Map.jsx'
+// import Map from './components/Map.jsx'
 import Header from './components/Header.jsx'
 import Showcase from './components/Showcase.jsx'
 import Resources from './components/Resources.jsx'
@@ -26,9 +26,9 @@ class App extends Component {
         <Header />
         <section>
           <Switch>
-            <Route exact path="/">
+            {/* <Route exact path="/">
               <Map />
-            </Route>
+            </Route> */}
             <Route exact path="/businesses">
               <Showcase />
             </Route>
