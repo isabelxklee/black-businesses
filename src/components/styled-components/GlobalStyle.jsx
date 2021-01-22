@@ -113,7 +113,7 @@ const GlobalStyle = createGlobalStyle`
     grid-template-columns: repeat(2, 1fr);
   }
 
-  div.hero- {
+  div.hero-section {
     margin-top: 32px;
   }
 
@@ -134,6 +134,10 @@ const GlobalStyle = createGlobalStyle`
   div.map-header {
     text-align: center;
     padding: 20px 0;
+  }
+
+  div.resources-page {
+    padding: 80px 100px;
   }
 
   img.business-page {

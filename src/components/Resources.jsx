@@ -1,22 +1,30 @@
 import React from 'react'
-import Wrapper from './styled-components/Wrapper.jsx'
 
 const Resources = () => (
-  <Wrapper>
-    <h1>Resources</h1>
-    <ul>
-      <li>
-        <a href="https://www.blackownedbrooklyn.com" target="noreferrer_blank">
-          Black-Owned Brooklyn
+  <div className="resources-page">
+    <h1>Resources to help you get started: </h1>
+    <div className="resource-container">
+      <div className="resource">
+        <h3>Black-Owned Brooklyn</h3>
+        <p className="description">Optional brief description of what the website is goes here.</p>
+        <a
+          href="https://www.blackownedbrooklyn.com"
+          target="noreferrer_blank"
+          className="site-link"
+        >
+          Visit site
         </a>
-      </li>
-      <li>
-        <a href="https://trippin.world/guides" target="noreferrer_blank">
-          Trippin World Guides
+      </div>
+
+      <div className="resource">
+        <h3>Trippin World Guides</h3>
+        <p className="description">Optional brief description of what the website is goes here.</p>
+        <a href="https://trippin.world/guides" target="noreferrer_blank" className="site-link">
+          Visit site
         </a>
-      </li>
-    </ul>
-  </Wrapper>
+      </div>
+    </div>
+  </div>
 )
 
 export default Resources

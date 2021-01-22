@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const PrimaryTag = styled.nav`
   background-color: ${({$isSelected}) => ($isSelected ? '#ce1e20' : '#F7CAC7')};
-  color: ${({$isSelected}) => ($isSelected ? '#F7CAC7' : '#ce1e20')};
+  color: ${({$isSelected}) => ($isSelected ? '#FFF' : '#ce1e20')};
   font-weight: 700;
   border-radius: 2rem;
   padding: 0.6rem 1.4rem;
