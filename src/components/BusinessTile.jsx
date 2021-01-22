@@ -2,32 +2,31 @@ import React from 'react'
 import {IBusiness} from '../types'
 import {Link} from 'react-router-dom'
 import BusinessTags from './BusinessTags'
-import Card from './styled-components/Card.jsx'
 import Button from './styled-components/Button.jsx'
 
 const BusinessTile = ({business}) => (
-  <Card>
+  <div className="business-tile">
     <Link to={`businesses/${business.id}`}>
-      <img src={business.image_url} alt={business.title} className="tile-image" />
+      <img src={business.image_url} alt={business.title} className="business-tile-image" />
     </Link>
-    <section className="tile-info">
-      <section className="category-container">
+    <div className="business-tile-info">
+      <div className="category-container">
         <BusinessTags business={business} />
-      </section>
+      </div>
       <Link to={`businesses/${business.id}`}>
         <h3>{business.title}</h3>
       </Link>
-      <section className="address">
+      <div className="address">
         <p className="address">{business.address ? business.address : null}</p>
         <p className="address">
           {business.city}, {business.state}
         </p>
-      </section>
+      </div>
       <Button href={business.website} target="noreferrer_blank">
         Website
       </Button>
-    </section>
-  </Card>
+    </div>
+  </div>
 )
 
 BusinessTile.propTypes = {

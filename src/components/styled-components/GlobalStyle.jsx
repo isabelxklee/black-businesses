@@ -45,17 +45,20 @@ const GlobalStyle = createGlobalStyle`
 
   .business-tile-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-    grid-column-gap: 2rem;
-    grid-row-gap: 2rem;
-    margin: 4rem 0;
+    grid-template-columns: repeat(4, 1fr);
+    grid-row-gap: 100px;
+    margin: 100px;
   }
 
-  .tile-image {
+  .business-tile {
+    text-align: left;
+  }
+
+  .business-tile-image {
     object-fit: cover;
-    width: 100%;
-    height: 300px;
-    border-radius: 1rem 1rem 0 0;
+    width: 284px;
+    height: 284px;
+    border-radius: 10px;
   }
 
   footer {
@@ -70,6 +73,10 @@ const GlobalStyle = createGlobalStyle`
   img.logo {
     width: 200px;
     margin: 0 60px;
+  }
+
+  img.tile-divider {
+    width: 100%;
   }
 
   img.tile {
@@ -97,7 +104,7 @@ const GlobalStyle = createGlobalStyle`
     grid-template-columns: repeat(2, 1fr);
   }
 
-  div.hero-section {
+  div.hero- {
     margin-top: 32px;
   }
 
@@ -126,7 +133,7 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 0.4rem;
   }
 
-  section.business-page {
+  .business-page {
     display: flex;
   }
 
@@ -139,8 +146,8 @@ const GlobalStyle = createGlobalStyle`
     padding: 2rem;
   }
 
-  .tile-info {
-    padding: 1rem 2rem;
+  .business-tile-info {
+    padding: 16px 0;
   }
 
   .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
@@ -198,7 +205,7 @@ const GlobalStyle = createGlobalStyle`
     display: none;
   }
 
-  section.address {
+  .address {
     margin: 1rem 0 0.4rem 0;
   }
 
@@ -224,16 +231,16 @@ const GlobalStyle = createGlobalStyle`
       display: none;
     }
 
-    section.business-page {
+    .business-page {
       display: block;
       padding: 2rem 0 4rem 0;
     }
 
-    section.column {
+    .column {
       padding: 0;
     }
 
-    section.business-tile-container {
+    .business-tile-container {
       grid-template-columns: 1fr;
     } 
 

@@ -4,7 +4,6 @@ import {connect} from 'react-redux'
 import {IBusinesses} from '../types'
 import BusinessTile from './BusinessTile.jsx'
 import PrimaryTag from './styled-components/PrimaryTag.jsx'
-import Wrapper from './styled-components/Wrapper.jsx'
 import CategoryContainer from './styled-components/CategoryContainer.jsx'
 
 class Showcase extends Component {
@@ -44,7 +43,7 @@ class Showcase extends Component {
 
   render() {
     return (
-      <div>
+      <div className="showcase">
         <CategoryContainer>
           <h1>Browse all businesses</h1>
           <p>Filter by category: </p>
@@ -59,13 +58,11 @@ class Showcase extends Component {
             </PrimaryTag>
           ))}
         </CategoryContainer>
-        <Wrapper>
-          <div className="business-tile-container">
-            {this.filterBusinesses().map((business) => (
-              <BusinessTile key={business.id} business={business} />
-            ))}
-          </div>
-        </Wrapper>
+        <div className="business-tile-container">
+          {this.filterBusinesses().map((business) => (
+            <BusinessTile key={business.id} business={business} />
+          ))}
+        </div>
       </div>
     )
   }

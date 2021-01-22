@@ -10,7 +10,7 @@ const Footer = () => (
         your lunch, email us at submit@black-owned-businesses.com
       </p>
     </div>
-    <img src={tileDivider} />
+    <img src={tileDivider} className="tile-divider" />
   </footer>
 )
 
