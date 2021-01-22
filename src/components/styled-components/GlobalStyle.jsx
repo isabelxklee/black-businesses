@@ -143,11 +143,6 @@ const GlobalStyle = createGlobalStyle`
     padding: 1rem 2rem;
   }
 
-  .category-container {
-    display: block;
-    margin: 0 0 1.2rem 0;
-  }
-
   .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
     border-top-color: #CE1E20;
     margin-bottom: 2.4rem;
@@ -211,7 +206,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0.2rem 0;
   }
 
-  @media only screen and (max-width: 700px) {
+  @media (max-width: 700px) {
     h1 {
       font-size: 2.4rem;
       margin: 1rem 0;
@@ -223,11 +218,6 @@ const GlobalStyle = createGlobalStyle`
 
     p {
       line-height: 1.4rem;
-    }
-
-    .category-container {
-      display: block;
-      width: auto;
     }
 
     .mapboxgl-ctrl-group:not(:empty) {
