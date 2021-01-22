@@ -4,9 +4,9 @@ import {connect} from 'react-redux'
 import {func} from 'prop-types'
 import {IBusinesses} from './types'
 import GlobalStyle from './components/styled-components/GlobalStyle.jsx'
-import Map from './components/Map.jsx'
-import HeroSection from './components/HeroSection.jsx'
+import Home from './components/Home.jsx'
 import Header from './components/Header.jsx'
+import Footer from './components/Footer.jsx'
 import Showcase from './components/Showcase.jsx'
 import Resources from './components/Resources.jsx'
 import BusinessPage from './components/BusinessPage.jsx'
@@ -25,11 +25,10 @@ class App extends Component {
       <section className="app">
         <GlobalStyle />
         <Header />
-        <HeroSection />
         <div>
           <Switch>
             <Route exact path="/">
-              <Map />
+              <Home />
             </Route>
             <Route exact path="/businesses">
               <Showcase />
@@ -44,6 +43,7 @@ class App extends Component {
             ))}
           </Switch>
         </div>
+        <Footer />
       </section>
     )
   }

@@ -2,9 +2,8 @@ import {createGlobalStyle} from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   .map-container {
-    position: relative;
     height: 636px;
-    z-index: -1;
+    width: 100%;
   }
 
   body {
@@ -59,6 +58,10 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 1rem 1rem 0 0;
   }
 
+  footer {
+    bottom: 0;
+  }
+
   div.header-links {
     margin: auto;
     display: flex;
@@ -98,9 +101,14 @@ const GlobalStyle = createGlobalStyle`
     margin-top: 32px;
   }
 
-  div.hero-2 {
+  div.hero-2, div.footer-message {
     background-color: #FCDFDD;
     text-align: center;
+  }
+
+  div.footer-message {
+    padding: 84px 300px;
+    margin: 80px 0;
   }
 
   div.hero-text {
@@ -147,8 +155,6 @@ const GlobalStyle = createGlobalStyle`
 
   .mapboxgl-ctrl-group:not(:empty) {
     right: 0;
-    bottom: 0;
-    position: fixed;
     margin: 1rem;
   }
 
@@ -191,13 +197,6 @@ const GlobalStyle = createGlobalStyle`
 
   ul li:last-child {
     border: none;
-  }
-
-  .mapboxgl-ctrl-group:not(:empty) {
-    right: 0;
-    bottom: 0;
-    position: fixed;
-    margin: 1rem;
   }
 
   .mapboxgl-ctrl.mapboxgl-ctrl-attrib {
