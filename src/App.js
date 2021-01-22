@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Switch, Route} from 'react-router-dom'
-import {IMapState, IBusinesses} from './types'
+import {IBusinesses} from './types'
 import GlobalStyle from './components/styled-components/GlobalStyle.jsx'
 import Home from './components/Home.jsx'
 import Header from './components/Header.jsx'
@@ -36,7 +36,7 @@ class App extends Component {
         <div>
           <Switch>
             <Route exact path="/">
-              <Home places={this.state.places} app={this.state} />
+              <Home places={this.state.places} />
             </Route>
             <Route exact path="/businesses">
               <Showcase />
@@ -60,6 +60,5 @@ class App extends Component {
 export default App
 
 App.propTypes = {
-  places: IBusinesses.isRequired,
-  app: IMapState.isRequired,
+  places: IBusinesses,
 }

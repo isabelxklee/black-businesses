@@ -1,60 +1,73 @@
 import React, {Component} from 'react'
-import {IMapState, IBusinesses} from '../types.js'
-import mapboxgl from 'mapbox-gl'
+import {IBusinesses} from '../types.js'
+import ReactMapGl, {Marker, NavigationControl} from 'react-map-gl'
+// import ReactMapGl, {Marker, NavigationControl, Popup} from 'react-map-gl'
 import PlacesList from './PlacesList.jsx'
-
-mapboxgl.accessToken =
+import mapPin from '../assets/map-pin.svg'
+const accessToken =
   'pk.eyJ1Ijoic3VwZXJoaSIsImEiOiJkMTcyNzU0M2YzZDQ3YjNjNmQ2NmYwYjcwMmMzZGViMCJ9.RmlVJzqEJ1RqQSvQGL_Jkg'
 
 class Map extends Component {
   state = {
-    map: null,
+    showPopup: false,
+    viewport: {
+      width: '100%',
+      height: 600,
+      latitude: 39.0626831,
+      longitude: -101.642682,
+      zoom: 2,
+    },
   }
 
-  componentDidMount() {
-    const map = new mapboxgl.Map({
-      container: 'map',
-      style: this.props.app.appstyle,
-      center: [this.props.app.long, this.props.app.lat],
-      zoom: this.props.app.zoom,
-    })
+  handleClick = () => {
+    this.setState((state) => ({
+      showPopup: !state.showPopup,
+    }))
 
-    const navigationControl = new mapboxgl.NavigationControl()
-    map.addControl(navigationControl)
-
-    this.setState({
-      map: map,
-    })
-  }
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.places !== this.props.places) {
-      this.props.places.map((place) => {
-        const marker = new mapboxgl.Marker({
-          color: '#ea4a4a',
-        })
-        marker.setLngLat(place.coordinates)
-        marker.addTo(this.state.map)
-
-        const popup = new mapboxgl.Popup({offset: 0}).setHTML(
-          `<h3 class="popup"><a href=${place.website} target="noreferrer_blank" class="popup">${place.title}</a></h3>
-                <p class="popup">${place.address}</p>
-                <p class="popup">${place.city}, ${place.state}</p>`
-        )
-
-        marker.setPopup(popup)
-      })
-    }
+    // showPopup && (
+    //   <Popup
+    //     latitude={37.78}
+    //     longitude={-122.41}
+    //     closeButton={true}
+    //     closeOnClick={false}
+    //     onClose={() => this.setState({showPopup: false})}
+    //     anchor="top"
+    //   >
+    //     <div>You are here</div>
+    //   </Popup>
+    // )}
   }
 
   render() {
+    const {places} = this.props
+
     return (
       <div>
         <div className="map-header">
           <h2>Map View</h2>
         </div>
-        <PlacesList places={this.props.places} map={this.state.map} />
-        <div id="map" className="map-container" />
+        <PlacesList places={places} map={this.state.map} />
+        <ReactMapGl
+          {...this.state.viewport}
+          mapboxApiAccessToken={accessToken}
+          onViewportChange={(viewport) => this.setState({viewport})}
+        >
+          <div style={{position: 'absolute', right: 0}}>
+            <NavigationControl showCompass={false} />
+          </div>
+          {places.map((place) => (
+            <Marker
+              key={place.id}
+              latitude={place.coordinates[1]}
+              longitude={place.coordinates[0]}
+              offsetLeft={-20}
+              offsetTop={-10}
+              onClick={this.handleClick}
+            >
+              <img src={mapPin} />
+            </Marker>
+          ))}
+        </ReactMapGl>
       </div>
     )
   }
@@ -62,11 +75,6 @@ class Map extends Component {
 
 Map.propTypes = {
   places: IBusinesses.isRequired,
-  style: IMapState.isRequired,
-  long: IMapState.isRequired,
-  lat: IMapState.isRequired,
-  zoom: IMapState.isRequired,
-  app: IMapState.isRequired,
 }
 
 export default Map
