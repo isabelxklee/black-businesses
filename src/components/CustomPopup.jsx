@@ -11,7 +11,14 @@ const CustomPopup = ({place, closePopup}) => {
       closeButton={true}
       offsetTop={10}
     >
-      <p>{place.title}</p>
+      <h3>{place.title}</h3>
+      <p>{place.address}</p>
+      <p>
+        {place.city}, {place.state}
+      </p>
+      <a href={place.website} target="noreferrer_blank" className="site-link map">
+        Visit their site
+      </a>
     </Popup>
   )
 }

@@ -182,11 +182,12 @@ const GlobalStyle = createGlobalStyle`
   }
 
   div.mapboxgl-popup-content {
-    padding: 2rem;
-    font-size: 1rem;
-    border-radius: 0.2rem;
+    padding: 16px;
+    font-size: 16px;
+    border-radius: 5px;
     background-color: #CE1E20;
     color: white;
+    z-index: 100;
   }
 
   a {
@@ -197,6 +198,10 @@ const GlobalStyle = createGlobalStyle`
   a.site-link {
     text-decoration: underline;
     font-weight: 700;
+  }
+
+  a.site-link.map {
+    color: white;
   }
 
   a.popup {
