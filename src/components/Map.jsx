@@ -33,16 +33,29 @@ class Map extends Component {
     })
   }
 
+  flyToLocation = (long, lat, zoom) => {
+    this.setState({
+      viewport: {
+        width: '100%',
+        height: 600,
+        latitude: lat,
+        longitude: long,
+        zoom: zoom,
+      },
+    })
+  }
+
   render() {
     const {places} = this.props
-    const {selectedMarker, map} = this.state
+    const {selectedMarker} = this.state
 
     return (
       <div>
         <div className="map-header">
           <h2>Map View</h2>
         </div>
-        <PlacesList places={places} map={map} />
+        <PlacesList places={places} flyToLocation={this.flyToLocation} />
+        <button onClick={this.flyToLocation}>fly to</button>
         <ReactMapGl
           {...this.state.viewport}
           mapboxApiAccessToken={accessToken}
@@ -64,6 +77,7 @@ class Map extends Component {
 Map.propTypes = {
   places: IBusinesses.isRequired,
   selectedMarker: PropTypes.object,
+  flyToLocation: PropTypes.func,
 }
 
 export default Map
