@@ -39,7 +39,7 @@ class App extends Component {
               <Home places={this.state.places} />
             </Route>
             <Route exact path="/businesses">
-              <Showcase />
+              <Showcase places={this.state.places} />
             </Route>
             <Route exact path="/resources">
               <Resources />

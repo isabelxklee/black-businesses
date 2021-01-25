@@ -3,11 +3,10 @@ import styled from 'styled-components'
 const SidePanel = styled.section`
   background-color: white;
   z-index: 1;
-  width: 20%;
   overflow: auto;
   position: absolute;
   left: 1rem;
-  height: 70%;
+  height: 50%;
   margin-top: 40px;
   border-radius: 0.6rem;
   border: 3px solid #ea4a4a;
