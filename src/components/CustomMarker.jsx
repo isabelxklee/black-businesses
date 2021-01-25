@@ -4,6 +4,10 @@ import PropTypes from 'prop-types'
 import {ReactComponent as MapPin} from '../assets/map-pin.svg'
 
 const CustomMarker = ({place, setSelectedMarker}) => {
+  const handleClick = () => {
+    setSelectedMarker(place)
+  }
+
   return (
     <Marker
       latitude={place.coordinates[1]}
@@ -11,7 +15,7 @@ const CustomMarker = ({place, setSelectedMarker}) => {
       offsetLeft={-20}
       offsetTop={-10}
     >
-      <div className="marker" onClick={() => setSelectedMarker(place)}>
+      <div className="marker" onClick={handleClick}>
         <MapPin />
       </div>
     </Marker>

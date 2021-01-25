@@ -1,9 +1,9 @@
 import React from 'react'
-import tileDivider from '../assets/tile-divider.svg'
+import {ReactComponent as TileDivider} from '../assets/tile-divider.svg'
 
 const Footer = () => (
   <footer>
-    <img src={tileDivider} className="tile-divider" />
+    <TileDivider />
     <div className="footer-message">
       <h3>Have a website to add to the directory?</h3>
       <p>
@@ -11,7 +11,7 @@ const Footer = () => (
         your lunch, email us at submit@black-owned-businesses.com
       </p>
     </div>
-    <img src={tileDivider} className="tile-divider" />
+    <TileDivider />
   </footer>
 )
 

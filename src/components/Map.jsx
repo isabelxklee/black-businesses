@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import {IBusinesses} from '../types.js'
 import ReactMapGl, {NavigationControl} from 'react-map-gl'
 import PlacesList from './PlacesList.jsx'
-import CustomPopup from './CustomPopup.jsx'
+// import CustomPopup from './CustomPopup.jsx'
 import CustomMarker from './CustomMarker.jsx'
 const accessToken =
   'pk.eyJ1Ijoic3VwZXJoaSIsImEiOiJkMTcyNzU0M2YzZDQ3YjNjNmQ2NmYwYjcwMmMzZGViMCJ9.RmlVJzqEJ1RqQSvQGL_Jkg'
@@ -32,13 +32,16 @@ class Map extends Component {
   }
 
   render() {
-    const {places, selectedMarker} = this.props
+    const {places} = this.props
+    const {map} = this.state
+    console.log(this.state.selectedMarker)
+
     return (
       <div>
         <div className="map-header">
           <h2>Map View</h2>
         </div>
-        <PlacesList places={places} map={this.state.map} />
+        <PlacesList places={places} map={map} />
         <ReactMapGl
           {...this.state.viewport}
           mapboxApiAccessToken={accessToken}
@@ -47,12 +50,12 @@ class Map extends Component {
           <div style={{position: 'absolute', right: 0}}>
             <NavigationControl showCompass={false} />
           </div>
-          {selectedMarker && (
+          {/* {selectedMarker && (
             <CustomPopup
               place={selectedMarker}
               // closePopup={this.closePopup}
             />
-          )}
+          )} */}
           {places.map((place) => (
             <CustomMarker key={place.id} place={place} setSelectedMarker={this.setSelectedMarker} />
           ))}

@@ -1,5 +1,5 @@
 import React from 'react'
-import tileDivider from '../assets/tile-divider.svg'
+import {ReactComponent as TileDivider} from '../assets/tile-divider.svg'
 import heroImage from '../assets/hero-image.png'
 
 const HeroSection = () => (
@@ -19,7 +19,7 @@ const HeroSection = () => (
       </div>
     </div>
 
-    <img src={tileDivider} className="tile-divider" />
+    <TileDivider />
   </div>
 )
 

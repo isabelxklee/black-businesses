@@ -79,10 +79,6 @@ const GlobalStyle = createGlobalStyle`
     margin: 0 60px;
   }
 
-  img.tile-divider {
-    width: 100%;
-  }
-
   img.tile {
     top: 2%;
     position: absolute;
