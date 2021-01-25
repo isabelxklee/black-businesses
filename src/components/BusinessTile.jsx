@@ -1,6 +1,6 @@
 import React from 'react'
-import {IBusiness} from '../types'
 import {Link} from 'react-router-dom'
+import {IBusiness} from '../types'
 import BusinessTags from './BusinessTags'
 import mapPin from '../assets/map-pin.svg'
 

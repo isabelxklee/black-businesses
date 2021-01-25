@@ -8,7 +8,7 @@ const CustomPopup = ({place, closePopup}) => {
       latitude={place.coordinates[1]}
       longitude={place.coordinates[0]}
       onClose={closePopup}
-      closeButton={true}
+      closeButton={false}
       offsetTop={10}
     >
       <h3>{place.title}</h3>

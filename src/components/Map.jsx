@@ -17,7 +17,7 @@ class Map extends Component {
       height: 600,
       latitude: 39.0626831,
       longitude: -101.642682,
-      zoom: 4,
+      zoom: 3,
     },
   }
 
@@ -55,7 +55,6 @@ class Map extends Component {
           <h2>Map View</h2>
         </div>
         <PlacesList places={places} flyToLocation={this.flyToLocation} />
-        <button onClick={this.flyToLocation}>fly to</button>
         <ReactMapGl
           {...this.state.viewport}
           mapboxApiAccessToken={accessToken}
