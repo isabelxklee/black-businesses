@@ -19,7 +19,7 @@ const HeroSection = () => (
       </div>
     </div>
 
-    <img src={tileDivider} className="tile-divider"/>
+    <img src={tileDivider} className="tile-divider" />
   </div>
 )
 
