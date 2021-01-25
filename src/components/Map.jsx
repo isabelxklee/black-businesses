@@ -17,7 +17,7 @@ class Map extends Component {
       height: 600,
       latitude: 39.0626831,
       longitude: -101.642682,
-      zoom: 2,
+      zoom: 4,
     },
   }
 
@@ -33,8 +33,6 @@ class Map extends Component {
 
   render() {
     const {places, selectedMarker} = this.props
-    console.log(selectedMarker)
-
     return (
       <div>
         <div className="map-header">

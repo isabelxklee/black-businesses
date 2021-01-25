@@ -1,7 +1,7 @@
 import React from 'react'
 import {Marker} from 'react-map-gl'
 import PropTypes from 'prop-types'
-import mapPin from '../assets/map-pin.svg'
+import {ReactComponent as MapPin} from '../assets/map-pin.svg'
 
 const CustomMarker = ({place, setSelectedMarker}) => {
   return (
@@ -12,7 +12,7 @@ const CustomMarker = ({place, setSelectedMarker}) => {
       offsetTop={-10}
     >
       <div className="marker" onClick={() => setSelectedMarker(place)}>
-        <img src={mapPin} />
+        <MapPin />
       </div>
     </Marker>
   )
