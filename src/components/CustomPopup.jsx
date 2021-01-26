@@ -16,9 +16,6 @@ const CustomPopup = ({place, closePopup}) => {
       <p>
         {place.city}, {place.state}
       </p>
-      <a href={place.website} target="noreferrer_blank" className="site-link map">
-        Visit their site
-      </a>
     </Popup>
   )
 }

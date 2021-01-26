@@ -1,12 +1,6 @@
 import {createGlobalStyle} from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
-  .map-container {
-    height: 636px;
-    width: 100%;
-    z-index: -100;
-  }
-
   body {
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
@@ -37,26 +31,24 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h3 {
-    font-size: 1.4rem;
-  }
-
-  h3.business-tile-name {
-    margin: 20px 0 8px 0
+    font-size: 30px;
+    margin: 16px 0;
   }
 
   p {
-    margin: 1rem 0;
+    margin: 16px 0;
   }
 
+  a {
+    text-decoration: none;
+    color: #CE1E20;
+  }
+  
   .business-tile-image {
     object-fit: cover;
     width: 284px;
     height: 284px;
     border-radius: 10px;
-  }
-
-  footer {
-    bottom: 0;
   }
 
   div.header-links {
@@ -103,14 +95,9 @@ const GlobalStyle = createGlobalStyle`
     margin-top: 32px;
   }
 
-  div.hero-2, div.footer-message {
+  div.hero-2 {
     background-color: #FCDFDD;
     text-align: center;
-  }
-
-  div.footer-message {
-    padding: 84px 300px;
-    margin: 80px 0;
   }
 
   div.hero-text {
@@ -120,18 +107,6 @@ const GlobalStyle = createGlobalStyle`
   div.map-header {
     text-align: center;
     padding: 20px 0;
-  }
-
-  div.resources-page {
-    padding: 80px 100px;
-    background-color: #FCDFDD;
-  }
-
-  div.resource-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 85%;
-    margin-top: 80px;
   }
 
   img.business-page {
@@ -151,10 +126,6 @@ const GlobalStyle = createGlobalStyle`
   .column {
     flex: 50%;
     padding: 2rem;
-  }
-
-  .business-tile-info {
-    padding: 16px 0;
   }
 
   .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
@@ -178,20 +149,6 @@ const GlobalStyle = createGlobalStyle`
     background-color: #CE1E20;
     color: white;
     z-index: 2;
-  }
-
-  a {
-    text-decoration: none;
-    color: #CE1E20;
-  }
-
-  a.site-link {
-    text-decoration: underline;
-    font-weight: 700;
-  }
-
-  a.site-link.map {
-    color: white;
   }
 
   a.popup {
@@ -226,15 +183,6 @@ const GlobalStyle = createGlobalStyle`
     display: none;
   }
 
-  p.address {
-    display: inline-block;
-    margin: 0 10px;
-  }
-
-  p.description {
-    width: 85%;
-  }
-
   @media (max-width: 700px) {
     h1 {
       font-size: 2.4rem;
@@ -242,11 +190,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     h3 {
-      font-size: 1.2rem;
-    }
-
-    p {
-      line-height: 1.4rem;
+      font-size: 20px;
     }
 
     .mapboxgl-ctrl-group:not(:empty) {
@@ -266,24 +210,9 @@ const GlobalStyle = createGlobalStyle`
       width: 100%;
     }
 
-    .business-tile-info {
-      padding: 0;
-    }
-
     .tile-info {
       padding: 1rem;
     }
-
-    div.footer-message {
-      padding: 40px 30px;
-      margin: 0;
-    }
-
-    div.resource-container {
-    grid-template-columns: repeat(2, 1fr);
-    width: 100%;
-    margin: 60px 0;
-  }
   }
 `
 

@@ -3,24 +3,24 @@ import {Link} from 'react-router-dom'
 import logo from '../assets/logo.svg'
 import tile from '../assets/tiles.svg'
 import Navigation from './styled-components/Navigation.jsx'
-import TextLink from './styled-components/TextLink.jsx'
+import NavLink from './styled-components/NavLink.jsx'
 
 const Header = () => (
   <Navigation>
     <img src={tile} alt="Repeating red and white tile pattern" className="tile left" />
     <div className="header-links">
-      <Link to="/" component={TextLink}>
+      <Link to="/" component={NavLink}>
         Map
       </Link>
-      <Link to="/businesses" component={TextLink}>
+      <Link to="/businesses" component={NavLink}>
         Browse
       </Link>
       <h1>
-        <Link to="/" component={TextLink}>
+        <Link to="/" component={NavLink}>
           <img src={logo} alt="Logo for Black owned food and drink directory" className="logo" />
         </Link>
       </h1>
-      <Link to="/resources" component={TextLink}>
+      <Link to="/resources" component={NavLink}>
         Learn
       </Link>
     </div>
