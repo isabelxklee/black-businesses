@@ -9,6 +9,7 @@ const Navigation = styled.header`
   @media (max-width: 700px) {
     /* height: 4rem;
     padding: 1rem 2rem; */
+    display: none;
   }
 `
 

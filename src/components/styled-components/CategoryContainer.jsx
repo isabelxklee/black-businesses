@@ -6,6 +6,7 @@ const CategoryContainer = styled.div`
 
   @media (max-width: 700px) {
     margin: auto;
+    padding: 40px 30px;
   }
 `
 

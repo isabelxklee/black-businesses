@@ -275,10 +275,35 @@ const GlobalStyle = createGlobalStyle`
 
     .business-tile-container {
       grid-template-columns: 1fr;
+      grid-row-gap: 40px;
+      padding: 40px 30px;
+      margin: 0;
     } 
+
+    .business-tile-image {
+      width: 100%;
+    }
+
+    .business-tile-info {
+      padding: 0;
+    }
+
+    .business-tile {
+      border-bottom: 3px solid #CE1E20;
+      padding: 16px 0 40px 0;
+    }
+
+    .business-tile:last-child {
+      border-bottom: none;
+    }
 
     .tile-info {
       padding: 1rem;
+    }
+
+    div.footer-message {
+      padding: 40px 30px;
+      margin: 0;
     }
   }
 `
