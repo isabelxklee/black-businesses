@@ -10,6 +10,7 @@ const CustomPopup = ({place, closePopup}) => {
       onClose={closePopup}
       closeButton={false}
       offsetTop={10}
+      sortByDepth={true}
     >
       <h3>{place.title}</h3>
       <p>{place.address}</p>

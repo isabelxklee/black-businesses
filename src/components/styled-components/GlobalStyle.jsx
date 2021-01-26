@@ -150,7 +150,6 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 5px;
     background-color: #CE1E20;
     color: white;
-    z-index: 2;
   }
 
   a.popup {
@@ -166,10 +165,6 @@ const GlobalStyle = createGlobalStyle`
 
   .popup {
     margin: 0.4rem 0;
-  }
-
-  div.mapboxgl-marker {
-    z-index: 0;
   }
 
   ul {
