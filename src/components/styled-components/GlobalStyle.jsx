@@ -21,11 +21,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Calistoga', cursive;
   }
 
-  /* h1 {
-    font-size: 60px;
-    margin: 0;
-  } */
-
   h2 {
     font-size: 40px;
   }

@@ -5,10 +5,11 @@ import tile from '../assets/tiles.svg'
 import Navigation from './styled-components/Navigation.jsx'
 import NavLink from './styled-components/NavLink.jsx'
 import NavLinkContainer from './styled-components/NavLinkContainer.jsx'
+import LogoContainer from './styled-components/LogoContainer.jsx'
 
 const Header = () => (
   <Navigation>
-    <div className="header-top">
+    <LogoContainer>
       <img src={tile} alt="Repeating red and white tile pattern" className="tile left" />
       <h1>
         <Link to="/" component={NavLink}>
@@ -16,7 +17,7 @@ const Header = () => (
         </Link>
       </h1>
       <img src={tile} alt="Repeating red and white tile pattern" className="tile right" />
-    </div>
+    </LogoContainer>
     <NavLinkContainer>
       <Link to="/" component={NavLink}>
         Map

@@ -8,8 +8,7 @@ const Navigation = styled.header`
 
   @media (max-width: 700px) {
     display: inline-block;
-    /* height: 4rem;
-    padding: 1rem 2rem; */
+    width: 100vw;
   }
 `
 
