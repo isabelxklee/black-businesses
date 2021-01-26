@@ -1,4 +1,5 @@
 import React from 'react'
+import Wrapper from './styled-components/Wrapper.jsx'
 
 const Resources = () => {
   const resources = [
@@ -17,7 +18,7 @@ const Resources = () => {
   ]
 
   return (
-    <div className="resources-page">
+    <Wrapper>
       <h1>Resources to help you get started: </h1>
       <div className="resource-container">
         {resources.map((resource) => (
@@ -30,7 +31,7 @@ const Resources = () => {
           </div>
         ))}
       </div>
-    </div>
+    </Wrapper>
   )
 }
 

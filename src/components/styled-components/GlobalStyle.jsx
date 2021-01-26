@@ -305,6 +305,12 @@ const GlobalStyle = createGlobalStyle`
       padding: 40px 30px;
       margin: 0;
     }
+
+    div.resource-container {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    margin: 60px 0;
+  }
   }
 `
 
