@@ -25,6 +25,10 @@ const GlobalStyle = createGlobalStyle`
     font-size: 40px;
   }
 
+  h2.hero-text {
+    margin-top: 250px;
+  }
+
   h3 {
     font-size: 30px;
     margin: 16px 0;
@@ -80,7 +84,7 @@ const GlobalStyle = createGlobalStyle`
 
   img.hero-image {
     width: 100%;
-    height: 100%;
+    height: 600px;
     object-fit: cover;
   }
 
@@ -92,15 +96,14 @@ const GlobalStyle = createGlobalStyle`
   div.grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  div.hero-2 {
-    background-color: #FCDFDD;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
   }
 
   div.hero-text {
-    margin: 100px;
+    background-color: #FCDFDD;
+    text-align: center;
+    height: 600px;
   }
 
   div.map-header {
@@ -188,15 +191,12 @@ const GlobalStyle = createGlobalStyle`
       margin: 16px 0;
     }
 
+    h2.hero-text {
+    margin-top: 0;
+  }
+
     h3 {
       font-size: 20px;
-    }
-
-    div.header-top {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
-      align-items: center;
-      justify-content: center;
     }
 
     img.tile {
@@ -208,6 +208,20 @@ const GlobalStyle = createGlobalStyle`
     img.logo {
       width: 140px;
       margin: auto;
+    }
+
+    img.hero-image {
+      height: 320px;
+    }
+
+    div.grid {
+      display: grid;
+      grid-template-columns: unset;
+    }
+
+    div.hero-text {
+      height: unset;
+      padding: 90px 30px;
     }
 
     .mapboxgl-ctrl-group:not(:empty) {
