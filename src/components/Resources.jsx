@@ -2,6 +2,7 @@ import React from 'react'
 import Wrapper from './styled-components/Wrapper.jsx'
 import ResourceContainer from './styled-components/ResourceContainer.jsx'
 import TextLink from './styled-components/TextLink.jsx'
+import ResourceTile from './styled-components/ResourceTile.jsx'
 
 const Resources = () => {
   const resources = [
@@ -17,6 +18,24 @@ const Resources = () => {
       description: 'Optional brief description of what the website is goes here.',
       url: 'https://trippin.world/guides',
     },
+    {
+      id: 3,
+      title: 'Testing',
+      description: 'Optional brief description of what the website is goes here.',
+      url: 'https://trippin.world/guides',
+    },
+    {
+      id: 4,
+      title: 'Something else',
+      description: 'Optional brief description of what the website is goes here.',
+      url: 'https://trippin.world/guides',
+    },
+    {
+      id: 5,
+      title: 'This is another test',
+      description: 'Optional brief description of what the website is goes here.',
+      url: 'https://trippin.world/guides',
+    },
   ]
 
   return (
@@ -24,13 +43,13 @@ const Resources = () => {
       <h1>Resources to help you get started: </h1>
       <ResourceContainer>
         {resources.map((resource) => (
-          <div className="resource" key={resource.id}>
+          <ResourceTile key={resource.id}>
             <h3>{resource.title}</h3>
             <p className="description">{resource.description}</p>
             <TextLink href={resource.url} target="noreferrer_blank">
               Visit site
             </TextLink>
-          </div>
+          </ResourceTile>
         ))}
       </ResourceContainer>
     </Wrapper>

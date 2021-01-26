@@ -152,17 +152,6 @@ const GlobalStyle = createGlobalStyle`
     color: white;
   }
 
-  a.popup {
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
-  a.popup:hover {
-    opacity: 0.5;
-  }
-
   .popup {
     margin: 0.4rem 0;
   }
@@ -176,8 +165,12 @@ const GlobalStyle = createGlobalStyle`
     border: none;
   }
 
-  .mapboxgl-ctrl.mapboxgl-ctrl-attrib {
-    display: none;
+  @media (max-width: 1000px) {
+    img.tile {
+      left: unset;
+      width: 250px;
+      top: 7%;
+    }
   }
 
   @media (max-width: 700px) {
@@ -194,16 +187,16 @@ const GlobalStyle = createGlobalStyle`
       font-size: 20px;
     }
 
-    img.tile {
-      left: unset;
-      width: 100px;
-      top: 7%;
-    }
-
     img.logo {
       width: 140px;
       margin: auto;
     }
+
+    img.tile {
+        left: unset;
+        width: 150px;
+        top: 7%;
+      }
 
     img.hero-image {
       height: 320px;
@@ -218,11 +211,7 @@ const GlobalStyle = createGlobalStyle`
       height: unset;
       padding: 90px 30px;
     }
-
-    .mapboxgl-ctrl-group:not(:empty) {
-      display: none;
-    }
-
+    
     .business-page {
       display: block;
       padding: 2rem 0 4rem 0;
