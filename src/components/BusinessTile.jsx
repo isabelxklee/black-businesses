@@ -4,7 +4,6 @@ import {IBusiness} from '../types'
 import BusinessTags from './BusinessTags'
 import BusinessTileCard from './styled-components/BusinessTileCard'
 import TextLink from './styled-components/TextLink.jsx'
-import Description from './styled-components/Description.jsx'
 import Address from './styled-components/Address.jsx'
 import {ReactComponent as MapPin} from '../assets/map-pin.svg'
 
@@ -23,7 +22,7 @@ const BusinessTile = ({business}) => (
     <Address>
       {business.city}, {business.state}
     </Address>
-    <Description>{business.description}</Description>
+    <p>{business.description}</p>
     <TextLink href={business.website} target="noreferrer_blank">
       Visit site
     </TextLink>
