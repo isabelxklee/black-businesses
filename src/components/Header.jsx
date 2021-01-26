@@ -8,12 +8,15 @@ import NavLinkContainer from './styled-components/NavLinkContainer.jsx'
 
 const Header = () => (
   <Navigation>
-    <img src={tile} alt="Repeating red and white tile pattern" className="tile left" />
-    <h1>
-      <Link to="/" component={NavLink}>
-        <img src={logo} alt="Logo for Black owned food and drink directory" className="logo" />
-      </Link>
-    </h1>
+    <div className="header-top">
+      <img src={tile} alt="Repeating red and white tile pattern" className="tile left" />
+      <h1>
+        <Link to="/" component={NavLink}>
+          <img src={logo} alt="Logo for Black owned food and drink directory" className="logo" />
+        </Link>
+      </h1>
+      <img src={tile} alt="Repeating red and white tile pattern" className="tile right" />
+    </div>
     <NavLinkContainer>
       <Link to="/" component={NavLink}>
         Map
@@ -25,7 +28,6 @@ const Header = () => (
         Learn
       </Link>
     </NavLinkContainer>
-    <img src={tile} alt="Repeating red and white tile pattern" className="tile right" />
   </Navigation>
 )
 

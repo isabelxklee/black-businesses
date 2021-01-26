@@ -1,10 +1,19 @@
 import styled from 'styled-components'
 
 const NavLinkContainer = styled.div`
-  margin: 16px auto;
+  /* margin: 16px auto; */
+  border-bottom: 2px solid #ce1e20;
+  border-top: 2px solid #ce1e20;
+  text-align: center;
+  margin: 0;
+  padding: 16px;
 
   @media (max-width: 700px) {
-    /* padding: 40px 30px; */
+    border-bottom: 2px solid #ce1e20;
+    border-top: 2px solid #ce1e20;
+    text-align: center;
+    margin: 0;
+    padding: 16px;
   }
 `
 

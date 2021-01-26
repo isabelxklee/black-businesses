@@ -56,15 +56,23 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
   }
 
+  div.header-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 16px 0;
+  }
+
   img.logo {
     width: 200px;
-    margin: 0 60px;
+    margin: auto;
+    display: inline-block;
   }
 
   img.tile {
-    top: 6%;
-    /* position: absolute; */
-    width: 330px;
+    width: 400px;
+    position: absolute;
   }
 
   img.tile.left {
@@ -73,7 +81,6 @@ const GlobalStyle = createGlobalStyle`
 
   img.tile.right {
     right: 0;
-    position: absolute;
   }
 
   img.hero-image {
@@ -188,6 +195,24 @@ const GlobalStyle = createGlobalStyle`
 
     h3 {
       font-size: 20px;
+    }
+
+    div.header-top {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      align-items: center;
+      justify-content: center;
+    }
+
+    img.tile {
+      left: unset;
+      width: 100px;
+      top: 7%;
+    }
+
+    img.logo {
+      width: 140px;
+      margin: auto;
     }
 
     .mapboxgl-ctrl-group:not(:empty) {
