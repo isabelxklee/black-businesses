@@ -3,9 +3,9 @@ import PrimaryTag from './PrimaryTag'
 
 const SecondaryTag = styled(PrimaryTag)`
   cursor: default;
-  font-size: 0.8rem;
-  padding: 0.6rem 1rem;
-  margin: 0.4rem 0.4rem 0 0;
+  font-size: 12px;
+  padding: 8px 10px;
+  margin: 10px 10px 0 0;
 
   &:hover {
     opacity: 1;

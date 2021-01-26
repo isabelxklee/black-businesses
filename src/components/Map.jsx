@@ -1,67 +1,82 @@
 import React, {Component} from 'react'
-import {func} from 'prop-types'
-import {IBusinesses, IMapState} from '../types'
-import mapboxgl from 'mapbox-gl'
+import PropTypes from 'prop-types'
+import {IBusinesses} from '../types.js'
+import ReactMapGl, {NavigationControl} from 'react-map-gl'
 import PlacesList from './PlacesList.jsx'
-
-mapboxgl.accessToken =
+import CustomPopup from './CustomPopup.jsx'
+import CustomMarker from './CustomMarker.jsx'
+const accessToken =
   'pk.eyJ1Ijoic3VwZXJoaSIsImEiOiJkMTcyNzU0M2YzZDQ3YjNjNmQ2NmYwYjcwMmMzZGViMCJ9.RmlVJzqEJ1RqQSvQGL_Jkg'
 
 class Map extends Component {
-  componentDidMount() {
-    const {style, long, lat, zoom} = this.props.app
-    const map = new mapboxgl.Map({
-      container: 'map',
-      style: style,
-      center: [long, lat],
-      zoom: zoom,
+  state = {
+    showPopup: false,
+    selectedMarker: null,
+    viewport: {
+      width: '100%',
+      height: 600,
+      latitude: 39.0626831,
+      longitude: -101.642682,
+      zoom: 3,
+    },
+  }
+
+  closePopup = () => {
+    this.setState({
+      selectedMarker: null,
     })
-
-    const navigationControl = new mapboxgl.NavigationControl()
-    map.addControl(navigationControl)
-
-    this.props.setMap(map)
   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.places !== this.props.places) {
-      this.props.places.map((place) => {
-        const marker = new mapboxgl.Marker({
-          color: '#ea4a4a',
-        })
-        marker.setLngLat(place.coordinates)
-        marker.addTo(this.props.map)
-
-        const popup = new mapboxgl.Popup({offset: 0}).setHTML(
-          `<h3 class="popup"><a href=${place.website} target="noreferrer_blank" class="popup">${place.title}</a></h3>
-                <p class="popup">${place.address}</p>
-                <p class="popup">${place.city}, ${place.state}</p>`
-        )
-
-        marker.setPopup(popup)
-      })
-    }
+  setSelectedMarker = (place) => {
+    this.setState({
+      selectedMarker: place,
+    })
   }
 
-  // TODO:
-  // 1. do we need to keep updating the markers each time?
-  // 2. should we keep track of markers to remove old ones if we update?
+  flyToLocation = (long, lat, zoom) => {
+    this.setState({
+      viewport: {
+        width: '100%',
+        height: 600,
+        latitude: lat,
+        longitude: long,
+        zoom: zoom,
+      },
+    })
+  }
 
   render() {
+    const {places} = this.props
+    const {selectedMarker} = this.state
+
     return (
-      <section>
-        <PlacesList places={this.props.places} map={this.props.map} />
-        <section id="map" className="map-container" />
-      </section>
+      <div>
+        <div className="map-header">
+          <h2>Map View</h2>
+        </div>
+        <PlacesList places={places} flyToLocation={this.flyToLocation} />
+        <ReactMapGl
+          {...this.state.viewport}
+          mapboxApiAccessToken={accessToken}
+          onViewportChange={(viewport) => this.setState({viewport})}
+        >
+          <div style={{position: 'absolute', right: 0}}>
+            <NavigationControl showCompass={false} />
+          </div>
+          {selectedMarker && <CustomPopup place={selectedMarker} closePopup={this.closePopup} />}
+          {places.map((place) => (
+            <CustomMarker key={place.id} place={place} setSelectedMarker={this.setSelectedMarker} />
+          ))}
+        </ReactMapGl>
+      </div>
     )
   }
 }
 
 Map.propTypes = {
   places: IBusinesses.isRequired,
-  app: IMapState.isRequired,
-  map: IMapState,
-  setMap: func.isRequired,
+  selectedMarker: PropTypes.object,
+  flyToLocation: PropTypes.func,
 }
 
 export default Map

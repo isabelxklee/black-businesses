@@ -3,6 +3,7 @@ import {IBusinesses} from '../types'
 import BusinessTile from './BusinessTile.jsx'
 import PrimaryTag from './styled-components/PrimaryTag.jsx'
 import Wrapper from './styled-components/Wrapper.jsx'
+import BusinessTileContainer from './styled-components/BusinessTileContainer.jsx'
 
 class Showcase extends Component {
   state = {
@@ -12,7 +13,7 @@ class Showcase extends Component {
   getAllCategories = () => {
     const categoryArray = ['all']
 
-    this.props.businesses.forEach((business) => {
+    this.props.places.forEach((business) => {
       business.categories.forEach((category) => {
         if (!categoryArray.includes(category)) {
           categoryArray.push(category)
@@ -25,9 +26,9 @@ class Showcase extends Component {
 
   filterBusinesses = () => {
     if (this.state.selectedCategory === 'all') {
-      return this.props.businesses
+      return this.props.places
     } else {
-      return this.props.businesses.filter((business) =>
+      return this.props.places.filter((business) =>
         business.categories.includes(this.state.selectedCategory)
       )
     }
@@ -41,10 +42,10 @@ class Showcase extends Component {
 
   render() {
     return (
-      <Wrapper>
-        <h1>All Businesses</h1>
-        <h3>Filter by category</h3>
-        <section className="category-container">
+      <>
+        <Wrapper>
+          <h1>Browse all businesses</h1>
+          <p>Filter by category: </p>
           {this.getAllCategories().map((category) => (
             <PrimaryTag
               key={category}
@@ -55,19 +56,19 @@ class Showcase extends Component {
               {category}
             </PrimaryTag>
           ))}
-        </section>
-        <section className="business-tile-container">
+        </Wrapper>
+        <BusinessTileContainer>
           {this.filterBusinesses().map((business) => (
             <BusinessTile key={business.id} business={business} />
           ))}
-        </section>
-      </Wrapper>
+        </BusinessTileContainer>
+      </>
     )
   }
 }
 
 Showcase.propTypes = {
-  businesses: IBusinesses.isRequired,
+  places: IBusinesses.isRequired,
 }
 
 export default Showcase

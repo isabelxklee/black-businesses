@@ -1,21 +1,16 @@
 import {createGlobalStyle} from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
-  .map-container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    z-index: -1;
-  }
-
   body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Rubik', sans-serif;
     font-weight: 400;
     margin: 0;
     padding: 0;
-    color: #ea4a4a;
+    color: #CE1E20;
+  }
+
+  body, a {
+    font-family: 'Rubik', sans-serif;
   }
 
   h1,
@@ -26,31 +21,94 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Calistoga', cursive;
   }
 
-  h1 {
-    font-size: 3rem;
+  h2 {
+    font-size: 40px;
+  }
+
+  h2.hero-text {
+    margin-top: 250px;
   }
 
   h3 {
-    font-size: 1.4rem;
+    font-size: 30px;
+    margin: 16px 0;
   }
 
   p {
-    margin: 1rem 0;
+    margin: 16px 0;
   }
 
-  .business-tile-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-    grid-column-gap: 2rem;
-    grid-row-gap: 2rem;
-    margin: 4rem 0;
+  a {
+    text-decoration: none;
+    color: #CE1E20;
   }
 
-  .tile-image {
+  .business-tile-image {
     object-fit: cover;
+    width: 284px;
+    height: 284px;
+    border-radius: 10px;
+  }
+
+  div.header-links {
+    margin: auto;
+    display: flex;
+  }
+
+  div.header-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    height: 300px;
-    border-radius: 1rem 1rem 0 0;
+    padding: 16px 0;
+  }
+
+  img.logo {
+    width: 200px;
+    margin: auto;
+    display: inline-block;
+  }
+
+  img.tile {
+    width: 400px;
+    position: absolute;
+  }
+
+  img.tile.left {
+    left: 0;
+  }
+
+  img.tile.right {
+    right: 0;
+  }
+
+  img.hero-image {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+  }
+
+  img.map-pin {
+    position: relative;
+    top: 5px;
+  }
+
+  div.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+  }
+
+  div.hero-text {
+    background-color: #FCDFDD;
+    text-align: center;
+    height: 600px;
+  }
+
+  div.map-header {
+    text-align: center;
+    padding: 20px 0;
   }
 
   img.business-page {
@@ -59,7 +117,7 @@ const GlobalStyle = createGlobalStyle`
     border-radius: 0.4rem;
   }
 
-  section.business-page {
+  .business-page {
     display: flex;
   }
 
@@ -72,24 +130,13 @@ const GlobalStyle = createGlobalStyle`
     padding: 2rem;
   }
 
-  .tile-info {
-    padding: 1rem 2rem;
-  }
-
-  .category-container {
-    display: block;
-    margin: 0 0 1.2rem 0;
-  }
-
   .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
-    border-top-color: #ea4a4a;
+    border-top-color: #CE1E20;
     margin-bottom: 2.4rem;
   }
 
   .mapboxgl-ctrl-group:not(:empty) {
     right: 0;
-    bottom: 0;
-    position: fixed;
     margin: 1rem;
   }
 
@@ -98,16 +145,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   div.mapboxgl-popup-content {
-    padding: 2rem;
-    font-size: 1rem;
-    border-radius: 0.2rem;
-    background-color: #ea4a4a;
+    padding: 16px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #CE1E20;
     color: white;
-  }
-
-  a {
-    text-decoration: none;
-    color: #ea4a4a;
   }
 
   a.popup {
@@ -134,63 +176,64 @@ const GlobalStyle = createGlobalStyle`
     border: none;
   }
 
-  .mapboxgl-ctrl-group:not(:empty) {
-    right: 0;
-    bottom: 0;
-    position: fixed;
-    margin: 1rem;
-  }
-
   .mapboxgl-ctrl.mapboxgl-ctrl-attrib {
     display: none;
   }
 
-  section.address {
-    margin: 1rem 0 0.4rem 0;
-  }
-
-  p.address {
-    margin: 0.2rem 0;
-  }
-
-  @media only screen and (max-width: 700px) {
+  @media (max-width: 700px) {
     h1 {
       font-size: 2.4rem;
-      margin: 1rem 0;
+      margin: 16px 0;
     }
+
+    h2.hero-text {
+    margin-top: 0;
+  }
 
     h3 {
-      font-size: 1.2rem;
+      font-size: 20px;
     }
 
-    p {
-      line-height: 1.4rem;
+    img.tile {
+      left: unset;
+      width: 100px;
+      top: 7%;
     }
 
-    .category-container {
-      display: block;
-      width: auto;
+    img.logo {
+      width: 140px;
+      margin: auto;
+    }
+
+    img.hero-image {
+      height: 320px;
+    }
+
+    div.grid {
+      display: grid;
+      grid-template-columns: unset;
+    }
+
+    div.hero-text {
+      height: unset;
+      padding: 90px 30px;
     }
 
     .mapboxgl-ctrl-group:not(:empty) {
       display: none;
     }
 
-    section.business-page {
+    .business-page {
       display: block;
       padding: 2rem 0 4rem 0;
     }
 
-    section.column {
+    .column {
       padding: 0;
     }
 
-    section.business-tile-container {
-      grid-template-columns: 1fr;
-    } 
-
-    .tile-info {
-      padding: 1rem;
+    .business-tile-image {
+      width: 100%;
     }
   }
 `

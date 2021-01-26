@@ -1,18 +1,15 @@
 import React from 'react'
-import {object} from 'prop-types'
+import PropTypes from 'prop-types'
 import {IBusiness} from '../types'
 import ListItem from './styled-components/ListItem.jsx'
 
-const PanelChild = ({place, map}) => {
-  const flyToLocation = () => {
-    map.jumpTo({
-      center: place.coordinates,
-      zoom: 12,
-    })
+const PanelChild = ({place, flyToLocation}) => {
+  const handleClick = () => {
+    flyToLocation(place.coordinates[0], place.coordinates[1], 14)
   }
 
   return (
-    <ListItem onClick={flyToLocation}>
+    <ListItem onClick={handleClick}>
       <p className="popup title">{place.title}</p>
       <p className="popup">
         {place.city}, {place.state}
@@ -23,7 +20,7 @@ const PanelChild = ({place, map}) => {
 
 PanelChild.propTypes = {
   place: IBusiness.isRequired,
-  map: object,
+  flyToLocation: PropTypes.func,
 }
 
 export default PanelChild

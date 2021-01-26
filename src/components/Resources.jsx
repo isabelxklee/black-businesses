@@ -1,4 +1,7 @@
 import React from 'react'
+import Wrapper from './styled-components/Wrapper.jsx'
+import ResourceContainer from './styled-components/ResourceContainer.jsx'
+import TextLink from './styled-components/TextLink.jsx'
 
 const Resources = () => {
   const resources = [
@@ -17,20 +20,20 @@ const Resources = () => {
   ]
 
   return (
-    <div className="resources-page">
+    <Wrapper>
       <h1>Resources to help you get started: </h1>
-      <div className="resource-container">
+      <ResourceContainer>
         {resources.map((resource) => (
           <div className="resource" key={resource.id}>
             <h3>{resource.title}</h3>
             <p className="description">{resource.description}</p>
-            <a href={resource.url} target="noreferrer_blank" className="site-link">
+            <TextLink href={resource.url} target="noreferrer_blank">
               Visit site
-            </a>
+            </TextLink>
           </div>
         ))}
-      </div>
-    </div>
+      </ResourceContainer>
+    </Wrapper>
   )
 }
 

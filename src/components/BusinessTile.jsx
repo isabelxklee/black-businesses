@@ -1,28 +1,33 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import {IBusiness} from '../types'
 import BusinessTags from './BusinessTags'
-import Card from './styled-components/Card.jsx'
-import Button from './styled-components/Button.jsx'
+import BusinessTileCard from './styled-components/BusinessTileCard'
+import TextLink from './styled-components/TextLink.jsx'
+import Description from './styled-components/Description.jsx'
+import Address from './styled-components/Address.jsx'
+import {ReactComponent as MapPin} from '../assets/map-pin.svg'
 
 const BusinessTile = ({business}) => (
-  <Card>
-    <img src={business.image_url} alt={business.title} className="tile-image" />
-    <section className="tile-info">
-      <section className="category-container">
-        <BusinessTags business={business} />
-      </section>
-      <h3>{business.title}</h3>
-      <section className="address">
-        <p className="address">{business.address ? business.address : null}</p>
-        <p className="address">
-          {business.city}, {business.state}
-        </p>
-      </section>
-      <Button href={business.website} target="noreferrer_blank">
-        Website
-      </Button>
-    </section>
-  </Card>
+  <BusinessTileCard>
+    <Link to={`businesses/${business.id}`}>
+      <img src={business.image_url} alt={business.title} className="business-tile-image" />
+    </Link>
+    <div>
+      <BusinessTags business={business} />
+    </div>
+    <Link to={`businesses/${business.id}`}>
+      <h3 className="business-tile-name">{business.title}</h3>
+    </Link>
+    <MapPin />
+    <Address>
+      {business.city}, {business.state}
+    </Address>
+    <Description>{business.description}</Description>
+    <TextLink href={business.website} target="noreferrer_blank">
+      Visit site
+    </TextLink>
+  </BusinessTileCard>
 )
 
 BusinessTile.propTypes = {
