@@ -48,17 +48,6 @@ const GlobalStyle = createGlobalStyle`
     margin: 1rem 0;
   }
 
-  .business-tile-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-row-gap: 100px;
-    margin: 100px;
-  }
-
-  .business-tile {
-    text-align: left;
-  }
-
   .business-tile-image {
     object-fit: cover;
     width: 284px;
@@ -273,28 +262,12 @@ const GlobalStyle = createGlobalStyle`
       padding: 0;
     }
 
-    .business-tile-container {
-      grid-template-columns: 1fr;
-      grid-row-gap: 40px;
-      padding: 40px 30px;
-      margin: 0;
-    } 
-
     .business-tile-image {
       width: 100%;
     }
 
     .business-tile-info {
       padding: 0;
-    }
-
-    .business-tile {
-      border-bottom: 3px solid #CE1E20;
-      padding: 16px 0 40px 0;
-    }
-
-    .business-tile:last-child {
-      border-bottom: none;
     }
 
     .tile-info {

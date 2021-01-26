@@ -2,10 +2,11 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import {IBusiness} from '../types'
 import BusinessTags from './BusinessTags'
+import BusinessTileCard from './styled-components/BusinessTileCard'
 import mapPin from '../assets/map-pin.svg'
 
 const BusinessTile = ({business}) => (
-  <div className="business-tile">
+  <BusinessTileCard>
     <Link to={`businesses/${business.id}`}>
       <img src={business.image_url} alt={business.title} className="business-tile-image" />
     </Link>
@@ -25,7 +26,7 @@ const BusinessTile = ({business}) => (
         Visit their site
       </a>
     </div>
-  </div>
+  </BusinessTileCard>
 )
 
 BusinessTile.propTypes = {

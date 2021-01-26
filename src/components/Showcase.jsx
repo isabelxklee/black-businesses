@@ -2,7 +2,8 @@ import React, {Component} from 'react'
 import {IBusinesses} from '../types'
 import BusinessTile from './BusinessTile.jsx'
 import PrimaryTag from './styled-components/PrimaryTag.jsx'
-import CategoryContainer from './styled-components/CategoryContainer.jsx'
+import Wrapper from './styled-components/Wrapper.jsx'
+import BusinessTileContainer from './styled-components/BusinessTileContainer.jsx'
 
 class Showcase extends Component {
   state = {
@@ -41,8 +42,8 @@ class Showcase extends Component {
 
   render() {
     return (
-      <div className="showcase">
-        <CategoryContainer>
+      <>
+        <Wrapper>
           <h1>Browse all businesses</h1>
           <p>Filter by category: </p>
           {this.getAllCategories().map((category) => (
@@ -55,13 +56,13 @@ class Showcase extends Component {
               {category}
             </PrimaryTag>
           ))}
-        </CategoryContainer>
-        <div className="business-tile-container">
+        </Wrapper>
+        <BusinessTileContainer>
           {this.filterBusinesses().map((business) => (
             <BusinessTile key={business.id} business={business} />
           ))}
-        </div>
-      </div>
+        </BusinessTileContainer>
+      </>
     )
   }
 }

@@ -12,11 +12,6 @@ const PrimaryTag = styled.nav`
   transition: 0.3s;
   display: inline-block;
 
-  /* &:hover {
-    background-color: ${({$isSelected}) => ($isSelected ? '#F7CAC7' : '#ce1e20')};
-    color: ${({$isSelected}) => ($isSelected ? '#ce1e20' : '#F7CAC7')};
-  } */
-
   @media (max-width: 700px) {
     margin: 0.6rem 0.6rem 0 0;
   }
