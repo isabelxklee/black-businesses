@@ -183,8 +183,8 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ul {
-    margin-left: 0;
-    padding-left: 0;
+    margin: 0;
+    padding: 0;
   }
 
   ul li:last-child {
