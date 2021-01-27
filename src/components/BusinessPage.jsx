@@ -8,6 +8,7 @@ import Wrapper from './styled-components/Wrapper.jsx'
 import Address from './styled-components/Address.jsx'
 import mapPinIcon from '../assets/map-pin.png'
 import MapPin from './styled-components/MapPin.jsx'
+import H1 from './styled-components/H1.jsx'
 
 const BusinessPage = ({business}) => {
   return business ? (
@@ -22,7 +23,7 @@ const BusinessPage = ({business}) => {
         </div>
 
         <div>
-          <h1>{business.title}</h1>
+          <H1>{business.title}</H1>
           <MapPin src={mapPinIcon} />
           <Address>
             {business.city}, {business.state}

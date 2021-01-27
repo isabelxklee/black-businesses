@@ -5,6 +5,7 @@ import ReactMapGl, {NavigationControl} from 'react-map-gl'
 import PlacesList from './PlacesList.jsx'
 import CustomPopup from './CustomPopup.jsx'
 import CustomMarker from './CustomMarker.jsx'
+import H2 from './styled-components/H2.jsx'
 const accessToken =
   'pk.eyJ1Ijoic3VwZXJoaSIsImEiOiJkMTcyNzU0M2YzZDQ3YjNjNmQ2NmYwYjcwMmMzZGViMCJ9.RmlVJzqEJ1RqQSvQGL_Jkg'
 
@@ -52,7 +53,7 @@ class Map extends Component {
     return (
       <div>
         <div className="map-header">
-          <h2>Map View</h2>
+          <H2>Map View</H2>
         </div>
         <PlacesList places={places} flyToLocation={this.flyToLocation} />
         <ReactMapGl

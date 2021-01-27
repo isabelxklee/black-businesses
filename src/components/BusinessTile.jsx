@@ -10,6 +10,7 @@ import Address from './styled-components/Address.jsx'
 import AddressContainer from './styled-components/AddressContainer.jsx'
 import mapPinIcon from '../assets/map-pin.png'
 import MapPin from './styled-components/MapPin.jsx'
+import H3 from './styled-components/H3.jsx'
 
 const BusinessTile = ({business}) => (
   <BusinessTileCard>
@@ -21,7 +22,7 @@ const BusinessTile = ({business}) => (
     </div>
     <BusinessTileInformation>
       <Link to={`businesses/${business.id}`}>
-        <h3 className="business-tile-name">{business.title}</h3>
+        <H3 className="business-tile-name">{business.title}</H3>
       </Link>
       <AddressContainer>
         <MapPin src={mapPinIcon} />

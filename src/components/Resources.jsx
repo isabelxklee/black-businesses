@@ -3,6 +3,8 @@ import Wrapper from './styled-components/Wrapper.jsx'
 import ResourceContainer from './styled-components/ResourceContainer.jsx'
 import TextLink from './styled-components/TextLink.jsx'
 import ResourceTile from './styled-components/ResourceTile.jsx'
+import H1 from './styled-components/H1.jsx'
+import H3 from './styled-components/H3.jsx'
 
 const Resources = () => {
   const resources = [
@@ -40,11 +42,11 @@ const Resources = () => {
 
   return (
     <Wrapper>
-      <h1>Resources to help you get started: </h1>
+      <H1>Resources to help you get started: </H1>
       <ResourceContainer>
         {resources.map((resource) => (
           <ResourceTile key={resource.id}>
-            <h3>{resource.title}</h3>
+            <H3>{resource.title}</H3>
             <p className="description">{resource.description}</p>
             <TextLink href={resource.url} target="noreferrer_blank">
               Visit site

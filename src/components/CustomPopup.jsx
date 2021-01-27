@@ -1,10 +1,11 @@
 import React from 'react'
-import {Popup} from 'react-map-gl'
+import StyledPopup from './styled-components/StyledPopup.jsx'
+import H3 from './styled-components/H3.jsx'
 import PropTypes from 'prop-types'
 
 const CustomPopup = ({place, closePopup}) => {
   return (
-    <Popup
+    <StyledPopup
       latitude={place.coordinates[1]}
       longitude={place.coordinates[0]}
       onClose={closePopup}
@@ -12,12 +13,12 @@ const CustomPopup = ({place, closePopup}) => {
       offsetTop={10}
       sortByDepth={true}
     >
-      <h3>{place.title}</h3>
+      <H3>{place.title}</H3>
       <p>{place.address}</p>
       <p>
         {place.city}, {place.state}
       </p>
-    </Popup>
+    </StyledPopup>
   )
 }
 
