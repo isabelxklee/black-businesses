@@ -5,7 +5,9 @@ const SecondaryTag = styled(PrimaryTag)`
   cursor: default;
   font-size: 12px;
   padding: 8px 10px;
-  margin: 10px 10px 0 0;
+  margin: 0 10px 0 0;
+  border: 2px solid #ce1e20;
+  background-color: #fff;
 
   &:hover {
     opacity: 1;

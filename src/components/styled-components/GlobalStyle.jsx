@@ -16,9 +16,23 @@ const GlobalStyle = createGlobalStyle`
   h1,
   h2,
   h3,
+  h4,
   p.popup.title,
   a.popup {
     font-family: 'Calistoga', cursive;
+  }
+
+  h1, h4 {
+    margin: 0 0 10px 0;
+  }
+
+  p, h3 {
+    margin: 0;
+  }
+
+  h1 {
+    font-size: 48px;
+    line-height: 48px;
   }
 
   h2 {
@@ -31,12 +45,11 @@ const GlobalStyle = createGlobalStyle`
 
   h3 {
     font-size: 30px;
-    margin: 16px 0;
   }
 
-  p {
-    margin: 16px 0;
-  }
+  h4 {
+    font-size: 20px;
+    }
 
   a {
     text-decoration: none;
@@ -48,6 +61,11 @@ const GlobalStyle = createGlobalStyle`
     width: 284px;
     height: 284px;
     border-radius: 10px;
+    margin-bottom: 20px;
+  }
+
+  div.business-information {
+    margin: 20px 0;
   }
 
   div.header-links {
@@ -61,6 +79,10 @@ const GlobalStyle = createGlobalStyle`
     align-items: center;
     width: 100%;
     padding: 16px 0;
+  }
+
+  div.full-address {
+    margin: 40px 0 20px 0;
   }
 
   img.logo {
@@ -104,6 +126,7 @@ const GlobalStyle = createGlobalStyle`
     background-color: #FCDFDD;
     text-align: center;
     height: 600px;
+    padding: 0 100px;
   }
 
   div.map-header {
@@ -114,15 +137,14 @@ const GlobalStyle = createGlobalStyle`
   img.business-page {
     object-fit: cover;
     width: 100%;
-    border-radius: 0.4rem;
+    height: 400px;
+    border-radius: 10px;
   }
 
-  .business-page {
-    display: flex;
-  }
-
-  h1.business-page {
-    margin: 0;
+  div.business-page {
+    display: grid;
+    grid-template-columns: 45% 25% 25%;
+    grid-column-gap: 40px;
   }
 
   .column {
@@ -132,12 +154,12 @@ const GlobalStyle = createGlobalStyle`
 
   .mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
     border-top-color: #CE1E20;
-    margin-bottom: 2.4rem;
+    margin-bottom: 30px;
   }
 
   .mapboxgl-ctrl-group:not(:empty) {
     right: 0;
-    margin: 1rem;
+    margin: 16px;
   }
 
   .mapboxgl-ctrl.mapboxgl-ctrl-attrib {
@@ -145,7 +167,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   div.mapboxgl-popup-content {
-    padding: 16px;
+    padding: 30px;
     font-size: 16px;
     border-radius: 5px;
     background-color: #CE1E20;

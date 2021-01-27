@@ -15,14 +15,15 @@ const BusinessTile = ({business}) => (
     <div>
       <BusinessTags business={business} />
     </div>
-    <Link to={`businesses/${business.id}`}>
-      <h3 className="business-tile-name">{business.title}</h3>
-    </Link>
-    <MapPin />
-    <Address>
-      {business.city}, {business.state}
-    </Address>
-    <p>{business.description}</p>
+    <div className="business-information">
+      <Link to={`businesses/${business.id}`}>
+        <h3 className="business-tile-name">{business.title}</h3>
+      </Link>
+      <MapPin />
+      <Address>
+        {business.city}, {business.state}
+      </Address>
+    </div>
     <TextLink href={business.website} target="noreferrer_blank">
       Visit site
     </TextLink>

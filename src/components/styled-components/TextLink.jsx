@@ -6,6 +6,7 @@ const TextLink = styled.a`
   font-size: 16px;
   font-weight: 700;
   text-decoration: underline;
+  display: block;
   cursor: pointer;
 
   @media (max-width: 700px) {

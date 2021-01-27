@@ -9,14 +9,11 @@ const BusinessTileContainer = styled.div`
 
   @media (max-width: 1300px) {
     grid-template-columns: repeat(3, 1fr);
-    grid-row-gap: 20px;
-    margin: 80px;
+    margin: 100px 120px;
   }
 
   @media (max-width: 1000px) {
     grid-template-columns: repeat(2, 1fr);
-    grid-row-gap: 20px;
-    margin: 80px;
   }
 
   @media (max-width: 700px) {

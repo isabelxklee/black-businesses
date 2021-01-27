@@ -1,34 +1,48 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import {IBusiness} from '../types'
 import BusinessTags from './BusinessTags'
-import Button from './styled-components/Button.jsx'
+import TextLink from './styled-components/TextLink.jsx'
 import Wrapper from './styled-components/Wrapper.jsx'
+import Address from './styled-components/Address.jsx'
+import {ReactComponent as MapPin} from '../assets/map-pin.svg'
 
 const BusinessPage = ({business}) => (
   <Wrapper>
-    <section className="business-page">
-      <section className="column">
-        <img src={business.image_url} alt={business.title} className="business-page" />
-      </section>
-      <section className="column">
-        <section className="category-container">
-          <BusinessTags business={business} />
-        </section>
-        <h1 className="business-page">{business.title}</h1>
-        <p>{business.description}</p>
+    <Link to="/businesses">
+      <h4>View all businesses</h4>
+    </Link>
 
-        <section className="address">
-          <h3>Address</h3>
-          <p className="address">{business.address ? business.address : null}</p>
-          <p className="address">
+    <div className="business-page">
+      <div>
+        <img src={business.image_url} alt={business.title} className="business-page" />
+      </div>
+
+      <div>
+        <h1>{business.title}</h1>
+        <MapPin />
+        <Address>
+          {business.city}, {business.state}
+        </Address>
+        <p>{business.description}</p>
+      </div>
+
+      <div>
+        <h4>Tags: </h4>
+        <BusinessTags business={business} />
+
+        <div className="full-address">
+          <h4>Full address: </h4>
+          <p>{business.address ? business.address : null}</p>
+          <p>
             {business.city}, {business.state}
           </p>
-        </section>
-        <Button href={business.website} target="noreferrer_blank">
-          Website
-        </Button>
-      </section>
-    </section>
+        </div>
+        <TextLink href={business.website} target="noreferrer_blank">
+          Visit site
+        </TextLink>
+      </div>
+    </div>
   </Wrapper>
 )
 
