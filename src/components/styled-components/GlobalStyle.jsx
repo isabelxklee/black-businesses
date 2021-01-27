@@ -162,7 +162,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .mapboxgl-ctrl-group:not(:empty) {
-    right: 0;
+    right: 5%;
     margin: 16px;
   }
 
