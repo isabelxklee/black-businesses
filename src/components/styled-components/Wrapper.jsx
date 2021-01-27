@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
-  padding: 3rem 8rem;
+  padding: 48px 128px;
   background-color: #fcdfdd;
 
   @media (max-width: 700px) {

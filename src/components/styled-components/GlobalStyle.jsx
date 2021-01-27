@@ -56,6 +56,10 @@ const GlobalStyle = createGlobalStyle`
     color: #CE1E20;
   }
 
+  p.description {
+    margin-bottom: 20px;
+  }
+
   .business-tile-image {
     object-fit: cover;
     width: 284px;
@@ -188,6 +192,11 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @media (max-width: 1000px) {
+    div.business-page {
+      grid-template-columns: 50% 30% 25%;
+      grid-column-gap: 40px;
+    }
+    
     img.tile {
       left: unset;
       width: 250px;
@@ -196,8 +205,17 @@ const GlobalStyle = createGlobalStyle`
   }
 
   @media (max-width: 700px) {
+    div.business-page {
+      grid-template-columns: 1fr;
+      grid-column-gap: 40px;
+    }
+
+    img.business-page {
+      height: 315px;
+    }
+
     h1 {
-      font-size: 2.4rem;
+      font-size: 30px;
       margin: 16px 0;
     }
 
@@ -233,12 +251,7 @@ const GlobalStyle = createGlobalStyle`
       height: unset;
       padding: 90px 30px;
     }
-    
-    .business-page {
-      display: block;
-      padding: 2rem 0 4rem 0;
-    }
-
+  
     .column {
       padding: 0;
     }

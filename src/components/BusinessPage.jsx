@@ -24,7 +24,7 @@ const BusinessPage = ({business}) => (
         <Address>
           {business.city}, {business.state}
         </Address>
-        <p>{business.description}</p>
+        <p className="description">{business.description}</p>
       </div>
 
       <div>
