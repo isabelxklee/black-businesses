@@ -5,6 +5,7 @@ import HeroTextContainer from './styled-components/HeroTextContainer.jsx'
 import HeroTextH2 from './styled-components/HeroTextH2.jsx'
 import heroImage from '../assets/hero-image.png'
 import HeroImage from './styled-components/HeroImage.jsx'
+import P from './styled-components/P.jsx'
 
 const HeroSection = () => (
   <div className="hero-section">
@@ -12,10 +13,10 @@ const HeroSection = () => (
       <HeroImage src={heroImage} />
       <HeroTextContainer>
         <HeroTextH2>Support local Black owned businesses!</HeroTextH2>
-        <p>
+        <P>
           Use our directory to discover new Black owned businesses local to you, or add your own to
           the directory.
-        </p>
+        </P>
       </HeroTextContainer>
     </HeroGrid>
 

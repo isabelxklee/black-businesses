@@ -13,24 +13,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Rubik', sans-serif;
   }
 
-  h4,
-  p.popup.title,
-  a.popup {
-    font-family: 'Calistoga', cursive;
-  }
-
-  h4 {
-    margin: 0 0 10px 0;
-  }
-
-  p {
-    margin: 0;
-  }
-
-  h4 {
-    font-size: 20px;
-    }
-
   a {
     text-decoration: none;
     color: #CE1E20;

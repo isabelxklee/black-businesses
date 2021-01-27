@@ -1,6 +1,7 @@
 import React from 'react'
 import StyledPopup from './styled-components/StyledPopup.jsx'
 import H3 from './styled-components/H3.jsx'
+import P from './styled-components/P.jsx'
 import PropTypes from 'prop-types'
 
 const CustomPopup = ({place, closePopup}) => {
@@ -14,10 +15,10 @@ const CustomPopup = ({place, closePopup}) => {
       sortByDepth={true}
     >
       <H3>{place.title}</H3>
-      <p>{place.address}</p>
-      <p>
+      <P>{place.address}</P>
+      <P>
         {place.city}, {place.state}
-      </p>
+      </P>
     </StyledPopup>
   )
 }

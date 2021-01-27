@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {IBusiness} from '../types'
 import ListItem from './styled-components/ListItem.jsx'
+import H4 from './styled-components/H4.jsx'
+import P from './styled-components/P.jsx'
 
 const PanelChild = ({place, flyToLocation}) => {
   const handleClick = () => {
@@ -10,10 +12,10 @@ const PanelChild = ({place, flyToLocation}) => {
 
   return (
     <ListItem onClick={handleClick}>
-      <p className="popup title">{place.title}</p>
-      <p className="popup">
+      <H4 className="popup title">{place.title}</H4>
+      <P>
         {place.city}, {place.state}
-      </p>
+      </P>
     </ListItem>
   )
 }
