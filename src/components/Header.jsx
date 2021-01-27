@@ -8,17 +8,19 @@ import NavLink from './styled-components/NavLink.jsx'
 import NavLinkContainer from './styled-components/NavLinkContainer.jsx'
 import LogoContainer from './styled-components/LogoContainer.jsx'
 import H1 from './styled-components/H1.jsx'
+import TileLeft from './styled-components/TileLeft.jsx'
+import TileRight from './styled-components/TileRight.jsx'
 
 const Header = () => (
   <Navigation>
     <LogoContainer>
-      <img src={tile} alt="Repeating red and white tile pattern" className="tile left" />
+      <TileLeft src={tile} alt="Repeating red and white tile pattern" />
       <H1>
         <Link to="/" component={NavLink}>
           <Logo src={logo} alt="Logo for Black owned food and drink directory" />
         </Link>
       </H1>
-      <img src={tile} alt="Repeating red and white tile pattern" className="tile right" />
+      <TileRight src={tile} alt="Repeating red and white tile pattern" />
     </LogoContainer>
     <NavLinkContainer>
       <Link to="/" component={NavLink}>
