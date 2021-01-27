@@ -1,10 +1,9 @@
 import styled from 'styled-components'
 
 const BusinessImage = styled.img`
-  width: ${({$isOnMap}) => ($isOnMap ? '38px' : '14px')};
   object-fit: cover;
-  width: 284px;
-  height: 284px;
+  width: ${({$isOnBusinessPage}) => ($isOnBusinessPage ? '100%' : '284px')};
+  height: ${({$isOnBusinessPage}) => ($isOnBusinessPage ? '400px' : '284px')};
   border-radius: 10px;
   margin-bottom: 20px;
 
