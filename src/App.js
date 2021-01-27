@@ -24,6 +24,11 @@ class App extends Component {
     this.setState({places: placesArray})
   }
 
+  routeMatcher = ({match}) => {
+    const business = this.state.places.find(({id}) => id.toString() === match.params.id)
+    return business ? <BusinessPage businesss={business} /> : null
+  }
+
   render() {
     return (
       <section className="app">
@@ -40,11 +45,7 @@ class App extends Component {
             <Route exact path="/resources">
               <Resources />
             </Route>
-            {this.state.places.map((business) => (
-              <Route exact path={`/businesses/${business.id}`} key={business.id}>
-                <BusinessPage business={business} />
-              </Route>
-            ))}
+            <Route exact path={'/businesses/:id'} render={this.routeMatcher} />
           </Switch>
         </div>
         <Footer />

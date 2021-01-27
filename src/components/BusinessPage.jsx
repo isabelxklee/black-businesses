@@ -46,6 +46,10 @@ const BusinessPage = ({business}) => (
   </Wrapper>
 )
 
+// you can load a loading screen or a 404 page instead of null
+// talk about this in the course video, but don't have to implement
+// maybe make a homework exercise
+
 BusinessPage.propTypes = {
   business: IBusiness.isRequired,
 }

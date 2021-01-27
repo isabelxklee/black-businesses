@@ -35,6 +35,8 @@ const GlobalStyle = createGlobalStyle`
     line-height: 48px;
   }
 
+  /* create a generic H2 and then a styled version of H2 for hero H2 */
+
   h2 {
     font-size: 40px;
   }
