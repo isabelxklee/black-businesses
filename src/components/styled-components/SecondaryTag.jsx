@@ -7,7 +7,7 @@ const SecondaryTag = styled(PrimaryTag)`
   padding: 8px 10px;
   margin: 0 10px 0 0;
   border: 2px solid #ce1e20;
-  background-color: #fff;
+  background-color: transparent;
 
   &:hover {
     opacity: 1;
