@@ -234,8 +234,8 @@ const GlobalStyle = createGlobalStyle`
 
     img.tile {
         left: unset;
-        width: 150px;
-        top: 7%;
+        width: 100px;
+        top: 9%;
       }
 
     img.hero-image {
