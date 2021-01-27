@@ -3,27 +3,33 @@ import {Link} from 'react-router-dom'
 import {IBusiness} from '../types'
 import BusinessTags from './BusinessTags'
 import BusinessTileCard from './styled-components/BusinessTileCard'
+import BusinessImage from './styled-components/BusinessImage.jsx'
+import BusinessTileInformation from './styled-components/BusinessTileInformation.jsx'
 import TextLink from './styled-components/TextLink.jsx'
 import Address from './styled-components/Address.jsx'
-import {ReactComponent as MapPin} from '../assets/map-pin.svg'
+import AddressContainer from './styled-components/AddressContainer.jsx'
+import mapPinIcon from '../assets/map-pin.png'
+import MapPin from './styled-components/MapPin.jsx'
 
 const BusinessTile = ({business}) => (
   <BusinessTileCard>
     <Link to={`businesses/${business.id}`}>
-      <img src={business.image_url} alt={business.title} className="business-tile-image" />
+      <BusinessImage src={business.image_url} alt={business.title} />
     </Link>
     <div>
       <BusinessTags business={business} />
     </div>
-    <div className="business-information">
+    <BusinessTileInformation>
       <Link to={`businesses/${business.id}`}>
         <h3 className="business-tile-name">{business.title}</h3>
       </Link>
-      <MapPin />
-      <Address>
-        {business.city}, {business.state}
-      </Address>
-    </div>
+      <AddressContainer>
+        <MapPin src={mapPinIcon} />
+        <Address>
+          {business.city}, {business.state}
+        </Address>
+      </AddressContainer>
+    </BusinessTileInformation>
     <TextLink href={business.website} target="noreferrer_blank">
       Visit site
     </TextLink>

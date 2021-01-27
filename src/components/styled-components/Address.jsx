@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 
 const Address = styled.p`
-  display: inline-block;
-  margin: 0 10px;
+  margin: 0 4px;
 `
 
 export default Address

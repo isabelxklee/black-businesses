@@ -1,15 +1,12 @@
 import styled from 'styled-components'
 
-const Title = styled.img`
-  float: left;
-  color: #ea4a4a;
-  margin: 1rem;
-  font-weight: 600;
-  font-size: 1.6rem;
-  @media (max-width: 700px) {
-    margin: 0.6rem 0;
-    font-size: 1.2rem;
+const MapPin = styled.img`
+  width: ${({$isOnMap}) => ($isOnMap ? '38px' : '14px')};
+  object-fit: cover;
+
+  @media (max-width: 1000px) {
+    width: 32px;
   }
 `
 
-export default Title
+export default MapPin

@@ -62,14 +62,6 @@ const GlobalStyle = createGlobalStyle`
     margin-bottom: 20px;
   }
 
-  .business-tile-image {
-    object-fit: cover;
-    width: 284px;
-    height: 284px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-  }
-
   div.business-information {
     margin: 20px 0;
   }
@@ -114,11 +106,6 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: 600px;
     object-fit: cover;
-  }
-
-  img.map-pin {
-    position: relative;
-    top: 5px;
   }
 
   div.grid {
@@ -256,10 +243,6 @@ const GlobalStyle = createGlobalStyle`
   
     .column {
       padding: 0;
-    }
-
-    .business-tile-image {
-      width: 100%;
     }
   }
 `

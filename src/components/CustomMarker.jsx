@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {Marker} from 'react-map-gl'
-import mapPin from '../assets/map-pin.png'
-import StyledMarker from './styled-components/StyledMarker.jsx'
+import mapPinIcon from '../assets/map-pin.png'
+import MapPin from './styled-components/MapPin.jsx'
 
 const CustomMarker = ({place, setSelectedMarker}) => {
   const handleClick = () => {
@@ -16,7 +16,7 @@ const CustomMarker = ({place, setSelectedMarker}) => {
       offsetLeft={-20}
       offsetTop={-10}
     >
-      <StyledMarker src={mapPin} onClick={handleClick} />
+      <MapPin $isOnMap={true} src={mapPinIcon} onClick={handleClick} />
     </Marker>
   )
 }
