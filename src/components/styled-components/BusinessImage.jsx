@@ -1,7 +1,7 @@
 import styled from 'styled-components'
+import Image from './Image.jsx'
 
-const BusinessImage = styled.img`
-  object-fit: cover;
+const BusinessImage = styled(Image)`
   width: ${({$isOnBusinessPage}) => ($isOnBusinessPage ? '100%' : '284px')};
   height: ${({$isOnBusinessPage}) => ($isOnBusinessPage ? '400px' : '284px')};
   border-radius: 10px;
@@ -9,6 +9,7 @@ const BusinessImage = styled.img`
 
   @media (max-width: 700px) {
     width: 100%;
+    height: ${({$isOnBusinessPage}) => ($isOnBusinessPage ? '315px' : '284px')};
   }
 `
 

@@ -1,11 +1,12 @@
 import React from 'react'
 import {ReactComponent as TileDivider} from '../assets/tile-divider.svg'
 import heroImage from '../assets/hero-image.png'
+import HeroImage from './styled-components/HeroImage.jsx'
 
 const HeroSection = () => (
   <div className="hero-section">
     <div className="grid">
-      <img src={heroImage} className="hero-image" />
+      <HeroImage src={heroImage} />
       <div className="hero-text">
         <h2 className="hero-text">Support local Black owned businesses!</h2>
         <p>

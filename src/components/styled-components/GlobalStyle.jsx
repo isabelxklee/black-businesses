@@ -102,12 +102,6 @@ const GlobalStyle = createGlobalStyle`
     right: 0;
   }
 
-  img.hero-image {
-    width: 100%;
-    height: 600px;
-    object-fit: cover;
-  }
-
   div.grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -125,13 +119,6 @@ const GlobalStyle = createGlobalStyle`
   div.map-header {
     text-align: center;
     padding: 20px 0;
-  }
-
-  img.business-page {
-    object-fit: cover;
-    width: 100%;
-    height: 400px;
-    border-radius: 10px;
   }
 
   div.business-page {
@@ -199,10 +186,6 @@ const GlobalStyle = createGlobalStyle`
       grid-column-gap: 40px;
     }
 
-    img.business-page {
-      height: 315px;
-    }
-
     h1 {
       font-size: 30px;
       margin: 16px 0;
@@ -226,10 +209,6 @@ const GlobalStyle = createGlobalStyle`
         width: 100px;
         top: 9%;
       }
-
-    img.hero-image {
-      height: 320px;
-    }
 
     div.grid {
       display: grid;
