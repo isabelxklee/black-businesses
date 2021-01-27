@@ -1,5 +1,4 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 import {IBusiness} from '../types'
 import BusinessTags from './BusinessTags'
 import BusinessTileCard from './styled-components/BusinessTileCard'
@@ -11,19 +10,20 @@ import AddressContainer from './styled-components/AddressContainer.jsx'
 import mapPinIcon from '../assets/map-pin.png'
 import MapPin from './styled-components/MapPin.jsx'
 import H3 from './styled-components/H3.jsx'
+import StyledLink from './styled-components/StyledLink.jsx'
 
 const BusinessTile = ({business}) => (
   <BusinessTileCard>
-    <Link to={`businesses/${business.id}`}>
+    <StyledLink to={`businesses/${business.id}`}>
       <BusinessImage src={business.image_url} alt={business.title} />
-    </Link>
+    </StyledLink>
     <div>
       <BusinessTags business={business} />
     </div>
     <BusinessTileInformation>
-      <Link to={`businesses/${business.id}`}>
+      <StyledLink to={`businesses/${business.id}`}>
         <H3 className="business-tile-name">{business.title}</H3>
-      </Link>
+      </StyledLink>
       <AddressContainer>
         <MapPin src={mapPinIcon} />
         <Address>

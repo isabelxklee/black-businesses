@@ -1,8 +1,8 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 import {IBusiness} from '../types'
 import BusinessTags from './BusinessTags'
 import BusinessImage from './styled-components/BusinessImage.jsx'
+import StyledLink from './styled-components/StyledLink.jsx'
 import TextLink from './styled-components/TextLink.jsx'
 import Wrapper from './styled-components/Wrapper.jsx'
 import Address from './styled-components/Address.jsx'
@@ -13,9 +13,9 @@ import H1 from './styled-components/H1.jsx'
 const BusinessPage = ({business}) => {
   return business ? (
     <Wrapper>
-      <Link to="/businesses">
+      <StyledLink to="/businesses">
         <h4>View all businesses</h4>
-      </Link>
+      </StyledLink>
 
       <div className="business-page">
         <div>

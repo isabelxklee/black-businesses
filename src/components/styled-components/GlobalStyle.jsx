@@ -13,11 +13,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Rubik', sans-serif;
   }
 
-  a {
-    text-decoration: none;
-    color: #CE1E20;
-  }
-
   p.description {
     margin-bottom: 20px;
   }
