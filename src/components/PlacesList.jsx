@@ -3,14 +3,15 @@ import PropTypes from 'prop-types'
 import {IBusinesses} from '../types'
 import SidePanel from './styled-components/SidePanel.jsx'
 import PanelChild from './PanelChild.jsx'
+import UL from './styled-components/UL.jsx'
 
 const PlacesList = ({places, flyToLocation}) => (
   <SidePanel>
-    <ul>
+    <UL>
       {places.map((place) => (
         <PanelChild key={place.id} place={place} flyToLocation={flyToLocation} />
       ))}
-    </ul>
+    </UL>
   </SidePanel>
 )
 

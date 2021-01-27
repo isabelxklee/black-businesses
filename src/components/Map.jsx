@@ -7,6 +7,7 @@ import CustomPopup from './CustomPopup.jsx'
 import CustomMarker from './CustomMarker.jsx'
 import H2 from './styled-components/H2.jsx'
 import StyledNavigationControl from './styled-components/StyledNavigationControl.jsx'
+import MapHeader from './styled-components/MapHeader.jsx'
 const accessToken =
   'pk.eyJ1Ijoic3VwZXJoaSIsImEiOiJkMTcyNzU0M2YzZDQ3YjNjNmQ2NmYwYjcwMmMzZGViMCJ9.RmlVJzqEJ1RqQSvQGL_Jkg'
 
@@ -53,9 +54,9 @@ class Map extends Component {
 
     return (
       <div>
-        <div className="map-header">
+        <MapHeader>
           <H2>Map View</H2>
-        </div>
+        </MapHeader>
         <PlacesList places={places} flyToLocation={this.flyToLocation} />
         <ReactMapGl
           {...this.state.viewport}

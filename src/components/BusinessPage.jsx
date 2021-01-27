@@ -2,6 +2,7 @@ import React from 'react'
 import {IBusiness} from '../types'
 import BusinessTags from './BusinessTags'
 import BusinessImage from './styled-components/BusinessImage.jsx'
+import BusinessPageContainer from './styled-components/BusinessPageContainer.jsx'
 import StyledLink from './styled-components/StyledLink.jsx'
 import TextLink from './styled-components/TextLink.jsx'
 import Wrapper from './styled-components/Wrapper.jsx'
@@ -9,15 +10,16 @@ import Address from './styled-components/Address.jsx'
 import mapPinIcon from '../assets/map-pin.png'
 import MapPin from './styled-components/MapPin.jsx'
 import H1 from './styled-components/H1.jsx'
+import H4 from './styled-components/H4.jsx'
 
 const BusinessPage = ({business}) => {
   return business ? (
     <Wrapper>
       <StyledLink to="/businesses">
-        <h4>View all businesses</h4>
+        <H4>View all businesses</H4>
       </StyledLink>
 
-      <div className="business-page">
+      <BusinessPageContainer>
         <div>
           <BusinessImage src={business.image_url} alt={business.title} />
         </div>
@@ -46,7 +48,7 @@ const BusinessPage = ({business}) => {
             Visit site
           </TextLink>
         </div>
-      </div>
+      </BusinessPageContainer>
     </Wrapper>
   ) : null
 }
