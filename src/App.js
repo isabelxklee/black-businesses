@@ -40,13 +40,9 @@ class App extends Component {
             <Route exact path="/resources">
               <Resources />
             </Route>
-            <Route
-              exact
-              path={'/businesses/:id'}
-              render={(props) => (
-                <BusinessRouteSwitcher {...props} businesses={this.state.places} />
-              )}
-            />
+            <Route exact path={'/businesses/:id'}>
+              <BusinessRouteSwitcher businesses={this.state.places} />
+            </Route>
           </Switch>
         </div>
         <Footer />
