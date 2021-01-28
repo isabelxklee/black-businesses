@@ -25,24 +25,22 @@ class App extends Component {
 
   render() {
     return (
-      <section className="app">
+      <div className="app">
         <GlobalStyle />
         <Header />
-        <div>
-          <Switch>
-            <Route exact path="/">
-              <Home places={this.state.places} />
-            </Route>
-            <Route exact path="/businesses">
-              <Showcase places={this.state.places} />
-            </Route>
-            <Route exact path="/resources">
-              <Resources />
-            </Route>
-          </Switch>
-        </div>
+        <Switch>
+          <Route exact path="/">
+            <Home places={this.state.places} />
+          </Route>
+          <Route exact path="/businesses">
+            <Showcase places={this.state.places} />
+          </Route>
+          <Route exact path="/resources">
+            <Resources />
+          </Route>
+        </Switch>
         <Footer />
-      </section>
+      </div>
     )
   }
 }
