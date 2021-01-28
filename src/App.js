@@ -7,7 +7,6 @@ import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import Showcase from './components/Showcase.jsx'
 import Resources from './components/Resources.jsx'
-import BusinessPage from './components/BusinessPage.jsx'
 
 class App extends Component {
   state = {
@@ -22,11 +21,6 @@ class App extends Component {
     const response = await fetch('https://black-businesses-json.herokuapp.com/places')
     const placesArray = await response.json()
     this.setState({places: placesArray})
-  }
-
-  routeMatcher = ({match}) => {
-    const business = this.state.places.find(({id}) => id.toString() === match.params.id)
-    return business ? <BusinessPage businesss={business} /> : null
   }
 
   render() {
@@ -45,7 +39,6 @@ class App extends Component {
             <Route exact path="/resources">
               <Resources />
             </Route>
-            <Route exact path={'/businesses/:id'} render={this.routeMatcher} />
           </Switch>
         </div>
         <Footer />

@@ -10,26 +10,25 @@ import AddressContainer from './styled-components/AddressContainer.jsx'
 import mapPinIcon from '../assets/map-pin.png'
 import MapPin from './styled-components/MapPin.jsx'
 import H3 from './styled-components/H3.jsx'
-import StyledLink from './styled-components/StyledLink.jsx'
+import P from './styled-components/P.jsx'
 
 const BusinessTile = ({business}) => (
   <BusinessTileCard>
-    <StyledLink to={`businesses/${business.id}`}>
-      <BusinessImage src={business.image_url} alt={business.title} />
-    </StyledLink>
+    <BusinessImage src={business.image_url} alt={business.title} />
     <div>
       <BusinessTags business={business} />
     </div>
     <BusinessTileInformation>
-      <StyledLink to={`businesses/${business.id}`}>
-        <H3 className="business-tile-name">{business.title}</H3>
-      </StyledLink>
+      <H3 className="business-tile-name">{business.title}</H3>
       <AddressContainer>
         <MapPin src={mapPinIcon} />
         <Address>
           {business.city}, {business.state}
         </Address>
       </AddressContainer>
+    </BusinessTileInformation>
+    <BusinessTileInformation>
+      <P>{business.description}</P>
     </BusinessTileInformation>
     <TextLink href={business.website} target="noreferrer_blank">
       Visit site
