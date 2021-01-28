@@ -3,10 +3,10 @@ import {IBusinesses} from '../types.js'
 import Map from './Map.jsx'
 import HeroSection from './HeroSection.jsx'
 
-const Home = (props) => (
+const Home = ({places}) => (
   <div className="home">
     <HeroSection />
-    <Map places={props.places} />
+    <Map places={places} />
   </div>
 )
 
