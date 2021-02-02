@@ -11,7 +11,7 @@ import P from './styled-components/P.jsx'
 const HeroSection = () => (
   <div className="hero-section">
     <HeroGrid>
-      <HeroImage src={heroImage} />
+      <HeroImage src={heroImage} alt="group of Black people smiling at a restaurant" />
       <HeroTextContainer>
         <HeroText>
           <H2>Support local Black owned businesses!</H2>
