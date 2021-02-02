@@ -25,7 +25,7 @@ const BusinessTile = ({business}) => (
     <BusinessTags business={business} />
     <BusinessTileInformation>
       <StyledLink to={`businesses/${business.id}`}>
-        <H3 className="business-tile-name">{business.title}</H3>
+        <H3>{business.title}</H3>
       </StyledLink>
       <AddressContainer>
         <MapPin src={mapPinIcon} />

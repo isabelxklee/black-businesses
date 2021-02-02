@@ -9,7 +9,7 @@ import HeroImage from './styled-components/HeroImage.jsx'
 import P from './styled-components/P.jsx'
 
 const HeroSection = () => (
-  <div className="hero-section">
+  <div>
     <HeroGrid>
       <HeroImage src={heroImage} alt="group of Black people smiling at a restaurant" />
       <HeroTextContainer>

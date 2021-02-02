@@ -12,7 +12,7 @@ const PanelChild = ({place, flyToLocation}) => {
 
   return (
     <ListItem onClick={handleClick}>
-      <H4 className="popup title">{place.title}</H4>
+      <H4>{place.title}</H4>
       <P>
         {place.city}, {place.state}
       </P>
