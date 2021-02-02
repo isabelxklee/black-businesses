@@ -5,7 +5,7 @@ const MapPin = styled.img`
   object-fit: cover;
 
   @media (max-width: 1000px) {
-    width: 32px;
+    width: ${({$isOnMap}) => ($isOnMap ? '32px' : '14px')};
   }
 `
 

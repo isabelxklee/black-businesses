@@ -7,6 +7,12 @@ const BusinessInfo = styled(BusinessTileInformation)`
   :first-child {
     margin: 0 0 50px 0;
   }
+
+  @media (max-width: 700px) {
+    :first-child {
+      margin: 50px 0;
+    }
+  }
 `
 
 export default BusinessInfo

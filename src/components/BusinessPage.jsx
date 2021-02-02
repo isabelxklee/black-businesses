@@ -27,6 +27,7 @@ const BusinessPage = ({business}) => (
       <ImageContainer>
         <BusinessImage src={business.image_url} alt={business.title} />
       </ImageContainer>
+
       <div>
         <H1>{business.title}</H1>
         <AddressContainer>
@@ -42,6 +43,7 @@ const BusinessPage = ({business}) => (
           Visit site
         </TextLink>
       </div>
+
       <div>
         <BusinessInfo>
           <H4>Tags: </H4>
