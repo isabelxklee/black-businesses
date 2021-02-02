@@ -7,12 +7,10 @@ const TileImage = styled(Image)`
 
   @media (max-width: 1000px) {
     width: 250px;
-    top: 7%;
   }
 
   @media (max-width: 700px) {
     width: 100px;
-    top: 9%;
   }
 `
 
