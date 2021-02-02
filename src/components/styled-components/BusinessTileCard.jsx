@@ -6,6 +6,10 @@ const BusinessTileCard = styled.div`
     padding: 16px 0 40px 0;
   }
 
+  :first-child {
+    padding: 0 0 40px 0;
+  }
+
   :last-child {
     border-bottom: none;
   }
