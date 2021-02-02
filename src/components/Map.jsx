@@ -1,13 +1,15 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {IBusinesses} from '../types.js'
-import MapBox from 'react-map-gl'
+import ReactMapGl from 'react-map-gl'
+import mapboxgl from 'mapbox-gl'
 import PlacesList from './PlacesList.jsx'
 import CustomPopup from './CustomPopup.jsx'
 import CustomMarker from './CustomMarker.jsx'
 import H2 from './styled-components/H2.jsx'
 import StyledNavigationControl from './styled-components/StyledNavigationControl.jsx'
 import MapHeader from './styled-components/MapHeader.jsx'
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default
 const accessToken =
   'pk.eyJ1Ijoic3VwZXJoaSIsImEiOiJkMTcyNzU0M2YzZDQ3YjNjNmQ2NmYwYjcwMmMzZGViMCJ9.RmlVJzqEJ1RqQSvQGL_Jkg'
 
@@ -58,7 +60,7 @@ class Map extends Component {
           <H2>Map View</H2>
         </MapHeader>
         <PlacesList places={places} flyToLocation={this.flyToLocation} />
-        <MapBox
+        <ReactMapGl
           {...this.state.viewport}
           mapboxApiAccessToken={accessToken}
           onViewportChange={(viewport) => this.setState({viewport})}
@@ -68,7 +70,7 @@ class Map extends Component {
           {places.map((place) => (
             <CustomMarker key={place.id} place={place} setSelectedMarker={this.setSelectedMarker} />
           ))}
-        </MapBox>
+        </ReactMapGl>
       </div>
     )
   }
