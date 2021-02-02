@@ -2,13 +2,14 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {IBusinesses} from '../types.js'
 import ReactMapGl from 'react-map-gl'
+import mapboxgl from 'mapbox-gl'
 import PlacesList from './PlacesList.jsx'
 import CustomPopup from './CustomPopup.jsx'
 import CustomMarker from './CustomMarker.jsx'
 import H2 from './styled-components/H2.jsx'
 import StyledNavigationControl from './styled-components/StyledNavigationControl.jsx'
 import MapHeader from './styled-components/MapHeader.jsx'
-ReactMapGl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default
+mapboxgl.workerClass = require('worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker').default
 const accessToken =
   'pk.eyJ1Ijoic3VwZXJoaSIsImEiOiJkMTcyNzU0M2YzZDQ3YjNjNmQ2NmYwYjcwMmMzZGViMCJ9.RmlVJzqEJ1RqQSvQGL_Jkg'
 
