@@ -19,9 +19,7 @@ const BusinessTile = ({business}) => (
       <BusinessImage src={business.image_url} alt={business.title} />
     </ImageContainer>
 
-    <div>
-      <BusinessTags business={business} />
-    </div>
+    <BusinessTags business={business} />
     <BusinessTileInformation>
       <H3 className="business-tile-name">{business.title}</H3>
       <AddressContainer>
