@@ -1,10 +1,11 @@
 import styled from 'styled-components'
 
-const PrimaryTag = styled.nav`
+const PrimaryTag = styled.button`
   background-color: ${({$isSelected}) => ($isSelected ? '#ce1e20' : '#F7CAC7')};
   color: ${({$isSelected}) => ($isSelected ? '#FFF' : '#ce1e20')};
   font-weight: 700;
   border-radius: 2rem;
+  border: none;
   padding: 0.6rem 1.4rem;
   margin: 0.8rem 0.6rem 0 0;
   text-align: center;

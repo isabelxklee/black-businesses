@@ -3,6 +3,7 @@ import PrimaryTag from './PrimaryTag'
 
 const SecondaryTag = styled(PrimaryTag)`
   cursor: default;
+  pointer-events: none;
   font-size: 12px;
   padding: 8px 10px;
   margin: 0 10px 0 0;

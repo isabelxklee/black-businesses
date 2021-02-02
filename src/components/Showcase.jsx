@@ -47,16 +47,18 @@ class Showcase extends Component {
         <Wrapper>
           <H1>Browse all businesses</H1>
           <p>Filter by category: </p>
-          {this.getAllCategories().map((category) => (
-            <PrimaryTag
-              key={category}
-              id={category}
-              $isSelected={this.state.selectedCategory === category}
-              onClick={this.handleClick}
-            >
-              {category}
-            </PrimaryTag>
-          ))}
+          <nav>
+            {this.getAllCategories().map((category) => (
+              <PrimaryTag
+                key={category}
+                id={category}
+                $isSelected={this.state.selectedCategory === category}
+                onClick={this.handleClick}
+              >
+                {category}
+              </PrimaryTag>
+            ))}
+          </nav>
         </Wrapper>
         <BusinessTileContainer>
           {this.filterBusinesses().map((business) => (
