@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   async componentDidMount() {
-    const response = await fetch('https://black-businesses-json.herokuapp.com/places')
+    const response = await fetch('https://superhi-black-businesses.herokuapp.com/places')
     const placesArray = await response.json()
     this.setState({places: placesArray})
   }
