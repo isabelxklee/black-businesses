@@ -4,7 +4,7 @@ import HeroGrid from './styled-components/HeroGrid.jsx'
 import HeroTextContainer from './styled-components/HeroTextContainer.jsx'
 import HeroText from './styled-components/HeroText.jsx'
 import H2 from './styled-components/H2.jsx'
-import heroImage from '../assets/hero-image.png'
+import heroImage from '../assets/hero-image.jpg'
 import HeroImage from './styled-components/HeroImage.jsx'
 import P from './styled-components/P.jsx'
 

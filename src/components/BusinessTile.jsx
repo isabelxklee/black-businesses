@@ -8,7 +8,7 @@ import BusinessTileInformation from './styled-components/BusinessTileInformation
 import TextLink from './styled-components/TextLink.jsx'
 import Address from './styled-components/Address.jsx'
 import AddressContainer from './styled-components/AddressContainer.jsx'
-import mapPinIcon from '../assets/map-pin.png'
+import mapPinIcon from '../assets/map-pin.svg'
 import MapPin from './styled-components/MapPin.jsx'
 import H3 from './styled-components/H3.jsx'
 import P from './styled-components/P.jsx'
