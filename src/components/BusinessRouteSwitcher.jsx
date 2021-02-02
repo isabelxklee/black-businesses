@@ -6,7 +6,7 @@ import BusinessPage from './BusinessPage.jsx'
 
 const BusinessRouteSwitcher = ({match, businesses}) => {
   const business = businesses.find(({id}) => id.toString() === match.params.id)
-  return <BusinessPage businesss={business} />
+  return business ? <BusinessPage business={business} /> : null
 }
 
 export default withRouter(BusinessRouteSwitcher)
