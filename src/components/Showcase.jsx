@@ -37,7 +37,7 @@ class Showcase extends Component {
 
   handleClick = (event) => {
     this.setState({
-      selectedCategory: event.target.id,
+      selectedCategory: event.target.innerText,
     })
   }
 
@@ -51,7 +51,6 @@ class Showcase extends Component {
             {this.getAllCategories().map((category) => (
               <PrimaryTag
                 key={category}
-                id={category}
                 $isSelected={this.state.selectedCategory === category}
                 onClick={this.handleClick}
               >
