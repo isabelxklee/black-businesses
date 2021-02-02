@@ -19,7 +19,7 @@ class Map extends Component {
     selectedMarker: null,
     viewport: {
       width: '100%',
-      height: 600,
+      height: 500,
       latitude: 39.0626831,
       longitude: -101.642682,
       zoom: 3,
@@ -42,7 +42,7 @@ class Map extends Component {
     this.setState({
       viewport: {
         width: '100%',
-        height: 600,
+        height: 500,
         latitude: lat,
         longitude: long,
         zoom: zoom,
