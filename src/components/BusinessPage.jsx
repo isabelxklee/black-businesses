@@ -11,7 +11,10 @@ import mapPinIcon from '../assets/map-pin.svg'
 import MapPin from './styled-components/MapPin.jsx'
 import H1 from './styled-components/H1.jsx'
 import H4 from './styled-components/H4.jsx'
+import P from './styled-components/P.jsx'
 import AddressContainer from './styled-components/AddressContainer.jsx'
+import BusinessInfo from './styled-components/BusinessInfo.jsx'
+import BusinessTileInformation from './styled-components/BusinessTileInformation.jsx'
 import ImageContainer from './styled-components/ImageContainer.jsx'
 
 const BusinessPage = ({business}) => (
@@ -32,23 +35,26 @@ const BusinessPage = ({business}) => (
             {business.city}, {business.state}
           </Address>
         </AddressContainer>
-        <p>{business.description}</p>
-      </div>
-      <div>
-        <h4>Tags: </h4>
-        <BusinessTags business={business} />
-
-        <AddressContainer $isOnBusinessPage={true}>
-          <h4>Full address: </h4>
-          <p>{business.address ? business.address : null}</p>
-          <p>
-            {business.city}, {business.state}
-          </p>
-        </AddressContainer>
-
+        <BusinessTileInformation>
+          <P>{business.description}</P>
+        </BusinessTileInformation>
         <TextLink href={business.website} target="noreferrer_blank">
           Visit site
         </TextLink>
+      </div>
+      <div>
+        <BusinessInfo>
+          <H4>Tags: </H4>
+          <BusinessTags business={business} />
+        </BusinessInfo>
+
+        <BusinessInfo $isOnBusinessPage={true}>
+          <H4>Full address: </H4>
+          <P>{business.address ? business.address : null}</P>
+          <P>
+            {business.city}, {business.state}
+          </P>
+        </BusinessInfo>
       </div>
     </BusinessPageContainer>
   </Wrapper>
