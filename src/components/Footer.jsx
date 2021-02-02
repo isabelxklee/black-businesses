@@ -2,11 +2,12 @@ import React from 'react'
 import FooterMessage from './styled-components/FooterMessage.jsx'
 import H3 from './styled-components/H3.jsx'
 import P from './styled-components/P.jsx'
-import {ReactComponent as TileDivider} from '../assets/tile-divider.svg'
+import TileDivider from './styled-components/TileDivider.jsx'
+import tileDividerAsset from '../assets/tile-divider.svg'
 
 const Footer = () => (
   <footer>
-    <TileDivider />
+    <TileDivider src={tileDividerAsset} alt="repeating red and white check pattern" />
     <FooterMessage>
       <H3>Have a website to add to the directory?</H3>
       <P>
@@ -14,7 +15,7 @@ const Footer = () => (
         your lunch, email us at submit@black-owned-businesses.com
       </P>
     </FooterMessage>
-    <TileDivider />
+    <TileDivider src={tileDividerAsset} alt="repeating red and white check pattern" />
   </footer>
 )
 

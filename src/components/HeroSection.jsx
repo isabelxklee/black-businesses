@@ -1,5 +1,6 @@
 import React from 'react'
-import {ReactComponent as TileDivider} from '../assets/tile-divider.svg'
+import TileDivider from './styled-components/TileDivider.jsx'
+import tileDividerAsset from '../assets/tile-divider.svg'
 import HeroGrid from './styled-components/HeroGrid.jsx'
 import HeroTextContainer from './styled-components/HeroTextContainer.jsx'
 import HeroText from './styled-components/HeroText.jsx'
@@ -23,7 +24,7 @@ const HeroSection = () => (
       </HeroTextContainer>
     </HeroGrid>
 
-    <TileDivider />
+    <TileDivider src={tileDividerAsset} alt="repeating red and white check pattern" />
   </div>
 )
 
