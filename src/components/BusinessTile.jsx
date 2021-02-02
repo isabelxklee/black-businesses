@@ -12,16 +12,21 @@ import mapPinIcon from '../assets/map-pin.svg'
 import MapPin from './styled-components/MapPin.jsx'
 import H3 from './styled-components/H3.jsx'
 import P from './styled-components/P.jsx'
+import StyledLink from './styled-components/StyledLink.jsx'
 
 const BusinessTile = ({business}) => (
   <BusinessTileCard>
-    <ImageContainer>
-      <BusinessImage src={business.image_url} alt={business.title} />
-    </ImageContainer>
+    <StyledLink to={`businesses/${business.id}`}>
+      <ImageContainer>
+        <BusinessImage src={business.image_url} alt={business.title} />
+      </ImageContainer>
+    </StyledLink>
 
     <BusinessTags business={business} />
     <BusinessTileInformation>
-      <H3 className="business-tile-name">{business.title}</H3>
+      <StyledLink to={`businesses/${business.id}`}>
+        <H3 className="business-tile-name">{business.title}</H3>
+      </StyledLink>
       <AddressContainer>
         <MapPin src={mapPinIcon} />
         <Address>

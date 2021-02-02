@@ -7,6 +7,7 @@ import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import Showcase from './components/Showcase.jsx'
 import Resources from './components/Resources.jsx'
+import BusinessRouteSwitcher from './components/BusinessRouteSwitcher.jsx'
 
 class App extends Component {
   state = {
@@ -37,6 +38,9 @@ class App extends Component {
           </Route>
           <Route exact path="/resources">
             <Resources />
+          </Route>
+          <Route exact path={'/businesses/:id'}>
+            <BusinessRouteSwitcher businesses={this.state.places} />
           </Route>
         </Switch>
         <Footer />
