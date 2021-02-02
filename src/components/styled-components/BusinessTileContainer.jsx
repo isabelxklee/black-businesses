@@ -3,6 +3,7 @@ import styled from 'styled-components'
 const BusinessTileContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 25px;
   grid-row-gap: 100px;
   margin: 100px;
   background-color: #fff;

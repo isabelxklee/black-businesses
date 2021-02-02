@@ -8,7 +8,8 @@ const H1 = styled.h1`
 
   @media (max-width: 700px) {
     font-size: 30px;
-    margin: 16px 0;
+    line-height: unset;
+    margin: 0;
   }
 `
 

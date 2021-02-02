@@ -47,7 +47,7 @@ const Resources = () => {
         {resources.map((resource) => (
           <ResourceTile key={resource.id}>
             <H3>{resource.title}</H3>
-            <p className="description">{resource.description}</p>
+            <p>{resource.description}</p>
             <TextLink href={resource.url} target="noreferrer_blank">
               Visit site
             </TextLink>

@@ -4,7 +4,7 @@ import Map from './Map.jsx'
 import HeroSection from './HeroSection.jsx'
 
 const Home = ({places}) => (
-  <div className="home">
+  <div>
     <HeroSection />
     <Map places={places} />
   </div>

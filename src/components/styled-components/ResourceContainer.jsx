@@ -9,7 +9,7 @@ const ResourceContainer = styled.div`
   @media (max-width: 1000px) {
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
-    margin: 60px 0;
+    margin: 60px 0 0 0;
   }
 `
 
