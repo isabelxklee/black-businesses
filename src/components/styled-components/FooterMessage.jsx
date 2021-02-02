@@ -7,11 +7,11 @@ const FooterMessage = styled.div`
   text-align: center;
 
   @media (max-width: 1000px) {
-    padding: 120px 60px;
+    padding: 120px 200px;
   }
 
   @media (max-width: 700px) {
-    padding: 40px 30px;
+    padding: 80px 30px;
     margin: 0;
   }
 `
