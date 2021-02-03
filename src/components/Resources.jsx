@@ -3,7 +3,7 @@ import Wrapper from './styled-components/Wrapper.jsx'
 import ResourceContainer from './styled-components/ResourceContainer.jsx'
 import TextLink from './styled-components/TextLink.jsx'
 import ResourceTile from './styled-components/ResourceTile.jsx'
-import H1 from './styled-components/H1.jsx'
+import H2 from './styled-components/H1.jsx'
 import H3 from './styled-components/H3.jsx'
 
 const Resources = () => {
@@ -42,7 +42,7 @@ const Resources = () => {
 
   return (
     <Wrapper>
-      <H1>Resources to help you get started: </H1>
+      <H2>Resources to help you get started: </H2>
       <ResourceContainer>
         {resources.map((resource) => (
           <ResourceTile key={resource.id}>
