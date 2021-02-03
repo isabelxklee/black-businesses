@@ -7,6 +7,9 @@ import H2 from './styled-components/H1.jsx'
 import H3 from './styled-components/H3.jsx'
 
 const Resources = () => {
+  // creating this resources component will be the homework exercise
+  // students will create their own list of resources and render them
+
   const resources = [
     {
       id: 1,
