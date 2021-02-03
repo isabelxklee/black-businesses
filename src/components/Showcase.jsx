@@ -4,7 +4,8 @@ import BusinessTile from './BusinessTile.jsx'
 import PrimaryTag from './styled-components/PrimaryTag.jsx'
 import Wrapper from './styled-components/Wrapper.jsx'
 import BusinessTileContainer from './styled-components/BusinessTileContainer.jsx'
-import H2 from './styled-components/H1.jsx'
+import H2 from './styled-components/H2.jsx'
+import P from './styled-components/P.jsx'
 
 class Showcase extends Component {
   state = {
@@ -46,7 +47,7 @@ class Showcase extends Component {
       <>
         <Wrapper>
           <H2>Browse all businesses</H2>
-          <p>Filter by category: </p>
+          <P>Filter by category: </P>
           <nav>
             {this.getAllCategories().map((category) => (
               <PrimaryTag

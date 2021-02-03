@@ -3,8 +3,9 @@ import Wrapper from './styled-components/Wrapper.jsx'
 import ResourceContainer from './styled-components/ResourceContainer.jsx'
 import TextLink from './styled-components/TextLink.jsx'
 import ResourceTile from './styled-components/ResourceTile.jsx'
-import H2 from './styled-components/H1.jsx'
+import H2 from './styled-components/H2.jsx'
 import H3 from './styled-components/H3.jsx'
+import SecondaryP from './styled-components/SecondaryP.jsx'
 
 const Resources = () => {
   // creating this resources component will be the homework exercise
@@ -50,7 +51,7 @@ const Resources = () => {
         {resources.map((resource) => (
           <ResourceTile key={resource.id}>
             <H3>{resource.title}</H3>
-            <p>{resource.description}</p>
+            <SecondaryP>{resource.description}</SecondaryP>
             <TextLink href={resource.url} target="noreferrer_blank">
               Visit site
             </TextLink>
