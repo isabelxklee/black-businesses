@@ -7,5 +7,5 @@ export const StyledNavigationControl = styled(NavigationControl)`
 `
 export const Header = styled.div`
   text-align: center;
-  padding: 20px 0;
+  padding: 36px 0 20px;
 `
