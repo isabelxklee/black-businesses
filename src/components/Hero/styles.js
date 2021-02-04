@@ -13,7 +13,10 @@ export const Grid = styled.div`
 `
 
 export const TextContainer = styled.div`
+  align-items: center;
   background-color: #fdeceb;
+  display: flex;
+  justify-content: center;
   text-align: center;
   height: 600px;
   padding: 0 100px;
@@ -25,15 +28,7 @@ export const TextContainer = styled.div`
 `
 
 export const Text = styled.div`
-  transform: translateY(100%);
-
-  @media (max-width: 1000px) {
-    transform: translateY(50%);
-  }
-
-  @media (max-width: 700px) {
-    transform: translateY(0%);
-  }
+  max-width: 440px;
 `
 
 export const Image = styled.img`

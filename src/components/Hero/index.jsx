@@ -4,7 +4,7 @@ import heroImageSrc from '../../assets/hero-image.jpg'
 import {LargeCheck} from '../Check/styles'
 import {H2, P} from '../../styles'
 
-const HeroSection = () => (
+const Hero = () => (
   <>
     <Grid>
       <Image src={heroImageSrc} alt="group of Black people smiling at a restaurant" />
@@ -23,4 +23,4 @@ const HeroSection = () => (
   </>
 )
 
-export default HeroSection
+export default Hero

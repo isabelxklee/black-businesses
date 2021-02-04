@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Map from '../../components/Map'
-import HeroSection from '../../components/HeroSection'
+import Hero from '../../components/Hero'
 
 const Home = ({places}) => (
   <>
-    <HeroSection />
+    <Hero />
     <Map places={places} />
   </>
 )
