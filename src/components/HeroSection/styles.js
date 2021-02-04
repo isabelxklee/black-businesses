@@ -13,7 +13,7 @@ export const Grid = styled.div`
 `
 
 export const TextContainer = styled.div`
-  background-color: #fcdfdd;
+  background-color: #fdeceb;
   text-align: center;
   height: 600px;
   padding: 0 100px;

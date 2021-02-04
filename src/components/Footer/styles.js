@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const MessageWrapper = styled.div`
   padding: 84px 30px;
   margin: 80px 0;
-  background-color: #fcdfdd;
+  background-color: #fdeceb;
 
   @media (max-width: 1000px) {
     padding: 120px 30px;
