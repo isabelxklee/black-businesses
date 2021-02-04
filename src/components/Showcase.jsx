@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {IBusinesses} from '../types'
+import PropTypes from 'prop-types'
 import BusinessTile from './BusinessTile.jsx'
 import PrimaryTag from './styled-components/PrimaryTag.jsx'
 import Wrapper from './styled-components/Wrapper.jsx'
@@ -71,7 +71,7 @@ class Showcase extends Component {
 }
 
 Showcase.propTypes = {
-  places: IBusinesses.isRequired,
+  places: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
 export default Showcase

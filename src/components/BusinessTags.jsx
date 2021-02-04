@@ -1,5 +1,5 @@
 import React from 'react'
-import {IBusiness} from '../types'
+import PropTypes from 'prop-types'
 import SecondaryTag from './styled-components/SecondaryTag.jsx'
 
 const BusinessTags = ({business}) =>
@@ -10,7 +10,7 @@ const BusinessTags = ({business}) =>
   ))
 
 BusinessTags.propTypes = {
-  business: IBusiness.isRequired,
+  business: PropTypes.object.isRequired,
 }
 
 export default BusinessTags

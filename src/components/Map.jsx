@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
-import {IBusinesses} from '../types.js'
 import ReactMapGl from 'react-map-gl'
 import mapboxgl from 'mapbox-gl'
 import PlacesList from './PlacesList.jsx'
@@ -77,9 +76,7 @@ class Map extends Component {
 }
 
 Map.propTypes = {
-  places: IBusinesses.isRequired,
-  selectedMarker: PropTypes.object,
-  flyToLocation: PropTypes.func,
+  places: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 
 export default Map

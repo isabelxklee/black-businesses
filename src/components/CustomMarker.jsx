@@ -24,6 +24,6 @@ const CustomMarker = ({place, setSelectedMarker}) => {
 export default CustomMarker
 
 CustomMarker.propTypes = {
-  place: PropTypes.object,
-  setSelectedMarker: PropTypes.func,
+  place: PropTypes.object.isRequired,
+  setSelectedMarker: PropTypes.func.isRequired,
 }

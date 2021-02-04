@@ -1,5 +1,5 @@
 import React from 'react'
-import {IBusinesses} from '../types.js'
+import PropTypes from 'prop-types'
 import Map from './Map.jsx'
 import HeroSection from './HeroSection.jsx'
 
@@ -13,5 +13,5 @@ const Home = ({places}) => (
 export default Home
 
 Home.propTypes = {
-  places: IBusinesses.isRequired,
+  places: PropTypes.arrayOf(PropTypes.object).isRequired,
 }

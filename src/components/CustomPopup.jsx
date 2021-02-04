@@ -1,8 +1,8 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import StyledPopup from './styled-components/StyledPopup.jsx'
 import PopupH3 from './styled-components/PopupH3.jsx'
 import P from './styled-components/P.jsx'
-import PropTypes from 'prop-types'
 
 const CustomPopup = ({place, closePopup}) => {
   return (
@@ -26,6 +26,6 @@ const CustomPopup = ({place, closePopup}) => {
 export default CustomPopup
 
 CustomPopup.propTypes = {
-  place: PropTypes.object,
-  closePopup: PropTypes.func,
+  place: PropTypes.object.isRequired,
+  closePopup: PropTypes.func.isRequired,
 }

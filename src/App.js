@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {Switch, Route} from 'react-router-dom'
-import {IBusinesses} from './types'
 import GlobalStyle from './components/styled-components/GlobalStyle.jsx'
 import Home from './components/Home.jsx'
 import Header from './components/Header.jsx'
@@ -46,7 +45,3 @@ class App extends Component {
 }
 
 export default App
-
-App.propTypes = {
-  places: IBusinesses,
-}

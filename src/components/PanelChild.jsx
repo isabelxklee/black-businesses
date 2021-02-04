@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {IBusiness} from '../types'
 import ListItem from './styled-components/ListItem.jsx'
 import H4 from './styled-components/H4.jsx'
 import P from './styled-components/P.jsx'
@@ -21,8 +20,8 @@ const PanelChild = ({place, flyToLocation}) => {
 }
 
 PanelChild.propTypes = {
-  place: IBusiness.isRequired,
-  flyToLocation: PropTypes.func,
+  place: PropTypes.object.isRequired,
+  flyToLocation: PropTypes.func.isRequired,
 }
 
 export default PanelChild

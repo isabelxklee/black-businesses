@@ -1,5 +1,5 @@
 import React from 'react'
-import {IBusiness} from '../types'
+import PropTypes from 'prop-types'
 import BusinessTags from './BusinessTags'
 import BusinessTileCard from './styled-components/BusinessTileCard'
 import BusinessImage from './styled-components/BusinessImage.jsx'
@@ -39,7 +39,7 @@ const BusinessTile = ({business}) => (
 )
 
 BusinessTile.propTypes = {
-  business: IBusiness.isRequired,
+  business: PropTypes.object.isRequired,
 }
 
 export default BusinessTile
