@@ -1,51 +1,48 @@
 import styled from 'styled-components'
 import {ReactComponent as LogoSVG} from '../../assets/logo.svg'
 
-export const LogoContainer = styled.div`
+export const Container = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: top;
   width: 100%;
-  padding: 32px 0;
+  padding: 0 0 20px;
+
+  @media (max-width: 700px) {
+    align-items: center;
+  }
+`
+
+export const DesktopNav = styled.nav`
+  align-items: center;
+  display: flex;
+  height: 40px;
+
+  @media (max-width: 700px) {
+    display: none;
+  }
+`
+
+export const MobileNav = styled.nav`
+  display: none;
+
+  @media (max-width: 700px) {
+    border-bottom: 2px solid #ce1e20;
+    border-top: 2px solid #ce1e20;
+    display: flex;
+    width: 100vw;
+  }
 `
 
 export const Logo = styled(LogoSVG)`
   object-fit: cover;
   width: 200px;
-  margin: auto;
+  margin: 20px 0;
   display: inline-block;
 
   @media (max-width: 700px) {
+    padding: 0 20px;
     width: 140px;
-    margin: auto;
-  }
-`
-
-export const NavigationContainer = styled.div`
-  border-bottom: 2px solid #ce1e20;
-  border-top: 2px solid #ce1e20;
-  text-align: center;
-  margin: 0;
-  padding: 16px;
-
-  @media (max-width: 700px) {
-    border-bottom: 2px solid #ce1e20;
-    border-top: 2px solid #ce1e20;
-    text-align: center;
-    margin: 0;
-    padding: 16px;
-  }
-`
-
-export const Navigation = styled.header`
-  background-color: #fff;
-  display: block;
-  align-items: center;
-  justify-content: center;
-
-  @media (max-width: 700px) {
-    display: inline-block;
-    width: 100vw;
   }
 `
 

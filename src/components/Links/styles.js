@@ -6,17 +6,21 @@ export const InternalLink = styled(NavLink)`
   font-family: 'Rubik', sans-serif;
   font-size: 1rem;
   transition: 0.3s;
-  margin: 1rem;
+  margin: 0;
+  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
   cursor: pointer;
+  max-width: 200px;
+  width: 15vw;
+
   &:hover {
     opacity: 0.5;
   }
+
   @media (max-width: 700px) {
     margin: 0.6rem;
-    text-align: center;
     font-size: 1rem;
     width: 100%;
     font-weight: 600;
