@@ -1,6 +1,7 @@
 import styled from 'styled-components'
+import {ReactComponent as MapPinSVG} from '../../assets/map-pin.svg'
 
-const MapPin = styled.img`
+const MapPin = styled(MapPinSVG)`
   width: ${({$isOnMap}) => ($isOnMap ? '38px' : '14px')};
   object-fit: cover;
 
