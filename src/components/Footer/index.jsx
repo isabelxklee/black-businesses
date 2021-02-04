@@ -1,11 +1,11 @@
 import React from 'react'
 import {Message} from './styles'
 import {H3, P2} from '../../styles'
-import {Check} from '../Check/styles'
+import {LargeCheck} from '../Check/styles'
 
 const Footer = () => (
   <footer>
-    <Check alt="repeating red and white check pattern" />
+    <LargeCheck />
     <Message>
       <H3>Have a website to add to the directory?</H3>
       <P2>
@@ -13,7 +13,7 @@ const Footer = () => (
         your lunch, email us at submit@black-owned-businesses.com
       </P2>
     </Message>
-    <Check alt="repeating red and white check pattern" />
+    <LargeCheck />
   </footer>
 )
 

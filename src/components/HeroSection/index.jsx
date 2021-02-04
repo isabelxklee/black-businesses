@@ -1,7 +1,7 @@
 import React from 'react'
 import {Grid, TextContainer, Text, Image} from './styles'
 import heroImageSrc from '../../assets/hero-image.jpg'
-import {Check} from '../Check/styles'
+import {LargeCheck} from '../Check/styles'
 import {H2, P} from '../../styles'
 
 const HeroSection = () => (
@@ -19,7 +19,7 @@ const HeroSection = () => (
       </TextContainer>
     </Grid>
 
-    <Check alt="repeating red and white check pattern" />
+    <LargeCheck />
   </>
 )
 

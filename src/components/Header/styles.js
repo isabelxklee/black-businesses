@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import {ReactComponent as LogoSVG} from '../../assets/logo.svg'
-export {ReactComponent as Tile} from '../../assets/tiles.svg'
 
 export const LogoContainer = styled.div`
   display: flex;
