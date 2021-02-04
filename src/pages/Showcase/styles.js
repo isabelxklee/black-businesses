@@ -10,7 +10,6 @@ export const Container = styled.div`
 
   @media (max-width: 1300px) {
     grid-template-columns: repeat(3, 1fr);
-    margin: 100px 120px;
   }
 
   @media (max-width: 1000px) {

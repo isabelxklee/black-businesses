@@ -4,6 +4,7 @@ import {H3} from '../../styles'
 
 export const StyledPopup = styled(Popup)`
   border-radius: 5px;
+  cursor: pointer;
 
   .mapboxgl-popup-content {
     padding: 30px;
