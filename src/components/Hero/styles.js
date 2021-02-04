@@ -14,7 +14,7 @@ export const Grid = styled.div`
 
 export const TextContainer = styled.div`
   align-items: center;
-  background-color: #fdeceb;
+  background-color: ${({theme}) => theme.background};
   display: flex;
   justify-content: center;
   text-align: center;

@@ -10,18 +10,18 @@ export const StyledPopup = styled(Popup)`
     padding: 30px;
     font-size: 16px;
     border-radius: 5px;
-    background-color: #ce1e20;
+    background-color: ${({theme}) => theme.primary};
     color: white;
   }
 
   .mapboxgl-popup-tip {
-    border-top-color: #ce1e20;
+    border-top-color: ${({theme}) => theme.primary};
     margin-bottom: 30px;
   }
 
   &.mapboxgl-popup-anchor-top {
     .mapboxgl-popup-tip {
-      border-bottom-color: #ce1e20;
+      border-bottom-color: ${({theme}) => theme.primary};
       margin-bottom: 0;
       margin-top: 30px;
     }

@@ -6,7 +6,7 @@ export const Container = styled.div`
   grid-column-gap: 25px;
   grid-row-gap: 100px;
   margin: 100px;
-  background-color: #fff;
+  background-color: ${({theme}) => theme.white};
 
   @media (max-width: 1300px) {
     grid-template-columns: repeat(3, 1fr);
@@ -29,8 +29,8 @@ export const Nav = styled.nav`
 `
 
 export const Tag = styled.button`
-  background-color: ${({$isSelected}) => ($isSelected ? '#ce1e20' : '#F7CAC7')};
-  color: ${({$isSelected}) => ($isSelected ? '#FFF' : '#ce1e20')};
+  background-color: ${({theme, $isSelected}) => ($isSelected ? theme.primary : theme.secondary)};
+  color: ${({theme, $isSelected}) => ($isSelected ? theme.white : theme.primary)};
   font-weight: 700;
   border-radius: 2rem;
   border: none;

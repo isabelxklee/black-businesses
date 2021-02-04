@@ -1,11 +1,12 @@
 import React, {Component} from 'react'
 import {Switch, Route} from 'react-router-dom'
+import {ThemeProvider} from 'styled-components'
 import Home from './pages/Home'
 import Showcase from './pages/Showcase'
 import Resources from './pages/Resources'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import {GlobalStyle} from './styles'
+import {GlobalStyle, theme} from './styles'
 
 class App extends Component {
   state = {
@@ -24,7 +25,7 @@ class App extends Component {
 
   render() {
     return (
-      <>
+      <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Header />
         <Switch>
@@ -39,7 +40,7 @@ class App extends Component {
           </Route>
         </Switch>
         <Footer />
-      </>
+      </ThemeProvider>
     )
   }
 }

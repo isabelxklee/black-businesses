@@ -18,7 +18,7 @@ export const Address = styled.p`
 
 export const TileCard = styled.div`
   @media (max-width: 700px) {
-    border-bottom: 3px solid #ce1e20;
+    border-bottom: 3px solid ${({theme}) => theme.primary};
     padding: 16px 0 40px 0;
   }
 
@@ -52,7 +52,7 @@ export const Tag = styled.li`
   font-size: 12px;
   padding: 8px 10px;
   margin: 0 10px 0 0;
-  border: 2px solid #ce1e20;
+  border: 2px solid ${({theme}) => theme.primary};
   background-color: transparent;
   text-align: center;
   display: inline-block;

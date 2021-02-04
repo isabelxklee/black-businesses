@@ -1,12 +1,19 @@
 import styled, {createGlobalStyle} from 'styled-components'
 
+export const theme = {
+  primary: '#CE1E20',
+  secondary: '#F7CAC7',
+  background: '#FDECEB',
+  white: '#FFF',
+}
+
 export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
     margin: 0;
     padding: 0;
-    color: #CE1E20;
+    color: ${({theme}) => theme.primary};
   }
 
   h1, h2, h3, h4 {

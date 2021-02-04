@@ -27,8 +27,8 @@ export const MobileNav = styled.nav`
   display: none;
 
   @media (max-width: 700px) {
-    border-bottom: 2px solid #ce1e20;
-    border-top: 2px solid #ce1e20;
+    border-bottom: 2px solid ${({theme}) => theme.primary};
+    border-top: 2px solid ${({theme}) => theme.primary};
     display: flex;
     width: 100vw;
   }

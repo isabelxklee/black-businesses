@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import {NavLink} from 'react-router-dom'
 
 export const InternalLink = styled(NavLink)`
-  color: #ce1e20;
+  color: ${({theme}) => theme.primary};
   font-family: 'Rubik', sans-serif;
   font-size: 1rem;
   transition: 0.3s;
@@ -28,7 +28,7 @@ export const InternalLink = styled(NavLink)`
 `
 
 export const Link = styled.a`
-  color: #ce1e20;
+  color: ${({theme}) => theme.primary};
   font-family: 'Rubik', sans-serif;
   font-size: 16px;
   font-weight: 700;

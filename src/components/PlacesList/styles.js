@@ -10,8 +10,8 @@ export const SidePanel = styled.div`
   height: 50%;
   margin-top: 40px;
   border-radius: 10px;
-  border: 3px solid #ce1e20;
-  box-shadow: 16px 16px 0 -6px #ce1e20;
+  border: 3px solid;
+  box-shadow: 16px 16px 0 -6px ${({theme}) => theme.primary};
 
   @media (max-width: 700px) {
     border-left: none;
@@ -35,10 +35,10 @@ export const Li = styled.li`
   padding: 20px 25px;
   cursor: pointer;
   transition: 0.3s;
-  border-bottom: 2px solid #ce1e20;
+  border-bottom: 2px solid ${({theme}) => theme.primary};
 
   :hover {
-    background-color: #fdeceb;
+    background-color: ${({theme}) => theme.background};
   }
 
   :last-child {
