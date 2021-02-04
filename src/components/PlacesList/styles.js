@@ -14,18 +14,21 @@ export const SidePanel = styled.div`
   box-shadow: 16px 16px 0 -6px #ce1e20;
 
   @media (max-width: 700px) {
-    display: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    box-shadow: none;
+    position: relative;
+    height: 400px;
+    left: auto;
+    margin: 0;
+    width: 100vw;
   }
 `
 
 export const Ul = styled(BaseUl)`
   flex-direction: column;
   flex-wrap: nowrap;
-
-  @media (max-width: 700px) {
-    margin: 0.6rem 0;
-    font-size: 1.2rem;
-  }
 `
 
 export const Li = styled.li`
@@ -40,5 +43,9 @@ export const Li = styled.li`
 
   :last-child {
     border-bottom: none;
+  }
+
+  @media (max-width: 700px) {
+    padding: 10px 20px;
   }
 `

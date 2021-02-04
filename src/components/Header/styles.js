@@ -41,7 +41,7 @@ export const Logo = styled(LogoSVG)`
   display: inline-block;
 
   @media (max-width: 700px) {
-    padding: 0 20px;
+    margin: 20px;
     width: 140px;
   }
 `

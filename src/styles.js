@@ -13,6 +13,10 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Calistoga', cursive;
     font-weight: 400;
   }
+
+  * {
+    box-sizing: border-box;
+  }
 `
 
 export const P = styled.p`
@@ -27,7 +31,7 @@ export const P2 = styled(P)`
 
 export const H2 = styled.h2`
   font-size: 48px;
-  margin: 16px 0;
+  margin: 0 0 16px;
 
   @media (max-width: 700px) {
     font-size: 30px;
