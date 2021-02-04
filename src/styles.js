@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
 
   h1, h2, h3, h4 {
     font-family: 'Calistoga', cursive;
+    font-weight: 400;
   }
 `
 
@@ -25,7 +26,7 @@ export const P2 = styled(P)`
 `
 
 export const H2 = styled.h2`
-  font-size: 40px;
+  font-size: 48px;
   margin: 16px 0;
 
   @media (max-width: 700px) {
