@@ -15,7 +15,7 @@ const CustomMarker = ({place, setSelectedMarker}) => {
       offsetLeft={-20}
       offsetTop={-10}
     >
-      <MapPin $isOnMap={true} onClick={handleClick} alt="a red map pin icon" />
+      <MapPin onClick={handleClick} alt="a red map pin icon" />
     </Marker>
   )
 }

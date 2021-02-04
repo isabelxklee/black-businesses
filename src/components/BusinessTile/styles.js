@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {ReactComponent as MapPinSVG} from '../../assets/map-pin.svg'
 
 export const TileInformation = styled.div`
   margin: 20px 0;
@@ -56,4 +57,9 @@ export const Tag = styled.li`
   text-align: center;
   display: inline-block;
   font-weight: 700;
+`
+
+export const Pin = styled(MapPinSVG)`
+  width: 14px;
+  object-fit: cover;
 `

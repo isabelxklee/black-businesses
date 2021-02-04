@@ -9,8 +9,8 @@ import {
   ImageContainer,
   Image,
   Tag,
+  Pin,
 } from './styles'
-import {MapPin} from '../CustomMarker/styles'
 import {H3, P, Ul} from '../../styles'
 
 const Tags = ({business}) => (
@@ -37,7 +37,7 @@ const BusinessTile = ({business}) => (
     <TileInformation>
       <H3>{business.title}</H3>
       <AddressContainer>
-        <MapPin />
+        <Pin />
         <Address>
           {business.city}, {business.state}
         </Address>
