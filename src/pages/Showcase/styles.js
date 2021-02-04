@@ -25,6 +25,10 @@ export const Container = styled.div`
   }
 `
 
+export const Nav = styled.nav`
+  max-width: 550px;
+`
+
 export const Tag = styled.button`
   background-color: ${({$isSelected}) => ($isSelected ? '#ce1e20' : '#F7CAC7')};
   color: ${({$isSelected}) => ($isSelected ? '#FFF' : '#ce1e20')};

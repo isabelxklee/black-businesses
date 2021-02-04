@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import BusinessTile from '../../components/BusinessTile'
-import {Container, Tag} from './styles'
+import {Container, Nav, Tag} from './styles'
 import {Wrapper} from '../styles'
 import {H2, P} from '../../styles'
 
@@ -46,7 +46,7 @@ class Showcase extends Component {
         <Wrapper>
           <H2>Browse all businesses</H2>
           <P>Filter by category: </P>
-          <nav>
+          <Nav>
             {this.getAllCategories().map((category) => (
               <Tag
                 key={category}
@@ -56,7 +56,7 @@ class Showcase extends Component {
                 {category}
               </Tag>
             ))}
-          </nav>
+          </Nav>
         </Wrapper>
         <Container>
           {this.filterBusinesses().map((business) => (
