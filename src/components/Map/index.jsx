@@ -55,7 +55,7 @@ class Map extends Component {
     const {selectedMarker} = this.state
 
     return (
-      <div>
+      <>
         <Header>
           <H2>Map View</H2>
         </Header>
@@ -76,7 +76,7 @@ class Map extends Component {
             <CustomMarker key={place.id} place={place} setSelectedMarker={this.setSelectedMarker} />
           ))}
         </ReactMapGl>
-      </div>
+      </>
     )
   }
 }

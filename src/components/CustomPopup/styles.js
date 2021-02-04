@@ -18,6 +18,14 @@ export const StyledPopup = styled(Popup)`
     border-top-color: #ce1e20;
     margin-bottom: 30px;
   }
+
+  &.mapboxgl-popup-anchor-top {
+    .mapboxgl-popup-tip {
+      border-bottom-color: #ce1e20;
+      margin-bottom: 0;
+      margin-top: 30px;
+    }
+  }
 `
 
 export const PopupH3 = styled(H3)`
