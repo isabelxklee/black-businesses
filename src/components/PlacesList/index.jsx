@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {SidePanel, Li} from './styles'
-import {Ul, H4, P} from '../../styles'
+import {SidePanel, Ul, Li} from './styles'
+import {H4, P} from '../../styles'
 
 const PanelChild = ({place, flyToLocation}) => {
   const handleClick = () => {

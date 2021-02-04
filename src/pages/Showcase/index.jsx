@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import BusinessTile from '../../components/BusinessTile'
 import {Container, Nav, Tag} from './styles'
 import {Wrapper} from '../styles'
-import {H2, P} from '../../styles'
+import {H2, P, Ul} from '../../styles'
 
 class Showcase extends Component {
   state = {
@@ -47,15 +47,18 @@ class Showcase extends Component {
           <H2>Browse all businesses</H2>
           <P>Filter by category: </P>
           <Nav>
-            {this.getAllCategories().map((category) => (
-              <Tag
-                key={category}
-                $isSelected={this.state.selectedCategory === category}
-                onClick={this.handleClick}
-              >
-                {category}
-              </Tag>
-            ))}
+            <Ul>
+              {this.getAllCategories().map((category) => (
+                <li key={category}>
+                  <Tag
+                    $isSelected={this.state.selectedCategory === category}
+                    onClick={this.handleClick}
+                  >
+                    {category}
+                  </Tag>
+                </li>
+              ))}
+            </Ul>
           </Nav>
         </Wrapper>
         <Container>

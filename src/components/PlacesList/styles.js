@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {Ul as BaseUl} from '../../styles'
 
 export const SidePanel = styled.div`
   background-color: white;
@@ -17,11 +18,25 @@ export const SidePanel = styled.div`
   }
 `
 
-export const Li = styled.article`
+export const Ul = styled(BaseUl)`
+  flex-direction: column;
+  flex-wrap: nowrap;
+
+  @media (max-width: 700px) {
+    margin: 0.6rem 0;
+    font-size: 1.2rem;
+  }
+`
+
+export const Li = styled.li`
   padding: 20px 25px;
   cursor: pointer;
   transition: 0.3s;
   border-bottom: 2px solid #ce1e20;
+
+  :hover {
+    background-color: #fdeceb;
+  }
 
   :last-child {
     border-bottom: none;

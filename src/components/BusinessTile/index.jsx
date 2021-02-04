@@ -11,14 +11,17 @@ import {
   Tag,
 } from './styles'
 import {MapPin} from '../CustomMarker/styles'
-import {H3, P} from '../../styles'
+import {H3, P, Ul} from '../../styles'
 
-const Tags = ({business}) =>
-  business.categories.map((category) => (
-    <Tag key={category} id={category}>
-      {category}
-    </Tag>
-  ))
+const Tags = ({business}) => (
+  <Ul>
+    {business.categories.map((category) => (
+      <Tag key={category} id={category}>
+        {category}
+      </Tag>
+    ))}
+  </Ul>
+)
 
 Tags.propTypes = {
   business: PropTypes.object.isRequired,

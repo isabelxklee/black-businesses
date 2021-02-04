@@ -46,7 +46,7 @@ export const Image = styled.img`
   border-radius: 10px;
 `
 
-export const Tag = styled.div`
+export const Tag = styled.li`
   border-radius: 2rem;
   font-size: 12px;
   padding: 8px 10px;

@@ -49,14 +49,9 @@ export const H4 = styled.h4`
 `
 
 export const Ul = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
   margin: 0;
   padding: 0;
-  li:last-child {
-    border: none;
-  }
-
-  @media (max-width: 700px) {
-    margin: 0.6rem 0;
-    font-size: 1.2rem;
-  }
 `
