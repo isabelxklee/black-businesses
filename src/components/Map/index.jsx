@@ -60,7 +60,16 @@ class Map extends Component {
           <H2>Map View</H2>
         </Header>
         <PlacesList places={places} flyToLocation={this.flyToLocation} />
-        <ReactMapGl {...this.state.viewport} mapboxApiAccessToken={accessToken}>
+        <ReactMapGl
+          {...this.state.viewport}
+          mapboxApiAccessToken={accessToken}
+          onViewportChange={({latitude, longitude, zoom}) =>
+            this.setState((state) => ({
+              ...state,
+              viewport: {...state.viewport, latitude, longitude, zoom},
+            }))
+          }
+        >
           <StyledNavigationControl showCompass={false} />
           {selectedMarker && <CustomPopup place={selectedMarker} closePopup={this.closePopup} />}
           {places.map((place) => (
