@@ -1,11 +1,11 @@
 import React, {Component} from 'react'
 import {Switch, Route} from 'react-router-dom'
-import GlobalStyle from './components/styled-components/GlobalStyle.jsx'
-import Home from './components/Home.jsx'
-import Header from './components/Header.jsx'
-import Footer from './components/Footer.jsx'
-import Showcase from './components/Showcase.jsx'
-import Resources from './components/Resources.jsx'
+import Home from './pages/Home'
+import Showcase from './pages/Showcase'
+import Resources from './pages/Resources'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import {GlobalStyle} from './styles'
 
 class App extends Component {
   state = {
@@ -24,7 +24,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="app">
+      <>
         <GlobalStyle />
         <Header />
         <Switch>
@@ -39,7 +39,7 @@ class App extends Component {
           </Route>
         </Switch>
         <Footer />
-      </div>
+      </>
     )
   }
 }
