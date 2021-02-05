@@ -50,6 +50,11 @@ class Map extends Component {
     })
   }
 
+  flyToAndOpen = (place) => {
+    this.flyToLocation(place.coordinates[0], place.coordinates[1], 14)
+    this.setSelectedMarker(place)
+  }
+
   render() {
     const {places} = this.props
     const {selectedMarker} = this.state
@@ -59,7 +64,7 @@ class Map extends Component {
         <Header>
           <H2>Map View</H2>
         </Header>
-        <PlacesList places={places} flyToLocation={this.flyToLocation} />
+        <PlacesList places={places} flyToAndOpen={this.flyToAndOpen} />
         <ReactMapGl
           {...this.state.viewport}
           mapboxApiAccessToken={accessToken}

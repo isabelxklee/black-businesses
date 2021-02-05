@@ -3,9 +3,9 @@ import PropTypes from 'prop-types'
 import {SidePanel, Ul, Li} from './styles'
 import {H4, P} from '../../styles'
 
-const PanelChild = ({place, flyToLocation}) => {
+const PanelChild = ({place, flyToAndOpen}) => {
   const handleClick = () => {
-    flyToLocation(place.coordinates[0], place.coordinates[1], 14)
+    flyToAndOpen(place)
   }
 
   return (
@@ -20,14 +20,14 @@ const PanelChild = ({place, flyToLocation}) => {
 
 PanelChild.propTypes = {
   place: PropTypes.object.isRequired,
-  flyToLocation: PropTypes.func.isRequired,
+  flyToAndOpen: PropTypes.func.isRequired,
 }
 
-const PlacesList = ({places, flyToLocation}) => (
+const PlacesList = ({places, flyToAndOpen}) => (
   <SidePanel>
     <Ul>
       {places.map((place) => (
-        <PanelChild key={place.id} place={place} flyToLocation={flyToLocation} />
+        <PanelChild key={place.id} place={place} flyToAndOpen={flyToAndOpen} />
       ))}
     </Ul>
   </SidePanel>
@@ -35,7 +35,7 @@ const PlacesList = ({places, flyToLocation}) => (
 
 PlacesList.propTypes = {
   places: PropTypes.arrayOf(PropTypes.object).isRequired,
-  flyToLocation: PropTypes.func.isRequired,
+  flyToAndOpen: PropTypes.func.isRequired,
 }
 
 export default PlacesList
