@@ -1,0 +1,38 @@
+import styled from 'styled-components'
+import {Popup} from 'react-map-gl'
+import {H3} from '../../styles'
+
+export const StyledPopup = styled(Popup)`
+  border-radius: 5px;
+  cursor: pointer;
+
+  .mapboxgl-popup-content {
+    padding: 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: ${({theme}) => theme.primary};
+    color: white;
+  }
+
+  .mapboxgl-popup-tip {
+    border-top-color: ${({theme}) => theme.primary};
+    margin-bottom: 30px;
+  }
+
+  &.mapboxgl-popup-anchor-top {
+    .mapboxgl-popup-tip {
+      border-bottom-color: ${({theme}) => theme.primary};
+      margin-bottom: 0;
+      margin-top: 30px;
+    }
+  }
+`
+
+export const PopupH3 = styled(H3)`
+  font-size: 20px;
+  margin: 0 0 8px 0;
+
+  @media (max-width: 700px) {
+    font-size: 20px;
+  }
+`
