@@ -39,7 +39,8 @@ export const P2 = styled(P)`
 
 export const H1 = styled.h1`
   font-size: 48px;
-  /* margin: 0 0 12px 0; */
+  margin: 0;
+  line-height: 1;
 `
 
 export const H2 = styled.h2`

@@ -1,15 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-// import {ImageContainer, Image} from './styles'
-import {H1, H4, P, Address, AddressContainer, Tag, Pin, ImageContainer, Image} from '../../styles'
+import {Container, Wrapper} from './styles'
+import {
+  H1,
+  H4,
+  P,
+  Ul,
+  Address,
+  AddressContainer,
+  Tag,
+  Pin,
+  ImageContainer,
+  Image,
+} from '../../styles'
 import {ExternalLink} from '../../components/Links'
 import {InternalLink} from '../../components/Links/styles'
 
 const BusinessPage = ({business}) => (
-  <div>
+  <Wrapper>
     <InternalLink to="/">Back to view all businesses</InternalLink>
 
-    <div>
+    <Container>
       <ImageContainer>
         <Image src={business.image_url} alt={business.title} />
       </ImageContainer>
@@ -31,13 +42,13 @@ const BusinessPage = ({business}) => (
 
       <div>
         <H4>Tags: </H4>
-        <ul>
+        <Ul>
           {business.categories.map((category) => (
             <Tag key={category} id={category}>
               {category}
             </Tag>
           ))}
-        </ul>
+        </Ul>
 
         <div>
           <H4>Full address: </H4>
@@ -47,8 +58,8 @@ const BusinessPage = ({business}) => (
           </P>
         </div>
       </div>
-    </div>
-  </div>
+    </Container>
+  </Wrapper>
 )
 
 BusinessPage.propTypes = {
