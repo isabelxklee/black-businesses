@@ -6,6 +6,7 @@ import Showcase from './pages/Showcase'
 import Resources from './pages/Resources'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import BusinessRouteSwitcher from './components/BusinessRouteSwitcher'
 import {GlobalStyle, theme} from './styles'
 
 class App extends Component {
@@ -37,6 +38,9 @@ class App extends Component {
           </Route>
           <Route exact path="/resources">
             <Resources />
+          </Route>
+          <Route exact path={'/businesses/:id'}>
+            <BusinessRouteSwitcher businesses={this.state.places} />
           </Route>
         </Switch>
         <Footer />

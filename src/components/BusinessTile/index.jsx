@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {ExternalLink} from '../Links'
+import {InternalLink} from '../Links/styles'
 import {
   Address,
   AddressContainer,
@@ -30,7 +31,9 @@ Tags.propTypes = {
 const BusinessTile = ({business}) => (
   <TileCard>
     <ImageContainer>
-      <Image src={business.image_url} alt={business.title} />
+      <InternalLink to={`businesses/${business.id}`}>
+        <Image src={business.image_url} alt={business.title} />
+      </InternalLink>
     </ImageContainer>
 
     <Tags business={business} />
