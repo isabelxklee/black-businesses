@@ -1,6 +1,20 @@
 import styled from 'styled-components'
 import {H4} from '../../styles'
 
+export const Desktop = styled.div`
+  @media (max-width: 700px) {
+    display: none;
+  }
+`
+
+export const Mobile = styled.div`
+  display: none;
+
+  @media (max-width: 700px) {
+    display: block;
+  }
+`
+
 export const Wrapper = styled.div`
   padding: 48px 100px;
   background-color: ${({theme}) => theme.background};

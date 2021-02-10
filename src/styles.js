@@ -41,6 +41,10 @@ export const H1 = styled.h1`
   font-size: 48px;
   margin: 0;
   line-height: 1;
+
+  @media (max-width: 700px) {
+    font-size: 30px;
+  }
 `
 
 export const H2 = styled.h2`
