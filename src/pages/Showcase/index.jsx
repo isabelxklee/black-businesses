@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import BusinessTile from '../../components/BusinessTile'
 import {Container, Nav, Tag} from './styles'
 import {Wrapper} from '../styles'
-import {H2, P, Ul} from '../../styles'
+import {H1, P, Ul} from '../../styles'
 
 class Showcase extends Component {
   state = {
@@ -44,7 +44,7 @@ class Showcase extends Component {
     return (
       <>
         <Wrapper>
-          <H2>Browse all businesses</H2>
+          <H1>Browse all businesses</H1>
           <P>Filter by category: </P>
           <Nav>
             <Ul>

@@ -1,7 +1,7 @@
 import React from 'react'
 import {Container, Tile} from './styles'
 import {Wrapper} from '../styles'
-import {H2, H3, P2} from '../../styles'
+import {H1, H3, P2} from '../../styles'
 import {ExternalLink} from '../../components/Links'
 
 // creating this resources component will be the homework exercise
@@ -41,7 +41,7 @@ const resources = [
 
 const Resources = () => (
   <Wrapper>
-    <H2>Resources to help you get started: </H2>
+    <H1>Resources to help you get started: </H1>
     <Container>
       {resources.map((resource) => (
         <Tile key={resource.id}>

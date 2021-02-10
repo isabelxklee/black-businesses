@@ -2,17 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {ExternalLink} from '../Links'
 import {InternalLink} from '../Links/styles'
-import {
-  Address,
-  AddressContainer,
-  TileInformation,
-  TileCard,
-  ImageContainer,
-  Image,
-  Tag,
-  Pin,
-} from './styles'
-import {H3, P, Ul} from '../../styles'
+import {TileInformation, TileCard} from './styles'
+import {H3, P, Ul, Tag, Pin, Address, AddressContainer, ImageContainer, Image} from '../../styles'
 
 const Tags = ({business}) => (
   <Ul>
