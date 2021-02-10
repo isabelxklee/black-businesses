@@ -15,18 +15,27 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 50% 25% 25%;
   grid-column-gap: 40px;
   margin-top: 30px;
 
   @media (max-width: 700px) {
     grid-template-columns: 1fr;
     grid-column-gap: 40px;
+    margin-top: 0;
   }
 `
 
 export const Section = styled.div`
   margin-bottom: 40px;
+
+  @media (max-width: 700px) {
+    margin: 40px 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 `
 
 export const H42 = styled(H4)`

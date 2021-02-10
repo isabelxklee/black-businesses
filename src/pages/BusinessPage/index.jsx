@@ -1,7 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {Container, Wrapper, Section, H42, InternalLink} from './styles'
-import {H1, P, Ul, Address, AddressContainer, Tag, Pin, ImageContainer, Image} from '../../styles'
+import {
+  H1,
+  P,
+  P2,
+  Ul,
+  Address,
+  AddressContainer,
+  Tag,
+  Pin,
+  ImageContainer,
+  Image,
+} from '../../styles'
 import {ExternalLink} from '../../components/Links'
 
 const BusinessPage = ({business}) => (
@@ -23,7 +34,7 @@ const BusinessPage = ({business}) => (
         </AddressContainer>
 
         <div>
-          <p>{business.description}</p>
+          <P2>{business.description}</P2>
         </div>
         <ExternalLink href={business.website}>Visit site</ExternalLink>
       </div>
