@@ -30,7 +30,7 @@ export const GlobalStyle = createGlobalStyle`
 export const P = styled.p`
   font-family: 'Rubik', sans-serif;
   margin: 0 0 4px 0;
-  line-height: 1.4;
+  line-height: 1.2;
 `
 
 export const P2 = styled(P)`
